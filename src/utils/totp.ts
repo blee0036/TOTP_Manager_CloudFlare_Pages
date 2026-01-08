@@ -27,17 +27,18 @@ export async function generateTOTP(
     const counter = Math.floor(Date.now() / 1000 / step);
     
     // 3. 将计数器转换为 8 字节大端序
-    const counterBytes = new ArrayBuffer(8);
-    const counterView = new DataView(counterBytes);
+    const counterBuffer = new ArrayBuffer(8);
+    const counterView = new DataView(counterBuffer);
     const high = Math.floor(counter / 0x100000000);
     const low = counter & 0xFFFFFFFF;
     counterView.setUint32(0, high, false); // 大端序
     counterView.setUint32(4, low, false);  // 大端序
+    const counterBytes = new Uint8Array(counterBuffer);
     
     // 4. 导入密钥用于 HMAC-SHA1
     const key = await crypto.subtle.importKey(
       'raw',
-      secretBytes as BufferSource,
+      secretBytes,
       { name: 'HMAC', hash: 'SHA-1' },
       false,
       ['sign']
