@@ -38,14 +38,14 @@ export async function generateTOTP(
     // 4. 导入密钥用于 HMAC-SHA1
     const key = await crypto.subtle.importKey(
       'raw',
-      secretBytes,
+      secretBytes as BufferSource,
       { name: 'HMAC', hash: 'SHA-1' },
       false,
       ['sign']
     );
     
     // 5. 计算 HMAC-SHA1
-    const hmacResult = await crypto.subtle.sign('HMAC', key, counterBytes);
+    const hmacResult = await crypto.subtle.sign('HMAC', key, counterBytes as BufferSource);
     const hmacBytes = new Uint8Array(hmacResult);
     
     // 6. 动态截断（Dynamic Truncation）
