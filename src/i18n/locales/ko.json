@@ -1,0 +1,79 @@
+{
+  "app": {
+    "title": "TOTP 관리자",
+    "description": "안전한 시간 기반 일회용 비밀번호 관리자"
+  },
+  "nav": {
+    "tokens": "토큰",
+    "addKey": "키 추가",
+    "manage": "관리",
+    "login": "로그인",
+    "logout": "로그아웃",
+    "welcome": "환영합니다, {username}",
+    "settings": "설정",
+    "language": "언어"
+  },
+  "auth": {
+    "login": "로그인",
+    "register": "회원가입",
+    "username": "사용자 이름",
+    "password": "비밀번호",
+    "confirmPassword": "비밀번호 확인",
+    "temporaryMode": "임시 모드",
+    "temporaryModeDesc": "키는 브라우저에만 저장됩니다",
+    "loginButton": "로그인",
+    "registerButton": "회원가입",
+    "usernameMinLength": "사용자 이름은 최소 3자 이상이어야 합니다",
+    "passwordMinLength": "비밀번호는 최소 6자 이상이어야 합니다",
+    "passwordMismatch": "비밀번호가 일치하지 않습니다",
+    "switchToLogin": "이미 계정이 있으신가요? 로그인",
+    "switchToRegister": "계정이 없으신가요? 회원가입"
+  },
+  "keys": {
+    "remark": "비고",
+    "remarkPlaceholder": "예: Google, GitHub",
+    "remarkRequired": "비고는 필수입니다",
+    "secret": "비밀 키",
+    "secretPlaceholder": "Base32 키를 입력하거나 otpauth:// URI를 붙여넣으세요",
+    "uploadQR": "QR 코드 업로드",
+    "addKey": "키 추가",
+    "updateKey": "업데이트",
+    "deleteKey": "삭제",
+    "confirmDelete": "'{remark}'을(를) 삭제하시겠습니까?",
+    "search": "키 검색...",
+    "noKeys": "키를 찾을 수 없습니다",
+    "noResults": "일치하는 키를 찾을 수 없습니다",
+    "cancel": "취소",
+    "save": "저장"
+  },
+  "token": {
+    "copy": "복사",
+    "copied": "클립보드에 복사되었습니다!",
+    "timeRemaining": "{seconds}초 남음",
+    "expired": "새 토큰 생성 중...",
+    "generating": "생성 중..."
+  },
+  "errors": {
+    "invalidSecret": "잘못된 비밀 키 형식",
+    "networkError": "네트워크 오류가 발생했습니다",
+    "unauthorized": "계속하려면 로그인하세요",
+    "notFound": "리소스를 찾을 수 없습니다",
+    "serverError": "서버 오류가 발생했습니다",
+    "validationError": "유효성 검사 오류",
+    "usernameExists": "사용자 이름이 이미 존재합니다",
+    "invalidCredentials": "잘못된 사용자 이름 또는 비밀번호"
+  },
+  "success": {
+    "keyAdded": "키가 성공적으로 추가되었습니다",
+    "keyUpdated": "키가 성공적으로 업데이트되었습니다",
+    "keyDeleted": "키가 성공적으로 삭제되었습니다",
+    "loginSuccess": "로그인에 성공했습니다",
+    "registerSuccess": "회원가입에 성공했습니다"
+  },
+  "theme": {
+    "light": "라이트",
+    "dark": "다크",
+    "auto": "자동",
+    "toggle": "테마 전환"
+  }
+}

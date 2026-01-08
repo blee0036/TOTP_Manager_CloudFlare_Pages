@@ -1,0 +1,267 @@
+/**
+ * Global Styles for TOTP Manager
+ * Material Design 3 (Material You) with Roboto font
+ */
+
+/* Import Roboto font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* Typography */
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  font-weight: 400;
+
+  /* Font rendering */
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  font-family: 'Roboto', sans-serif;
+}
+
+/* App container */
+#app {
+  min-height: 100vh;
+  width: 100%;
+}
+
+/* Material Design Typography Scale */
+.text-h1 {
+  font-size: 96px;
+  font-weight: 300;
+  line-height: 1.167;
+  letter-spacing: -1.5px;
+}
+
+.text-h2 {
+  font-size: 60px;
+  font-weight: 300;
+  line-height: 1.2;
+  letter-spacing: -0.5px;
+}
+
+.text-h3 {
+  font-size: 48px;
+  font-weight: 400;
+  line-height: 1.167;
+  letter-spacing: 0;
+}
+
+.text-h4 {
+  font-size: 34px;
+  font-weight: 400;
+  line-height: 1.235;
+  letter-spacing: 0.25px;
+}
+
+.text-h5 {
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1.334;
+  letter-spacing: 0;
+}
+
+.text-h6 {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.6;
+  letter-spacing: 0.15px;
+}
+
+.text-subtitle-1 {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.75;
+  letter-spacing: 0.15px;
+}
+
+.text-subtitle-2 {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.57;
+  letter-spacing: 0.1px;
+}
+
+.text-body-1 {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0.5px;
+}
+
+.text-body-2 {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.43;
+  letter-spacing: 0.25px;
+}
+
+.text-button {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.75;
+  letter-spacing: 1.25px;
+  text-transform: uppercase;
+}
+
+.text-caption {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.66;
+  letter-spacing: 0.4px;
+}
+
+.text-overline {
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 2.66;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+/* Material Design elevation shadows */
+.elevation-0 {
+  box-shadow: none;
+}
+
+.elevation-1 {
+  box-shadow: 0px 2px 1px -1px rgba(0,0,0,0.2),
+              0px 1px 1px 0px rgba(0,0,0,0.14),
+              0px 1px 3px 0px rgba(0,0,0,0.12);
+}
+
+.elevation-2 {
+  box-shadow: 0px 3px 1px -2px rgba(0,0,0,0.2),
+              0px 2px 2px 0px rgba(0,0,0,0.14),
+              0px 1px 5px 0px rgba(0,0,0,0.12);
+}
+
+.elevation-3 {
+  box-shadow: 0px 3px 3px -2px rgba(0,0,0,0.2),
+              0px 3px 4px 0px rgba(0,0,0,0.14),
+              0px 1px 8px 0px rgba(0,0,0,0.12);
+}
+
+.elevation-4 {
+  box-shadow: 0px 2px 4px -1px rgba(0,0,0,0.2),
+              0px 4px 5px 0px rgba(0,0,0,0.14),
+              0px 1px 10px 0px rgba(0,0,0,0.12);
+}
+
+/* Utility classes */
+.rounded-sm {
+  border-radius: 4px;
+}
+
+.rounded-md {
+  border-radius: 8px;
+}
+
+.rounded-lg {
+  border-radius: 12px;
+}
+
+.rounded-full {
+  border-radius: 9999px;
+}
+
+/* Responsive container */
+.container {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+@media (min-width: 600px) {
+  .container {
+    max-width: 600px;
+  }
+}
+
+@media (min-width: 960px) {
+  .container {
+    max-width: 960px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .container {
+    max-width: 1280px;
+  }
+}
+
+@media (min-width: 1920px) {
+  .container {
+    max-width: 1920px;
+  }
+}
+
+/* Scrollbar styling (Material Design) */
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+/* Dark theme scrollbar */
+.v-theme--dark ::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.v-theme--dark ::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* Transitions */
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.3s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+
+.slide-enter-active,
+.slide-leave-active {
+  transition: transform 0.3s ease;
+}
+
+.slide-enter-from {
+  transform: translateX(-100%);
+}
+
+.slide-leave-to {
+  transform: translateX(100%);
+}
+

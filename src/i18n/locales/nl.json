@@ -1,0 +1,79 @@
+{
+  "app": {
+    "title": "TOTP-beheerder",
+    "description": "Veilige tijdgebaseerde eenmalige wachtwoordbeheerder"
+  },
+  "nav": {
+    "tokens": "Tokens",
+    "addKey": "Sleutel toevoegen",
+    "manage": "Beheren",
+    "login": "Inloggen",
+    "logout": "Uitloggen",
+    "welcome": "Welkom, {username}",
+    "settings": "Instellingen",
+    "language": "Taal"
+  },
+  "auth": {
+    "login": "Inloggen",
+    "register": "Registreren",
+    "username": "Gebruikersnaam",
+    "password": "Wachtwoord",
+    "confirmPassword": "Bevestig wachtwoord",
+    "temporaryMode": "Tijdelijke modus",
+    "temporaryModeDesc": "Sleutels worden alleen in de browser opgeslagen",
+    "loginButton": "Inloggen",
+    "registerButton": "Registreren",
+    "usernameMinLength": "Gebruikersnaam moet minimaal 3 tekens bevatten",
+    "passwordMinLength": "Wachtwoord moet minimaal 6 tekens bevatten",
+    "passwordMismatch": "Wachtwoorden komen niet overeen",
+    "switchToLogin": "Heb je al een account? Inloggen",
+    "switchToRegister": "Heb je nog geen account? Registreren"
+  },
+  "keys": {
+    "remark": "Opmerking",
+    "remarkPlaceholder": "bijv. Google, GitHub",
+    "remarkRequired": "Opmerking is verplicht",
+    "secret": "Geheime sleutel",
+    "secretPlaceholder": "Voer Base32-sleutel in of plak otpauth:// URI",
+    "uploadQR": "QR-code uploaden",
+    "addKey": "Sleutel toevoegen",
+    "updateKey": "Bijwerken",
+    "deleteKey": "Verwijderen",
+    "confirmDelete": "Weet je zeker dat je \"{remark}\" wilt verwijderen?",
+    "search": "Sleutels zoeken...",
+    "noKeys": "Geen sleutels gevonden",
+    "noResults": "Geen overeenkomende sleutels gevonden",
+    "cancel": "Annuleren",
+    "save": "Opslaan"
+  },
+  "token": {
+    "copy": "Kopiëren",
+    "copied": "Gekopieerd naar klembord!",
+    "timeRemaining": "{seconds}s resterend",
+    "expired": "Nieuwe token genereren...",
+    "generating": "Genereren..."
+  },
+  "errors": {
+    "invalidSecret": "Ongeldig geheime sleutelformaat",
+    "networkError": "Er is een netwerkfout opgetreden",
+    "unauthorized": "Log in om door te gaan",
+    "notFound": "Bron niet gevonden",
+    "serverError": "Er is een serverfout opgetreden",
+    "validationError": "Validatiefout",
+    "usernameExists": "Gebruikersnaam bestaat al",
+    "invalidCredentials": "Ongeldige gebruikersnaam of wachtwoord"
+  },
+  "success": {
+    "keyAdded": "Sleutel succesvol toegevoegd",
+    "keyUpdated": "Sleutel succesvol bijgewerkt",
+    "keyDeleted": "Sleutel succesvol verwijderd",
+    "loginSuccess": "Succesvol ingelogd",
+    "registerSuccess": "Succesvol geregistreerd"
+  },
+  "theme": {
+    "light": "Licht",
+    "dark": "Donker",
+    "auto": "Auto",
+    "toggle": "Thema wisselen"
+  }
+}

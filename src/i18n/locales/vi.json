@@ -1,0 +1,79 @@
+{
+  "app": {
+    "title": "Trình quản lý TOTP",
+    "description": "Trình quản lý mật khẩu một lần dựa trên thời gian an toàn"
+  },
+  "nav": {
+    "tokens": "Token",
+    "addKey": "Thêm khóa",
+    "manage": "Quản lý",
+    "login": "Đăng nhập",
+    "logout": "Đăng xuất",
+    "welcome": "Chào mừng, {username}",
+    "settings": "Cài đặt",
+    "language": "Ngôn ngữ"
+  },
+  "auth": {
+    "login": "Đăng nhập",
+    "register": "Đăng ký",
+    "username": "Tên người dùng",
+    "password": "Mật khẩu",
+    "confirmPassword": "Xác nhận mật khẩu",
+    "temporaryMode": "Chế độ tạm thời",
+    "temporaryModeDesc": "Khóa chỉ được lưu trữ trong trình duyệt",
+    "loginButton": "Đăng nhập",
+    "registerButton": "Đăng ký",
+    "usernameMinLength": "Tên người dùng phải có ít nhất 3 ký tự",
+    "passwordMinLength": "Mật khẩu phải có ít nhất 6 ký tự",
+    "passwordMismatch": "Mật khẩu không khớp",
+    "switchToLogin": "Đã có tài khoản? Đăng nhập",
+    "switchToRegister": "Chưa có tài khoản? Đăng ký"
+  },
+  "keys": {
+    "remark": "Ghi chú",
+    "remarkPlaceholder": "ví dụ: Google, GitHub",
+    "remarkRequired": "Ghi chú là bắt buộc",
+    "secret": "Khóa bí mật",
+    "secretPlaceholder": "Nhập khóa Base32 hoặc dán URI otpauth://",
+    "uploadQR": "Tải lên mã QR",
+    "addKey": "Thêm khóa",
+    "updateKey": "Cập nhật",
+    "deleteKey": "Xóa",
+    "confirmDelete": "Bạn có chắc chắn muốn xóa \"{remark}\"?",
+    "search": "Tìm kiếm khóa...",
+    "noKeys": "Không tìm thấy khóa",
+    "noResults": "Không tìm thấy khóa phù hợp",
+    "cancel": "Hủy",
+    "save": "Lưu"
+  },
+  "token": {
+    "copy": "Sao chép",
+    "copied": "Đã sao chép vào clipboard!",
+    "timeRemaining": "Còn {seconds}s",
+    "expired": "Đang tạo token mới...",
+    "generating": "Đang tạo..."
+  },
+  "errors": {
+    "invalidSecret": "Định dạng khóa bí mật không hợp lệ",
+    "networkError": "Đã xảy ra lỗi mạng",
+    "unauthorized": "Vui lòng đăng nhập để tiếp tục",
+    "notFound": "Không tìm thấy tài nguyên",
+    "serverError": "Đã xảy ra lỗi máy chủ",
+    "validationError": "Lỗi xác thực",
+    "usernameExists": "Tên người dùng đã tồn tại",
+    "invalidCredentials": "Tên người dùng hoặc mật khẩu không hợp lệ"
+  },
+  "success": {
+    "keyAdded": "Đã thêm khóa thành công",
+    "keyUpdated": "Đã cập nhật khóa thành công",
+    "keyDeleted": "Đã xóa khóa thành công",
+    "loginSuccess": "Đăng nhập thành công",
+    "registerSuccess": "Đăng ký thành công"
+  },
+  "theme": {
+    "light": "Sáng",
+    "dark": "Tối",
+    "auto": "Tự động",
+    "toggle": "Chuyển đổi chủ đề"
+  }
+}

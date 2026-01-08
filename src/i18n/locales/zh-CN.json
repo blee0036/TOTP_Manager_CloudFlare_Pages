@@ -1,0 +1,114 @@
+{
+  "app": {
+    "title": "TOTP 管理器",
+    "description": "安全的基于时间的一次性密码管理器"
+  },
+  "common": {
+    "close": "关闭",
+    "ok": "确定",
+    "cancel": "取消",
+    "save": "保存",
+    "delete": "删除",
+    "edit": "编辑",
+    "confirm": "确认"
+  },
+  "nav": {
+    "tokens": "令牌",
+    "addKey": "添加密钥",
+    "manage": "管理",
+    "login": "登录",
+    "logout": "登出",
+    "welcome": "欢迎，{username}",
+    "settings": "设置",
+    "language": "语言"
+  },
+  "auth": {
+    "login": "登录",
+    "register": "注册",
+    "username": "用户名",
+    "password": "密码",
+    "confirmPassword": "确认密码",
+    "temporaryMode": "临时模式",
+    "temporaryModeDesc": "密钥仅存储在浏览器中",
+    "loginButton": "登录",
+    "registerButton": "注册",
+    "usernameMinLength": "用户名至少需要 3 个字符",
+    "passwordMinLength": "密码至少需要 6 个字符",
+    "passwordMismatch": "密码不匹配",
+    "switchToLogin": "已有账户？立即登录",
+    "switchToRegister": "没有账户？立即注册"
+  },
+  "keys": {
+    "remark": "备注",
+    "remarkPlaceholder": "例如：Google、GitHub",
+    "remarkRequired": "备注为必填项",
+    "remarkEmpty": "备注不能为空",
+    "secret": "密钥",
+    "secretPlaceholder": "输入 Base32 密钥或粘贴 otpauth:// URI",
+    "secretRequired": "密钥为必填项",
+    "uploadQR": "上传二维码",
+    "selectQRFile": "选择二维码图片",
+    "addKey": "添加密钥",
+    "updateKey": "更新",
+    "deleteKey": "删除",
+    "confirmDelete": "确定要删除\"{remark}\"吗？",
+    "search": "搜索密钥...",
+    "noKeys": "未找到密钥",
+    "noResults": "未找到匹配的密钥",
+    "cancel": "取消",
+    "save": "保存",
+    "otpauthDetected": "检测到 OTPAuth URI。将提取密钥和备注。",
+    "otpauthExtracted": "已从 OTPAuth URI 提取密钥"
+  },
+  "token": {
+    "copy": "复制",
+    "copied": "已复制到剪贴板！",
+    "timeRemaining": "剩余 {seconds} 秒",
+    "expired": "正在生成新令牌...",
+    "generating": "生成中..."
+  },
+  "errors": {
+    "invalidSecret": "无效的密钥格式",
+    "networkError": "网络错误",
+    "unauthorized": "请登录后继续",
+    "notFound": "未找到资源",
+    "serverError": "服务器错误",
+    "validationError": "验证错误",
+    "usernameExists": "用户名已存在",
+    "invalidCredentials": "用户名或密码错误",
+    "formValidationFailed": "请修正上述错误",
+    "invalidFileType": "请选择图片文件",
+    "noFileSelected": "请先选择文件",
+    "qrNotFound": "图片中未找到二维码",
+    "invalidQRContent": "二维码不包含有效的 OTPAuth URI",
+    "qrExtractionFailed": "从二维码提取数据失败",
+    "imageLoadFailed": "加载图片失败",
+    "fileReadFailed": "读取文件失败"
+  },
+  "success": {
+    "keyAdded": "密钥添加成功",
+    "keyUpdated": "密钥更新成功",
+    "keyDeleted": "密钥删除成功",
+    "loginSuccess": "登录成功",
+    "registerSuccess": "注册成功",
+    "qrScanned": "二维码扫描成功！"
+  },
+  "theme": {
+    "light": "浅色",
+    "dark": "深色",
+    "auto": "自动",
+    "toggle": "切换主题"
+  },
+  "qr": {
+    "scanning": "正在扫描二维码..."
+  },
+  "common": {
+    "cancel": "取消",
+    "save": "保存",
+    "delete": "删除",
+    "edit": "编辑",
+    "add": "添加",
+    "close": "关闭",
+    "confirm": "确认"
+  }
+}

@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48">
+  <defs>
+    <!-- Define styles for light and dark themes -->
+    <style>
+      @media (prefers-color-scheme: light) {
+        .clock-face { fill: #1976d2; }
+        .clock-hand { fill: #ffffff; }
+        .clock-center { fill: #ffffff; }
+        .clock-tick { fill: #4285f4; }
+      }
+      @media (prefers-color-scheme: dark) {
+        .clock-face { fill: #4285f4; }
+        .clock-hand { fill: #ffffff; }
+        .clock-center { fill: #ffffff; }
+        .clock-tick { fill: #8ab4f8; }
+      }
+    </style>
+  </defs>
+  
+  <!-- Clock face circle -->
+  <circle class="clock-face" cx="24" cy="24" r="20"/>
+  
+  <!-- Clock ticks at 12, 3, 6, 9 positions (Google brand colors) -->
+  <circle class="clock-tick" cx="24" cy="8" r="1.5"/>
+  <circle class="clock-tick" cx="40" cy="24" r="1.5"/>
+  <circle class="clock-tick" cx="24" cy="40" r="1.5"/>
+  <circle class="clock-tick" cx="8" cy="24" r="1.5"/>
+  
+  <!-- Hour hand pointing to 10 o'clock -->
+  <rect class="clock-hand" x="22.5" y="14" width="3" height="10" rx="1.5"/>
+  
+  <!-- Minute hand pointing to 2 (representing time-based) -->
+  <rect class="clock-hand" x="22.5" y="10" width="2" height="14" rx="1" transform="rotate(60 24 24)"/>
+  
+  <!-- Center dot -->
+  <circle class="clock-center" cx="24" cy="24" r="2"/>
+</svg>

@@ -1,0 +1,79 @@
+{
+  "app": {
+    "title": "TOTP マネージャー",
+    "description": "安全な時間ベースのワンタイムパスワードマネージャー"
+  },
+  "nav": {
+    "tokens": "トークン",
+    "addKey": "キーを追加",
+    "manage": "管理",
+    "login": "ログイン",
+    "logout": "ログアウト",
+    "welcome": "ようこそ、{username}",
+    "settings": "設定",
+    "language": "言語"
+  },
+  "auth": {
+    "login": "ログイン",
+    "register": "登録",
+    "username": "ユーザー名",
+    "password": "パスワード",
+    "confirmPassword": "パスワード確認",
+    "temporaryMode": "一時モード",
+    "temporaryModeDesc": "キーはブラウザにのみ保存されます",
+    "loginButton": "サインイン",
+    "registerButton": "サインアップ",
+    "usernameMinLength": "ユーザー名は3文字以上である必要があります",
+    "passwordMinLength": "パスワードは6文字以上である必要があります",
+    "passwordMismatch": "パスワードが一致しません",
+    "switchToLogin": "アカウントをお持ちですか？サインイン",
+    "switchToRegister": "アカウントをお持ちでないですか？サインアップ"
+  },
+  "keys": {
+    "remark": "備考",
+    "remarkPlaceholder": "例：Google、GitHub",
+    "remarkRequired": "備考は必須です",
+    "secret": "シークレットキー",
+    "secretPlaceholder": "Base32キーを入力するか、otpauth:// URIを貼り付けてください",
+    "uploadQR": "QRコードをアップロード",
+    "addKey": "キーを追加",
+    "updateKey": "更新",
+    "deleteKey": "削除",
+    "confirmDelete": "「{remark}」を削除してもよろしいですか？",
+    "search": "キーを検索...",
+    "noKeys": "キーが見つかりません",
+    "noResults": "一致するキーが見つかりません",
+    "cancel": "キャンセル",
+    "save": "保存"
+  },
+  "token": {
+    "copy": "コピー",
+    "copied": "クリップボードにコピーしました！",
+    "timeRemaining": "残り{seconds}秒",
+    "expired": "新しいトークンを生成中...",
+    "generating": "生成中..."
+  },
+  "errors": {
+    "invalidSecret": "無効なシークレットキー形式",
+    "networkError": "ネットワークエラーが発生しました",
+    "unauthorized": "続行するにはログインしてください",
+    "notFound": "リソースが見つかりません",
+    "serverError": "サーバーエラーが発生しました",
+    "validationError": "検証エラー",
+    "usernameExists": "ユーザー名は既に存在します",
+    "invalidCredentials": "ユーザー名またはパスワードが無効です"
+  },
+  "success": {
+    "keyAdded": "キーが正常に追加されました",
+    "keyUpdated": "キーが正常に更新されました",
+    "keyDeleted": "キーが正常に削除されました",
+    "loginSuccess": "ログインに成功しました",
+    "registerSuccess": "登録に成功しました"
+  },
+  "theme": {
+    "light": "ライト",
+    "dark": "ダーク",
+    "auto": "自動",
+    "toggle": "テーマを切り替え"
+  }
+}

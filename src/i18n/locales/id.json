@@ -1,0 +1,79 @@
+{
+  "app": {
+    "title": "Pengelola TOTP",
+    "description": "Pengelola kata sandi sekali pakai berbasis waktu yang aman"
+  },
+  "nav": {
+    "tokens": "Token",
+    "addKey": "Tambah Kunci",
+    "manage": "Kelola",
+    "login": "Masuk",
+    "logout": "Keluar",
+    "welcome": "Selamat datang, {username}",
+    "settings": "Pengaturan",
+    "language": "Bahasa"
+  },
+  "auth": {
+    "login": "Masuk",
+    "register": "Daftar",
+    "username": "Nama Pengguna",
+    "password": "Kata Sandi",
+    "confirmPassword": "Konfirmasi Kata Sandi",
+    "temporaryMode": "Mode Sementara",
+    "temporaryModeDesc": "Kunci hanya disimpan di browser",
+    "loginButton": "Masuk",
+    "registerButton": "Daftar",
+    "usernameMinLength": "Nama pengguna harus minimal 3 karakter",
+    "passwordMinLength": "Kata sandi harus minimal 6 karakter",
+    "passwordMismatch": "Kata sandi tidak cocok",
+    "switchToLogin": "Sudah punya akun? Masuk",
+    "switchToRegister": "Belum punya akun? Daftar"
+  },
+  "keys": {
+    "remark": "Catatan",
+    "remarkPlaceholder": "mis. Google, GitHub",
+    "remarkRequired": "Catatan wajib diisi",
+    "secret": "Kunci Rahasia",
+    "secretPlaceholder": "Masukkan kunci Base32 atau tempel URI otpauth://",
+    "uploadQR": "Unggah Kode QR",
+    "addKey": "Tambah Kunci",
+    "updateKey": "Perbarui",
+    "deleteKey": "Hapus",
+    "confirmDelete": "Apakah Anda yakin ingin menghapus \"{remark}\"?",
+    "search": "Cari kunci...",
+    "noKeys": "Tidak ada kunci ditemukan",
+    "noResults": "Tidak ada kunci yang cocok ditemukan",
+    "cancel": "Batal",
+    "save": "Simpan"
+  },
+  "token": {
+    "copy": "Salin",
+    "copied": "Disalin ke clipboard!",
+    "timeRemaining": "{seconds}d tersisa",
+    "expired": "Membuat token baru...",
+    "generating": "Membuat..."
+  },
+  "errors": {
+    "invalidSecret": "Format kunci rahasia tidak valid",
+    "networkError": "Terjadi kesalahan jaringan",
+    "unauthorized": "Silakan masuk untuk melanjutkan",
+    "notFound": "Sumber daya tidak ditemukan",
+    "serverError": "Terjadi kesalahan server",
+    "validationError": "Kesalahan validasi",
+    "usernameExists": "Nama pengguna sudah ada",
+    "invalidCredentials": "Nama pengguna atau kata sandi tidak valid"
+  },
+  "success": {
+    "keyAdded": "Kunci berhasil ditambahkan",
+    "keyUpdated": "Kunci berhasil diperbarui",
+    "keyDeleted": "Kunci berhasil dihapus",
+    "loginSuccess": "Berhasil masuk",
+    "registerSuccess": "Berhasil mendaftar"
+  },
+  "theme": {
+    "light": "Terang",
+    "dark": "Gelap",
+    "auto": "Otomatis",
+    "toggle": "Ganti tema"
+  }
+}

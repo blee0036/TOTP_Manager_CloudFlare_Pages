@@ -1,0 +1,79 @@
+{
+  "app": {
+    "title": "Menedżer TOTP",
+    "description": "Bezpieczny menedżer haseł jednorazowych opartych na czasie"
+  },
+  "nav": {
+    "tokens": "Tokeny",
+    "addKey": "Dodaj klucz",
+    "manage": "Zarządzaj",
+    "login": "Zaloguj się",
+    "logout": "Wyloguj się",
+    "welcome": "Witaj, {username}",
+    "settings": "Ustawienia",
+    "language": "Język"
+  },
+  "auth": {
+    "login": "Zaloguj się",
+    "register": "Zarejestruj się",
+    "username": "Nazwa użytkownika",
+    "password": "Hasło",
+    "confirmPassword": "Potwierdź hasło",
+    "temporaryMode": "Tryb tymczasowy",
+    "temporaryModeDesc": "Klucze są przechowywane tylko w przeglądarce",
+    "loginButton": "Zaloguj się",
+    "registerButton": "Zarejestruj się",
+    "usernameMinLength": "Nazwa użytkownika musi mieć co najmniej 3 znaki",
+    "passwordMinLength": "Hasło musi mieć co najmniej 6 znaków",
+    "passwordMismatch": "Hasła nie pasują do siebie",
+    "switchToLogin": "Masz już konto? Zaloguj się",
+    "switchToRegister": "Nie masz konta? Zarejestruj się"
+  },
+  "keys": {
+    "remark": "Uwaga",
+    "remarkPlaceholder": "np. Google, GitHub",
+    "remarkRequired": "Uwaga jest wymagana",
+    "secret": "Tajny klucz",
+    "secretPlaceholder": "Wprowadź klucz Base32 lub wklej URI otpauth://",
+    "uploadQR": "Prześlij kod QR",
+    "addKey": "Dodaj klucz",
+    "updateKey": "Aktualizuj",
+    "deleteKey": "Usuń",
+    "confirmDelete": "Czy na pewno chcesz usunąć \"{remark}\"?",
+    "search": "Szukaj kluczy...",
+    "noKeys": "Nie znaleziono kluczy",
+    "noResults": "Nie znaleziono pasujących kluczy",
+    "cancel": "Anuluj",
+    "save": "Zapisz"
+  },
+  "token": {
+    "copy": "Kopiuj",
+    "copied": "Skopiowano do schowka!",
+    "timeRemaining": "Pozostało {seconds}s",
+    "expired": "Generowanie nowego tokenu...",
+    "generating": "Generowanie..."
+  },
+  "errors": {
+    "invalidSecret": "Nieprawidłowy format tajnego klucza",
+    "networkError": "Wystąpił błąd sieci",
+    "unauthorized": "Zaloguj się, aby kontynuować",
+    "notFound": "Nie znaleziono zasobu",
+    "serverError": "Wystąpił błąd serwera",
+    "validationError": "Błąd walidacji",
+    "usernameExists": "Nazwa użytkownika już istnieje",
+    "invalidCredentials": "Nieprawidłowa nazwa użytkownika lub hasło"
+  },
+  "success": {
+    "keyAdded": "Klucz został pomyślnie dodany",
+    "keyUpdated": "Klucz został pomyślnie zaktualizowany",
+    "keyDeleted": "Klucz został pomyślnie usunięty",
+    "loginSuccess": "Logowanie powiodło się",
+    "registerSuccess": "Rejestracja powiodła się"
+  },
+  "theme": {
+    "light": "Jasny",
+    "dark": "Ciemny",
+    "auto": "Auto",
+    "toggle": "Przełącz motyw"
+  }
+}

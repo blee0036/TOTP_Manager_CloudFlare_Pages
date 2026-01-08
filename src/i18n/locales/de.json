@@ -1,0 +1,79 @@
+{
+  "app": {
+    "title": "TOTP-Manager",
+    "description": "Sicherer zeitbasierter Einmalpasswort-Manager"
+  },
+  "nav": {
+    "tokens": "Token",
+    "addKey": "Schlüssel hinzufügen",
+    "manage": "Verwalten",
+    "login": "Anmelden",
+    "logout": "Abmelden",
+    "welcome": "Willkommen, {username}",
+    "settings": "Einstellungen",
+    "language": "Sprache"
+  },
+  "auth": {
+    "login": "Anmelden",
+    "register": "Registrieren",
+    "username": "Benutzername",
+    "password": "Passwort",
+    "confirmPassword": "Passwort bestätigen",
+    "temporaryMode": "Temporärer Modus",
+    "temporaryModeDesc": "Schlüssel werden nur im Browser gespeichert",
+    "loginButton": "Anmelden",
+    "registerButton": "Registrieren",
+    "usernameMinLength": "Der Benutzername muss mindestens 3 Zeichen lang sein",
+    "passwordMinLength": "Das Passwort muss mindestens 6 Zeichen lang sein",
+    "passwordMismatch": "Passwörter stimmen nicht überein",
+    "switchToLogin": "Haben Sie bereits ein Konto? Anmelden",
+    "switchToRegister": "Haben Sie noch kein Konto? Registrieren"
+  },
+  "keys": {
+    "remark": "Bemerkung",
+    "remarkPlaceholder": "z.B. Google, GitHub",
+    "remarkRequired": "Bemerkung ist erforderlich",
+    "secret": "Geheimer Schlüssel",
+    "secretPlaceholder": "Base32-Schlüssel eingeben oder otpauth:// URI einfügen",
+    "uploadQR": "QR-Code hochladen",
+    "addKey": "Schlüssel hinzufügen",
+    "updateKey": "Aktualisieren",
+    "deleteKey": "Löschen",
+    "confirmDelete": "Möchten Sie \"{remark}\" wirklich löschen?",
+    "search": "Schlüssel suchen...",
+    "noKeys": "Keine Schlüssel gefunden",
+    "noResults": "Keine übereinstimmenden Schlüssel gefunden",
+    "cancel": "Abbrechen",
+    "save": "Speichern"
+  },
+  "token": {
+    "copy": "Kopieren",
+    "copied": "In die Zwischenablage kopiert!",
+    "timeRemaining": "{seconds}s verbleibend",
+    "expired": "Neues Token wird generiert...",
+    "generating": "Wird generiert..."
+  },
+  "errors": {
+    "invalidSecret": "Ungültiges Schlüsselformat",
+    "networkError": "Netzwerkfehler aufgetreten",
+    "unauthorized": "Bitte melden Sie sich an, um fortzufahren",
+    "notFound": "Ressource nicht gefunden",
+    "serverError": "Serverfehler aufgetreten",
+    "validationError": "Validierungsfehler",
+    "usernameExists": "Benutzername existiert bereits",
+    "invalidCredentials": "Ungültiger Benutzername oder Passwort"
+  },
+  "success": {
+    "keyAdded": "Schlüssel erfolgreich hinzugefügt",
+    "keyUpdated": "Schlüssel erfolgreich aktualisiert",
+    "keyDeleted": "Schlüssel erfolgreich gelöscht",
+    "loginSuccess": "Anmeldung erfolgreich",
+    "registerSuccess": "Registrierung erfolgreich"
+  },
+  "theme": {
+    "light": "Hell",
+    "dark": "Dunkel",
+    "auto": "Auto",
+    "toggle": "Design wechseln"
+  }
+}

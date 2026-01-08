@@ -1,0 +1,79 @@
+{
+  "app": {
+    "title": "TOTP Yöneticisi",
+    "description": "Güvenli zamana dayalı tek kullanımlık şifre yöneticisi"
+  },
+  "nav": {
+    "tokens": "Tokenler",
+    "addKey": "Anahtar Ekle",
+    "manage": "Yönet",
+    "login": "Giriş Yap",
+    "logout": "Çıkış Yap",
+    "welcome": "Hoş geldin, {username}",
+    "settings": "Ayarlar",
+    "language": "Dil"
+  },
+  "auth": {
+    "login": "Giriş Yap",
+    "register": "Kayıt Ol",
+    "username": "Kullanıcı Adı",
+    "password": "Şifre",
+    "confirmPassword": "Şifreyi Onayla",
+    "temporaryMode": "Geçici Mod",
+    "temporaryModeDesc": "Anahtarlar yalnızca tarayıcıda saklanır",
+    "loginButton": "Giriş Yap",
+    "registerButton": "Kayıt Ol",
+    "usernameMinLength": "Kullanıcı adı en az 3 karakter olmalıdır",
+    "passwordMinLength": "Şifre en az 6 karakter olmalıdır",
+    "passwordMismatch": "Şifreler eşleşmiyor",
+    "switchToLogin": "Zaten hesabınız var mı? Giriş yapın",
+    "switchToRegister": "Hesabınız yok mu? Kayıt olun"
+  },
+  "keys": {
+    "remark": "Not",
+    "remarkPlaceholder": "örn. Google, GitHub",
+    "remarkRequired": "Not gereklidir",
+    "secret": "Gizli Anahtar",
+    "secretPlaceholder": "Base32 anahtarını girin veya otpauth:// URI'sini yapıştırın",
+    "uploadQR": "QR Kodu Yükle",
+    "addKey": "Anahtar Ekle",
+    "updateKey": "Güncelle",
+    "deleteKey": "Sil",
+    "confirmDelete": "\"{remark}\" öğesini silmek istediğinizden emin misiniz?",
+    "search": "Anahtar ara...",
+    "noKeys": "Anahtar bulunamadı",
+    "noResults": "Eşleşen anahtar bulunamadı",
+    "cancel": "İptal",
+    "save": "Kaydet"
+  },
+  "token": {
+    "copy": "Kopyala",
+    "copied": "Panoya kopyalandı!",
+    "timeRemaining": "{seconds}s kaldı",
+    "expired": "Yeni token oluşturuluyor...",
+    "generating": "Oluşturuluyor..."
+  },
+  "errors": {
+    "invalidSecret": "Geçersiz gizli anahtar formatı",
+    "networkError": "Ağ hatası oluştu",
+    "unauthorized": "Devam etmek için lütfen giriş yapın",
+    "notFound": "Kaynak bulunamadı",
+    "serverError": "Sunucu hatası oluştu",
+    "validationError": "Doğrulama hatası",
+    "usernameExists": "Kullanıcı adı zaten mevcut",
+    "invalidCredentials": "Geçersiz kullanıcı adı veya şifre"
+  },
+  "success": {
+    "keyAdded": "Anahtar başarıyla eklendi",
+    "keyUpdated": "Anahtar başarıyla güncellendi",
+    "keyDeleted": "Anahtar başarıyla silindi",
+    "loginSuccess": "Giriş başarılı",
+    "registerSuccess": "Kayıt başarılı"
+  },
+  "theme": {
+    "light": "Açık",
+    "dark": "Koyu",
+    "auto": "Otomatik",
+    "toggle": "Temayı değiştir"
+  }
+}

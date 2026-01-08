@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "description": "Route configuration for TOTP Manager",
+  "include": [
+    "/api/*"
+  ],
+  "exclude": [
+    "/*"
+  ]
+}

@@ -1,0 +1,88 @@
+{
+  "app": {
+    "title": "TOTP Manager",
+    "description": "Secure Time-based One-Time Password Manager"
+  },
+  "common": {
+    "close": "Close",
+    "ok": "OK",
+    "cancel": "Cancel",
+    "save": "Save",
+    "delete": "Delete",
+    "edit": "Edit",
+    "confirm": "Confirm"
+  },
+  "nav": {
+    "tokens": "Tokens",
+    "addKey": "Add Key",
+    "manage": "Manage",
+    "login": "Login",
+    "logout": "Logout",
+    "welcome": "Welcome, {username}",
+    "settings": "Settings",
+    "language": "Language"
+  },
+  "auth": {
+    "login": "Login",
+    "register": "Register",
+    "username": "Username",
+    "password": "Password",
+    "confirmPassword": "Confirm Password",
+    "temporaryMode": "Temporary Mode",
+    "temporaryModeDesc": "Keys stored in browser only",
+    "loginButton": "Sign In",
+    "registerButton": "Sign Up",
+    "usernameMinLength": "Username must be at least 3 characters",
+    "passwordMinLength": "Password must be at least 6 characters",
+    "passwordMismatch": "Passwords do not match",
+    "switchToLogin": "Already have an account? Sign in",
+    "switchToRegister": "Don't have an account? Sign up"
+  },
+  "keys": {
+    "remark": "Remark",
+    "remarkPlaceholder": "e.g., Google, GitHub",
+    "remarkRequired": "Remark is required",
+    "secret": "Secret Key",
+    "secretPlaceholder": "Enter Base32 key or paste otpauth:// URI",
+    "uploadQR": "Upload QR Code",
+    "addKey": "Add Key",
+    "updateKey": "Update",
+    "deleteKey": "Delete",
+    "confirmDelete": "Are you sure you want to delete \"{remark}\"?",
+    "search": "Search keys...",
+    "noKeys": "No keys found",
+    "noResults": "No matching keys found",
+    "cancel": "Cancel",
+    "save": "Save"
+  },
+  "token": {
+    "copy": "Copy",
+    "copied": "Copied to clipboard!",
+    "timeRemaining": "{seconds}s remaining",
+    "expired": "Generating new token...",
+    "generating": "Generating..."
+  },
+  "errors": {
+    "invalidSecret": "Invalid secret key format",
+    "networkError": "Network error occurred",
+    "unauthorized": "Please login to continue",
+    "notFound": "Resource not found",
+    "serverError": "Server error occurred",
+    "validationError": "Validation error",
+    "usernameExists": "Username already exists",
+    "invalidCredentials": "Invalid username or password"
+  },
+  "success": {
+    "keyAdded": "Key added successfully",
+    "keyUpdated": "Key updated successfully",
+    "keyDeleted": "Key deleted successfully",
+    "loginSuccess": "Login successful",
+    "registerSuccess": "Registration successful"
+  },
+  "theme": {
+    "light": "Light",
+    "dark": "Dark",
+    "auto": "Auto",
+    "toggle": "Toggle theme"
+  }
+}

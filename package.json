@@ -1,0 +1,48 @@
+{
+  "name": "totp-manager",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc -b && vite build",
+    "preview": "vite preview",
+    "test": "vitest --run",
+    "test:watch": "vitest",
+    "test:ui": "vitest --ui",
+    "generate:favicons": "node scripts/generate-favicons.js",
+    "db:create": "wrangler d1 create totp_db",
+    "db:migrate:local": "wrangler d1 migrations apply totp_db --local",
+    "db:migrate:remote": "wrangler d1 migrations apply totp_db --remote",
+    "db:list:local": "wrangler d1 migrations list totp_db --local",
+    "db:list:remote": "wrangler d1 migrations list totp_db --remote",
+    "db:query:local": "wrangler d1 execute totp_db --local",
+    "db:query:remote": "wrangler d1 execute totp_db --remote",
+    "deploy": "npm run build && npm run db:migrate:remote && wrangler pages deploy dist"
+  },
+  "dependencies": {
+    "@mdi/font": "^7.4.47",
+    "jsqr": "^1.4.0",
+    "pinia": "^3.0.4",
+    "vue": "^3.5.24",
+    "vue-i18n": "^9.14.5",
+    "vue-router": "^4.6.4",
+    "vuetify": "^3.11.6"
+  },
+  "devDependencies": {
+    "@types/node": "^24.10.4",
+    "@vitejs/plugin-vue": "^6.0.1",
+    "@vitest/ui": "^4.0.16",
+    "@vue/tsconfig": "^0.8.1",
+    "jsdom": "^27.4.0",
+    "sass": "^1.97.2",
+    "sharp": "^0.33.5",
+    "typescript": "~5.9.3",
+    "vite": "^7.2.4",
+    "vite-plugin-pwa": "^1.2.0",
+    "vite-plugin-vuetify": "^2.1.2",
+    "vitest": "^4.0.16",
+    "vue-tsc": "^3.1.4",
+    "workbox-window": "^7.4.0"
+  }
+}

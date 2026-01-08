@@ -1,0 +1,79 @@
+{
+  "app": {
+    "title": "ตัวจัดการ TOTP",
+    "description": "ตัวจัดการรหัสผ่านแบบใช้ครั้งเดียวตามเวลาที่ปลอดภัย"
+  },
+  "nav": {
+    "tokens": "โทเค็น",
+    "addKey": "เพิ่มคีย์",
+    "manage": "จัดการ",
+    "login": "เข้าสู่ระบบ",
+    "logout": "ออกจากระบบ",
+    "welcome": "ยินดีต้อนรับ {username}",
+    "settings": "การตั้งค่า",
+    "language": "ภาษา"
+  },
+  "auth": {
+    "login": "เข้าสู่ระบบ",
+    "register": "ลงทะเบียน",
+    "username": "ชื่อผู้ใช้",
+    "password": "รหัสผ่าน",
+    "confirmPassword": "ยืนยันรหัสผ่าน",
+    "temporaryMode": "โหมดชั่วคราว",
+    "temporaryModeDesc": "คีย์จะถูกเก็บไว้ในเบราว์เซอร์เท่านั้น",
+    "loginButton": "เข้าสู่ระบบ",
+    "registerButton": "ลงทะเบียน",
+    "usernameMinLength": "ชื่อผู้ใช้ต้องมีอย่างน้อย 3 ตัวอักษร",
+    "passwordMinLength": "รหัสผ่านต้องมีอย่างน้อย 6 ตัวอักษร",
+    "passwordMismatch": "รหัสผ่านไม่ตรงกัน",
+    "switchToLogin": "มีบัญชีอยู่แล้ว? เข้าสู่ระบบ",
+    "switchToRegister": "ยังไม่มีบัญชี? ลงทะเบียน"
+  },
+  "keys": {
+    "remark": "หมายเหตุ",
+    "remarkPlaceholder": "เช่น Google, GitHub",
+    "remarkRequired": "จำเป็นต้องระบุหมายเหตุ",
+    "secret": "คีย์ลับ",
+    "secretPlaceholder": "ป้อนคีย์ Base32 หรือวาง URI otpauth://",
+    "uploadQR": "อัปโหลดคิวอาร์โค้ด",
+    "addKey": "เพิ่มคีย์",
+    "updateKey": "อัปเดต",
+    "deleteKey": "ลบ",
+    "confirmDelete": "คุณแน่ใจหรือไม่ว่าต้องการลบ \"{remark}\"?",
+    "search": "ค้นหาคีย์...",
+    "noKeys": "ไม่พบคีย์",
+    "noResults": "ไม่พบคีย์ที่ตรงกัน",
+    "cancel": "ยกเลิก",
+    "save": "บันทึก"
+  },
+  "token": {
+    "copy": "คัดลอก",
+    "copied": "คัดลอกไปยังคลิปบอร์ดแล้ว!",
+    "timeRemaining": "เหลือ {seconds} วินาที",
+    "expired": "กำลังสร้างโทเค็นใหม่...",
+    "generating": "กำลังสร้าง..."
+  },
+  "errors": {
+    "invalidSecret": "รูปแบบคีย์ลับไม่ถูกต้อง",
+    "networkError": "เกิดข้อผิดพลาดของเครือข่าย",
+    "unauthorized": "กรุณาเข้าสู่ระบบเพื่อดำเนินการต่อ",
+    "notFound": "ไม่พบทรัพยากร",
+    "serverError": "เกิดข้อผิดพลาดของเซิร์ฟเวอร์",
+    "validationError": "ข้อผิดพลาดในการตรวจสอบ",
+    "usernameExists": "ชื่อผู้ใช้มีอยู่แล้ว",
+    "invalidCredentials": "ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง"
+  },
+  "success": {
+    "keyAdded": "เพิ่มคีย์สำเร็จ",
+    "keyUpdated": "อัปเดตคีย์สำเร็จ",
+    "keyDeleted": "ลบคีย์สำเร็จ",
+    "loginSuccess": "เข้าสู่ระบบสำเร็จ",
+    "registerSuccess": "ลงทะเบียนสำเร็จ"
+  },
+  "theme": {
+    "light": "สว่าง",
+    "dark": "มืด",
+    "auto": "อัตโนมัติ",
+    "toggle": "สลับธีม"
+  }
+}

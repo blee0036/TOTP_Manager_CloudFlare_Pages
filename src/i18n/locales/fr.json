@@ -1,0 +1,79 @@
+{
+  "app": {
+    "title": "Gestionnaire TOTP",
+    "description": "Gestionnaire sécurisé de mots de passe à usage unique basés sur le temps"
+  },
+  "nav": {
+    "tokens": "Jetons",
+    "addKey": "Ajouter une clé",
+    "manage": "Gérer",
+    "login": "Connexion",
+    "logout": "Déconnexion",
+    "welcome": "Bienvenue, {username}",
+    "settings": "Paramètres",
+    "language": "Langue"
+  },
+  "auth": {
+    "login": "Connexion",
+    "register": "S'inscrire",
+    "username": "Nom d'utilisateur",
+    "password": "Mot de passe",
+    "confirmPassword": "Confirmer le mot de passe",
+    "temporaryMode": "Mode temporaire",
+    "temporaryModeDesc": "Les clés sont stockées uniquement dans le navigateur",
+    "loginButton": "Se connecter",
+    "registerButton": "S'inscrire",
+    "usernameMinLength": "Le nom d'utilisateur doit contenir au moins 3 caractères",
+    "passwordMinLength": "Le mot de passe doit contenir au moins 6 caractères",
+    "passwordMismatch": "Les mots de passe ne correspondent pas",
+    "switchToLogin": "Vous avez déjà un compte ? Se connecter",
+    "switchToRegister": "Vous n'avez pas de compte ? S'inscrire"
+  },
+  "keys": {
+    "remark": "Remarque",
+    "remarkPlaceholder": "par ex. : Google, GitHub",
+    "remarkRequired": "La remarque est obligatoire",
+    "secret": "Clé secrète",
+    "secretPlaceholder": "Entrez la clé Base32 ou collez l'URI otpauth://",
+    "uploadQR": "Télécharger le code QR",
+    "addKey": "Ajouter une clé",
+    "updateKey": "Mettre à jour",
+    "deleteKey": "Supprimer",
+    "confirmDelete": "Êtes-vous sûr de vouloir supprimer « {remark} » ?",
+    "search": "Rechercher des clés...",
+    "noKeys": "Aucune clé trouvée",
+    "noResults": "Aucune clé correspondante trouvée",
+    "cancel": "Annuler",
+    "save": "Enregistrer"
+  },
+  "token": {
+    "copy": "Copier",
+    "copied": "Copié dans le presse-papiers !",
+    "timeRemaining": "{seconds}s restantes",
+    "expired": "Génération d'un nouveau jeton...",
+    "generating": "Génération..."
+  },
+  "errors": {
+    "invalidSecret": "Format de clé secrète invalide",
+    "networkError": "Une erreur réseau s'est produite",
+    "unauthorized": "Veuillez vous connecter pour continuer",
+    "notFound": "Ressource introuvable",
+    "serverError": "Une erreur serveur s'est produite",
+    "validationError": "Erreur de validation",
+    "usernameExists": "Le nom d'utilisateur existe déjà",
+    "invalidCredentials": "Nom d'utilisateur ou mot de passe invalide"
+  },
+  "success": {
+    "keyAdded": "Clé ajoutée avec succès",
+    "keyUpdated": "Clé mise à jour avec succès",
+    "keyDeleted": "Clé supprimée avec succès",
+    "loginSuccess": "Connexion réussie",
+    "registerSuccess": "Inscription réussie"
+  },
+  "theme": {
+    "light": "Clair",
+    "dark": "Sombre",
+    "auto": "Auto",
+    "toggle": "Changer de thème"
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "app": {
+    "title": "Менеджер TOTP",
+    "description": "Безопасный менеджер одноразовых паролей на основе времени"
+  },
+  "nav": {
+    "tokens": "Токены",
+    "addKey": "Добавить ключ",
+    "manage": "Управление",
+    "login": "Войти",
+    "logout": "Выйти",
+    "welcome": "Добро пожаловать, {username}",
+    "settings": "Настройки",
+    "language": "Язык"
+  },
+  "auth": {
+    "login": "Войти",
+    "register": "Регистрация",
+    "username": "Имя пользователя",
+    "password": "Пароль",
+    "confirmPassword": "Подтвердите пароль",
+    "temporaryMode": "Временный режим",
+    "temporaryModeDesc": "Ключи хранятся только в браузере",
+    "loginButton": "Войти",
+    "registerButton": "Зарегистрироваться",
+    "usernameMinLength": "Имя пользователя должно содержать не менее 3 символов",
+    "passwordMinLength": "Пароль должен содержать не менее 6 символов",
+    "passwordMismatch": "Пароли не совпадают",
+    "switchToLogin": "Уже есть аккаунт? Войти",
+    "switchToRegister": "Нет аккаунта? Зарегистрироваться"
+  },
+  "keys": {
+    "remark": "Примечание",
+    "remarkPlaceholder": "например: Google, GitHub",
+    "remarkRequired": "Примечание обязательно",
+    "secret": "Секретный ключ",
+    "secretPlaceholder": "Введите ключ Base32 или вставьте URI otpauth://",
+    "uploadQR": "Загрузить QR-код",
+    "addKey": "Добавить ключ",
+    "updateKey": "Обновить",
+    "deleteKey": "Удалить",
+    "confirmDelete": "Вы уверены, что хотите удалить \"{remark}\"?",
+    "search": "Поиск ключей...",
+    "noKeys": "Ключи не найдены",
+    "noResults": "Совпадающие ключи не найдены",
+    "cancel": "Отмена",
+    "save": "Сохранить"
+  },
+  "token": {
+    "copy": "Копировать",
+    "copied": "Скопировано в буфер обмена!",
+    "timeRemaining": "Осталось {seconds}с",
+    "expired": "Генерация нового токена...",
+    "generating": "Генерация..."
+  },
+  "errors": {
+    "invalidSecret": "Неверный формат секретного ключа",
+    "networkError": "Произошла сетевая ошибка",
+    "unauthorized": "Пожалуйста, войдите, чтобы продолжить",
+    "notFound": "Ресурс не найден",
+    "serverError": "Произошла ошибка сервера",
+    "validationError": "Ошибка проверки",
+    "usernameExists": "Имя пользователя уже существует",
+    "invalidCredentials": "Неверное имя пользователя или пароль"
+  },
+  "success": {
+    "keyAdded": "Ключ успешно добавлен",
+    "keyUpdated": "Ключ успешно обновлен",
+    "keyDeleted": "Ключ успешно удален",
+    "loginSuccess": "Вход выполнен успешно",
+    "registerSuccess": "Регистрация выполнена успешно"
+  },
+  "theme": {
+    "light": "Светлая",
+    "dark": "Темная",
+    "auto": "Авто",
+    "toggle": "Переключить тему"
+  }
+}

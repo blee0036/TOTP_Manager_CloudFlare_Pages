@@ -1,0 +1,79 @@
+{
+  "app": {
+    "title": "Gestore TOTP",
+    "description": "Gestore sicuro di password monouso basate sul tempo"
+  },
+  "nav": {
+    "tokens": "Token",
+    "addKey": "Aggiungi chiave",
+    "manage": "Gestisci",
+    "login": "Accedi",
+    "logout": "Esci",
+    "welcome": "Benvenuto, {username}",
+    "settings": "Impostazioni",
+    "language": "Lingua"
+  },
+  "auth": {
+    "login": "Accedi",
+    "register": "Registrati",
+    "username": "Nome utente",
+    "password": "Password",
+    "confirmPassword": "Conferma password",
+    "temporaryMode": "Modalità temporanea",
+    "temporaryModeDesc": "Le chiavi sono memorizzate solo nel browser",
+    "loginButton": "Accedi",
+    "registerButton": "Registrati",
+    "usernameMinLength": "Il nome utente deve contenere almeno 3 caratteri",
+    "passwordMinLength": "La password deve contenere almeno 6 caratteri",
+    "passwordMismatch": "Le password non corrispondono",
+    "switchToLogin": "Hai già un account? Accedi",
+    "switchToRegister": "Non hai un account? Registrati"
+  },
+  "keys": {
+    "remark": "Nota",
+    "remarkPlaceholder": "es. Google, GitHub",
+    "remarkRequired": "La nota è obbligatoria",
+    "secret": "Chiave segreta",
+    "secretPlaceholder": "Inserisci la chiave Base32 o incolla l'URI otpauth://",
+    "uploadQR": "Carica codice QR",
+    "addKey": "Aggiungi chiave",
+    "updateKey": "Aggiorna",
+    "deleteKey": "Elimina",
+    "confirmDelete": "Sei sicuro di voler eliminare \"{remark}\"?",
+    "search": "Cerca chiavi...",
+    "noKeys": "Nessuna chiave trovata",
+    "noResults": "Nessuna chiave corrispondente trovata",
+    "cancel": "Annulla",
+    "save": "Salva"
+  },
+  "token": {
+    "copy": "Copia",
+    "copied": "Copiato negli appunti!",
+    "timeRemaining": "{seconds}s rimanenti",
+    "expired": "Generazione nuovo token...",
+    "generating": "Generazione..."
+  },
+  "errors": {
+    "invalidSecret": "Formato chiave segreta non valido",
+    "networkError": "Si è verificato un errore di rete",
+    "unauthorized": "Effettua l'accesso per continuare",
+    "notFound": "Risorsa non trovata",
+    "serverError": "Si è verificato un errore del server",
+    "validationError": "Errore di validazione",
+    "usernameExists": "Il nome utente esiste già",
+    "invalidCredentials": "Nome utente o password non validi"
+  },
+  "success": {
+    "keyAdded": "Chiave aggiunta con successo",
+    "keyUpdated": "Chiave aggiornata con successo",
+    "keyDeleted": "Chiave eliminata con successo",
+    "loginSuccess": "Accesso effettuato con successo",
+    "registerSuccess": "Registrazione effettuata con successo"
+  },
+  "theme": {
+    "light": "Chiaro",
+    "dark": "Scuro",
+    "auto": "Auto",
+    "toggle": "Cambia tema"
+  }
+}

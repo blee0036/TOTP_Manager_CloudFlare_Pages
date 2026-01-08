@@ -1,0 +1,79 @@
+{
+  "app": {
+    "title": "Gestor TOTP",
+    "description": "Gestor seguro de contraseñas de un solo uso basadas en tiempo"
+  },
+  "nav": {
+    "tokens": "Tokens",
+    "addKey": "Agregar clave",
+    "manage": "Administrar",
+    "login": "Iniciar sesión",
+    "logout": "Cerrar sesión",
+    "welcome": "Bienvenido, {username}",
+    "settings": "Configuración",
+    "language": "Idioma"
+  },
+  "auth": {
+    "login": "Iniciar sesión",
+    "register": "Registrarse",
+    "username": "Nombre de usuario",
+    "password": "Contraseña",
+    "confirmPassword": "Confirmar contraseña",
+    "temporaryMode": "Modo temporal",
+    "temporaryModeDesc": "Las claves se almacenan solo en el navegador",
+    "loginButton": "Iniciar sesión",
+    "registerButton": "Registrarse",
+    "usernameMinLength": "El nombre de usuario debe tener al menos 3 caracteres",
+    "passwordMinLength": "La contraseña debe tener al menos 6 caracteres",
+    "passwordMismatch": "Las contraseñas no coinciden",
+    "switchToLogin": "¿Ya tienes una cuenta? Iniciar sesión",
+    "switchToRegister": "¿No tienes una cuenta? Registrarse"
+  },
+  "keys": {
+    "remark": "Observación",
+    "remarkPlaceholder": "ej. Google, GitHub",
+    "remarkRequired": "La observación es obligatoria",
+    "secret": "Clave secreta",
+    "secretPlaceholder": "Ingrese la clave Base32 o pegue el URI otpauth://",
+    "uploadQR": "Subir código QR",
+    "addKey": "Agregar clave",
+    "updateKey": "Actualizar",
+    "deleteKey": "Eliminar",
+    "confirmDelete": "¿Está seguro de que desea eliminar \"{remark}\"?",
+    "search": "Buscar claves...",
+    "noKeys": "No se encontraron claves",
+    "noResults": "No se encontraron claves coincidentes",
+    "cancel": "Cancelar",
+    "save": "Guardar"
+  },
+  "token": {
+    "copy": "Copiar",
+    "copied": "¡Copiado al portapapeles!",
+    "timeRemaining": "{seconds}s restantes",
+    "expired": "Generando nuevo token...",
+    "generating": "Generando..."
+  },
+  "errors": {
+    "invalidSecret": "Formato de clave secreta inválido",
+    "networkError": "Ocurrió un error de red",
+    "unauthorized": "Por favor, inicie sesión para continuar",
+    "notFound": "Recurso no encontrado",
+    "serverError": "Ocurrió un error del servidor",
+    "validationError": "Error de validación",
+    "usernameExists": "El nombre de usuario ya existe",
+    "invalidCredentials": "Nombre de usuario o contraseña inválidos"
+  },
+  "success": {
+    "keyAdded": "Clave agregada exitosamente",
+    "keyUpdated": "Clave actualizada exitosamente",
+    "keyDeleted": "Clave eliminada exitosamente",
+    "loginSuccess": "Inicio de sesión exitoso",
+    "registerSuccess": "Registro exitoso"
+  },
+  "theme": {
+    "light": "Claro",
+    "dark": "Oscuro",
+    "auto": "Auto",
+    "toggle": "Cambiar tema"
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "app": {
+    "title": "Gerenciador TOTP",
+    "description": "Gerenciador seguro de senhas únicas baseadas em tempo"
+  },
+  "nav": {
+    "tokens": "Tokens",
+    "addKey": "Adicionar chave",
+    "manage": "Gerenciar",
+    "login": "Entrar",
+    "logout": "Sair",
+    "welcome": "Bem-vindo, {username}",
+    "settings": "Configurações",
+    "language": "Idioma"
+  },
+  "auth": {
+    "login": "Entrar",
+    "register": "Registrar",
+    "username": "Nome de usuário",
+    "password": "Senha",
+    "confirmPassword": "Confirmar senha",
+    "temporaryMode": "Modo temporário",
+    "temporaryModeDesc": "As chaves são armazenadas apenas no navegador",
+    "loginButton": "Entrar",
+    "registerButton": "Registrar",
+    "usernameMinLength": "O nome de usuário deve ter pelo menos 3 caracteres",
+    "passwordMinLength": "A senha deve ter pelo menos 6 caracteres",
+    "passwordMismatch": "As senhas não coincidem",
+    "switchToLogin": "Já tem uma conta? Entrar",
+    "switchToRegister": "Não tem uma conta? Registrar"
+  },
+  "keys": {
+    "remark": "Observação",
+    "remarkPlaceholder": "ex. Google, GitHub",
+    "remarkRequired": "A observação é obrigatória",
+    "secret": "Chave secreta",
+    "secretPlaceholder": "Digite a chave Base32 ou cole o URI otpauth://",
+    "uploadQR": "Carregar código QR",
+    "addKey": "Adicionar chave",
+    "updateKey": "Atualizar",
+    "deleteKey": "Excluir",
+    "confirmDelete": "Tem certeza de que deseja excluir \"{remark}\"?",
+    "search": "Pesquisar chaves...",
+    "noKeys": "Nenhuma chave encontrada",
+    "noResults": "Nenhuma chave correspondente encontrada",
+    "cancel": "Cancelar",
+    "save": "Salvar"
+  },
+  "token": {
+    "copy": "Copiar",
+    "copied": "Copiado para a área de transferência!",
+    "timeRemaining": "{seconds}s restantes",
+    "expired": "Gerando novo token...",
+    "generating": "Gerando..."
+  },
+  "errors": {
+    "invalidSecret": "Formato de chave secreta inválido",
+    "networkError": "Ocorreu um erro de rede",
+    "unauthorized": "Por favor, faça login para continuar",
+    "notFound": "Recurso não encontrado",
+    "serverError": "Ocorreu um erro no servidor",
+    "validationError": "Erro de validação",
+    "usernameExists": "O nome de usuário já existe",
+    "invalidCredentials": "Nome de usuário ou senha inválidos"
+  },
+  "success": {
+    "keyAdded": "Chave adicionada com sucesso",
+    "keyUpdated": "Chave atualizada com sucesso",
+    "keyDeleted": "Chave excluída com sucesso",
+    "loginSuccess": "Login bem-sucedido",
+    "registerSuccess": "Registro bem-sucedido"
+  },
+  "theme": {
+    "light": "Claro",
+    "dark": "Escuro",
+    "auto": "Auto",
+    "toggle": "Alternar tema"
+  }
+}
