@@ -110,8 +110,8 @@ Before using these workflows, you need to configure the following Secrets in you
 Add workflow status badges to README.md:
 
 ```markdown
-![CI](https://github.com/your-username/your-repo/workflows/CI/badge.svg)
-![Deploy](https://github.com/your-username/your-repo/workflows/Deploy%20to%20Cloudflare%20Pages/badge.svg)
+![CI](https://github.com/blee0036/TOTP_Manager_CloudFlare_Pages/workflows/CI/badge.svg)
+![Deploy](https://github.com/blee0036/TOTP_Manager_CloudFlare_Pages/workflows/Deploy%20to%20Cloudflare%20Pages/badge.svg)
 ```
 
 ## Troubleshooting

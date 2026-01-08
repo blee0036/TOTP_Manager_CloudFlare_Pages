@@ -58,8 +58,8 @@ TOTP Manager 是一个现代化的基于时间的一次性密码（TOTP）管理
 1. **克隆仓库**
 
 ```bash
-git clone <repository-url>
-cd totp-manager
+git clone https://github.com/blee0036/TOTP_Manager_CloudFlare_Pages.git
+cd TOTP_Manager_CloudFlare_Pages
 ```
 
 2. **安装依赖**

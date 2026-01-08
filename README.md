@@ -58,8 +58,8 @@ TOTP Manager is a modern time-based one-time password management application tha
 1. **Clone the repository**
 
 ```bash
-git clone <repository-url>
-cd totp-manager
+git clone https://github.com/blee0036/TOTP_Manager_CloudFlare_Pages.git
+cd TOTP_Manager_CloudFlare_Pages
 ```
 
 2. **Install dependencies**

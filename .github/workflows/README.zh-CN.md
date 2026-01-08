@@ -110,8 +110,8 @@
 在 README.md 中添加工作流状态徽章：
 
 ```markdown
-![CI](https://github.com/your-username/your-repo/workflows/CI/badge.svg)
-![Deploy](https://github.com/your-username/your-repo/workflows/Deploy%20to%20Cloudflare%20Pages/badge.svg)
+![CI](https://github.com/blee0036/TOTP_Manager_CloudFlare_Pages/workflows/CI/badge.svg)
+![Deploy](https://github.com/blee0036/TOTP_Manager_CloudFlare_Pages/workflows/Deploy%20to%20Cloudflare%20Pages/badge.svg)
 ```
 
 ## 故障排除
