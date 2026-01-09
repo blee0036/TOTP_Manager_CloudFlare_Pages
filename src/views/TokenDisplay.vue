@@ -65,8 +65,8 @@
     </v-row>
 
     <!-- Empty State -->
-    <v-row v-else-if="displayKeys.length === 0" class="mt-12">
-      <v-col cols="12">
+    <v-row v-else-if="displayKeys.length === 0" class="mt-12 justify-center">
+      <v-col cols="12" sm="10" md="8" lg="6">
         <div class="empty-state text-center">
           <div class="empty-icon-wrapper mb-8">
             <v-icon
@@ -80,8 +80,8 @@
           <h2 class="text-h5 font-weight-medium mb-4" style="color: rgb(var(--v-theme-on-background));">
             {{ t('keys.noKeys', 'No keys found') }}
           </h2>
-          <p class="text-body-1 mb-8" style="color: rgb(var(--v-theme-on-surface-variant)); max-width: 360px; margin-left: auto; margin-right: auto;">
-            {{ t('keys.noKeysDesc', 'Add your first TOTP key to get started') }}
+          <p class="text-body-1 mb-8" style="color: rgb(var(--v-theme-on-surface-variant));">
+            {{ t('keys.noKeysDesc', 'Add your first 2FA key to get started') }}
           </p>
           <v-btn
             color="primary"
@@ -98,8 +98,8 @@
     </v-row>
 
     <!-- No Search Results -->
-    <v-row v-else-if="filteredKeys.length === 0" class="mt-12">
-      <v-col cols="12">
+    <v-row v-else-if="filteredKeys.length === 0" class="mt-12 justify-center">
+      <v-col cols="12" sm="10" md="8" lg="6">
         <div class="empty-state text-center">
           <div class="empty-icon-wrapper mb-8">
             <v-icon
@@ -113,7 +113,7 @@
           <h2 class="text-h5 font-weight-medium mb-4" style="color: rgb(var(--v-theme-on-background));">
             {{ t('keys.noResults', 'No matching keys found') }}
           </h2>
-          <p class="text-body-1 mb-8" style="color: rgb(var(--v-theme-on-surface-variant)); max-width: 360px; margin-left: auto; margin-right: auto;">
+          <p class="text-body-1 mb-8" style="color: rgb(var(--v-theme-on-surface-variant));">
             {{ t('keys.noResultsDesc', 'Try a different search term') }}
           </p>
           <v-btn

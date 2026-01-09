@@ -42,7 +42,9 @@
     "confirmDelete": "Möchten Sie \"{remark}\" wirklich löschen?",
     "search": "Schlüssel suchen...",
     "noKeys": "Keine Schlüssel gefunden",
+    "noKeysDesc": "Fügen Sie Ihren ersten 2FA-Schlüssel hinzu, um zu beginnen",
     "noResults": "Keine übereinstimmenden Schlüssel gefunden",
+    "noResultsDesc": "Versuchen Sie einen anderen Suchbegriff",
     "cancel": "Abbrechen",
     "save": "Speichern"
   },

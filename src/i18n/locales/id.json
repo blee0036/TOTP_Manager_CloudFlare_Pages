@@ -42,7 +42,9 @@
     "confirmDelete": "Apakah Anda yakin ingin menghapus \"{remark}\"?",
     "search": "Cari kunci...",
     "noKeys": "Tidak ada kunci ditemukan",
+    "noKeysDesc": "Tambahkan kunci 2FA pertama Anda untuk memulai",
     "noResults": "Tidak ada kunci yang cocok ditemukan",
+    "noResultsDesc": "Coba istilah pencarian yang berbeda",
     "cancel": "Batal",
     "save": "Simpan"
   },

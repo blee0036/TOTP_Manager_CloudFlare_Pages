@@ -4,13 +4,13 @@
       <v-btn
         v-bind="props"
         variant="text"
-        :prepend-icon="'mdi-translate'"
+        icon
       >
-        {{ currentLocaleConfig?.flag }} {{ currentLocaleConfig?.name }}
+        <v-icon>mdi-translate</v-icon>
       </v-btn>
     </template>
 
-    <v-list>
+    <v-list density="compact" max-height="400">
       <v-list-item
         v-for="locale in supportedLocales"
         :key="locale.code"
@@ -19,7 +19,7 @@
         :active="currentLocale === locale.code"
       >
         <template v-slot:prepend>
-          <span class="text-h6 mr-2">{{ locale.flag }}</span>
+          <span class="text-h6 mr-3">{{ locale.flag }}</span>
         </template>
         <v-list-item-title>{{ locale.name }}</v-list-item-title>
       </v-list-item>
@@ -35,10 +35,6 @@ import { supportedLocales, setLocale } from '@/i18n';
 const { locale } = useI18n();
 
 const currentLocale = computed(() => locale.value);
-
-const currentLocaleConfig = computed(() => {
-  return supportedLocales.find(l => l.code === currentLocale.value);
-});
 
 const changeLocale = async (newLocale: string) => {
   await setLocale(newLocale);

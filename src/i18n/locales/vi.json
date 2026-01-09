@@ -42,7 +42,9 @@
     "confirmDelete": "Bạn có chắc chắn muốn xóa \"{remark}\"?",
     "search": "Tìm kiếm khóa...",
     "noKeys": "Không tìm thấy khóa",
+    "noKeysDesc": "Thêm khóa 2FA đầu tiên của bạn để bắt đầu",
     "noResults": "Không tìm thấy khóa phù hợp",
+    "noResultsDesc": "Thử một từ khóa tìm kiếm khác",
     "cancel": "Hủy",
     "save": "Lưu"
   },

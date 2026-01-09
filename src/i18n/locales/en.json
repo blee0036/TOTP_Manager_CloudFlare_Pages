@@ -51,7 +51,9 @@
     "confirmDelete": "Are you sure you want to delete \"{remark}\"?",
     "search": "Search keys...",
     "noKeys": "No keys found",
+    "noKeysDesc": "Add your first 2FA key to get started",
     "noResults": "No matching keys found",
+    "noResultsDesc": "Try a different search term",
     "cancel": "Cancel",
     "save": "Save"
   },

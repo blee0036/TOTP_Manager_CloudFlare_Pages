@@ -42,7 +42,9 @@
     "confirmDelete": "Tem certeza de que deseja excluir \"{remark}\"?",
     "search": "Pesquisar chaves...",
     "noKeys": "Nenhuma chave encontrada",
+    "noKeysDesc": "Adicione sua primeira chave 2FA para começar",
     "noResults": "Nenhuma chave correspondente encontrada",
+    "noResultsDesc": "Tente um termo de pesquisa diferente",
     "cancel": "Cancelar",
     "save": "Salvar"
   },

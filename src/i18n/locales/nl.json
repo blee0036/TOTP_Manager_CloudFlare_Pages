@@ -42,7 +42,9 @@
     "confirmDelete": "Weet je zeker dat je \"{remark}\" wilt verwijderen?",
     "search": "Sleutels zoeken...",
     "noKeys": "Geen sleutels gevonden",
+    "noKeysDesc": "Voeg uw eerste 2FA-sleutel toe om te beginnen",
     "noResults": "Geen overeenkomende sleutels gevonden",
+    "noResultsDesc": "Probeer een andere zoekterm",
     "cancel": "Annuleren",
     "save": "Opslaan"
   },
