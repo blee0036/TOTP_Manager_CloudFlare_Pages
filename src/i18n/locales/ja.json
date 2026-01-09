@@ -1,7 +1,7 @@
 {
   "app": {
-    "title": "TOTP マネージャー",
-    "description": "安全な時間ベースのワンタイムパスワードマネージャー"
+    "title": "2FA 認証",
+    "description": "安全で便利な二要素認証管理ツール"
   },
   "nav": {
     "tokens": "トークン",

@@ -1,7 +1,7 @@
 {
   "app": {
-    "title": "TOTP Yöneticisi",
-    "description": "Güvenli zamana dayalı tek kullanımlık şifre yöneticisi"
+    "title": "2FA Kimlik Doğrulayıcı",
+    "description": "Güvenli iki faktörlü kimlik doğrulama yöneticisi"
   },
   "nav": {
     "tokens": "Tokenler",

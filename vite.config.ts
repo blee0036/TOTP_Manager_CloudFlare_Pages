@@ -16,9 +16,9 @@ export default defineConfig({
       registerType: 'autoUpdate',
       includeAssets: ['favicon.svg', 'favicon-16x16.png', 'favicon-32x32.png', 'apple-touch-icon.png'],
       manifest: {
-        name: 'TOTP Manager',
-        short_name: 'TOTP',
-        description: 'Time-based One-Time Password Manager',
+        name: '2FA 身份验证器',
+        short_name: '2FA',
+        description: '安全便捷的双因素身份验证管理工具',
         theme_color: '#1976d2',
         background_color: '#ffffff',
         display: 'standalone',

@@ -1,7 +1,7 @@
 {
   "app": {
-    "title": "TOTP 관리자",
-    "description": "안전한 시간 기반 일회용 비밀번호 관리자"
+    "title": "2FA 인증",
+    "description": "안전하고 편리한 이중 인증 관리 도구"
   },
   "nav": {
     "tokens": "토큰",

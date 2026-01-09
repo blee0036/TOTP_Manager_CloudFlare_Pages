@@ -1,7 +1,7 @@
 {
   "app": {
-    "title": "Menedżer TOTP",
-    "description": "Bezpieczny menedżer haseł jednorazowych opartych na czasie"
+    "title": "Uwierzytelnianie 2FA",
+    "description": "Bezpieczny menedżer uwierzytelniania dwuskładnikowego"
   },
   "nav": {
     "tokens": "Tokeny",

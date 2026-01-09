@@ -1,7 +1,7 @@
 {
   "app": {
-    "title": "TOTP 管理器",
-    "description": "安全的基於時間的一次性密碼管理器"
+    "title": "2FA 身份驗證器",
+    "description": "安全便捷的雙因素身份驗證管理工具"
   },
   "nav": {
     "tokens": "令牌",

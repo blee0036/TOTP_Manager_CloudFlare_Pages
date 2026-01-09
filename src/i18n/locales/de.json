@@ -1,7 +1,7 @@
 {
   "app": {
-    "title": "TOTP-Manager",
-    "description": "Sicherer zeitbasierter Einmalpasswort-Manager"
+    "title": "2FA Authentifikator",
+    "description": "Sicherer Zwei-Faktor-Authentifizierungs-Manager"
   },
   "nav": {
     "tokens": "Token",

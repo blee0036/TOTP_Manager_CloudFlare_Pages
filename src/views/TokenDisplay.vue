@@ -65,65 +65,67 @@
     </v-row>
 
     <!-- Empty State -->
-    <v-row v-else-if="displayKeys.length === 0" class="mt-8">
+    <v-row v-else-if="displayKeys.length === 0" class="mt-12">
       <v-col cols="12">
-        <v-card
-          variant="outlined"
-          class="empty-state-card text-center pa-8"
-        >
-          <v-icon
-            size="80"
-            color="grey-lighten-1"
-            class="mb-4"
-          >
-            mdi-key-outline
-          </v-icon>
-          <h2 class="text-h5 mb-2">
+        <div class="empty-state text-center">
+          <div class="empty-icon-wrapper mb-8">
+            <v-icon
+              size="120"
+              color="primary"
+              class="empty-icon"
+            >
+              mdi-shield-key-outline
+            </v-icon>
+          </div>
+          <h2 class="text-h5 font-weight-medium mb-4" style="color: rgb(var(--v-theme-on-background));">
             {{ t('keys.noKeys', 'No keys found') }}
           </h2>
-          <p class="text-body-1 text-medium-emphasis mb-4">
+          <p class="text-body-1 mb-8" style="color: rgb(var(--v-theme-on-surface-variant)); max-width: 360px; margin-left: auto; margin-right: auto;">
             {{ t('keys.noKeysDesc', 'Add your first TOTP key to get started') }}
           </p>
           <v-btn
             color="primary"
-            variant="elevated"
             size="large"
             prepend-icon="mdi-plus"
+            class="text-none font-weight-medium px-6"
+            elevation="0"
             @click="handleAddKey"
           >
             {{ t('keys.addKey', 'Add Key') }}
           </v-btn>
-        </v-card>
+        </div>
       </v-col>
     </v-row>
 
     <!-- No Search Results -->
-    <v-row v-else-if="filteredKeys.length === 0" class="mt-8">
+    <v-row v-else-if="filteredKeys.length === 0" class="mt-12">
       <v-col cols="12">
-        <v-card
-          variant="outlined"
-          class="empty-state-card text-center pa-8"
-        >
-          <v-icon
-            size="80"
-            color="grey-lighten-1"
-            class="mb-4"
-          >
-            mdi-magnify
-          </v-icon>
-          <h2 class="text-h5 mb-2">
+        <div class="empty-state text-center">
+          <div class="empty-icon-wrapper mb-8">
+            <v-icon
+              size="120"
+              color="on-surface-variant"
+              class="empty-icon"
+            >
+              mdi-magnify
+            </v-icon>
+          </div>
+          <h2 class="text-h5 font-weight-medium mb-4" style="color: rgb(var(--v-theme-on-background));">
             {{ t('keys.noResults', 'No matching keys found') }}
           </h2>
-          <p class="text-body-1 text-medium-emphasis mb-4">
+          <p class="text-body-1 mb-8" style="color: rgb(var(--v-theme-on-surface-variant)); max-width: 360px; margin-left: auto; margin-right: auto;">
             {{ t('keys.noResultsDesc', 'Try a different search term') }}
           </p>
           <v-btn
             variant="outlined"
+            color="primary"
+            size="large"
+            class="text-none font-weight-medium px-6"
             @click="handleClearSearch"
           >
             {{ t('common.clearSearch', 'Clear Search') }}
           </v-btn>
-        </v-card>
+        </div>
       </v-col>
     </v-row>
 
@@ -141,7 +143,6 @@
           :id="key.id"
           :remark="key.remark"
           :secret="key.secret"
-          :on-manage="isTemporaryMode ? undefined : () => handleManageKey(key.id)"
           @copy="handleCopyToken"
           @manage="handleManageKey"
         />
@@ -314,10 +315,19 @@ watch(() => authStore.isAuthenticated, async (isAuth) => {
   padding-bottom: 24px;
 }
 
-.empty-state-card {
-  border-radius: 12px;
+.empty-state {
+  padding: 80px 24px;
   max-width: 600px;
   margin: 0 auto;
+}
+
+.empty-icon-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.empty-icon {
+  opacity: 0.6;
 }
 
 .gap-2 {

@@ -1,7 +1,7 @@
 {
   "app": {
-    "title": "Trình quản lý TOTP",
-    "description": "Trình quản lý mật khẩu một lần dựa trên thời gian an toàn"
+    "title": "Xác thực 2FA",
+    "description": "Trình quản lý xác thực hai yếu tố an toàn"
   },
   "nav": {
     "tokens": "Token",

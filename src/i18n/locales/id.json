@@ -1,7 +1,7 @@
 {
   "app": {
-    "title": "Pengelola TOTP",
-    "description": "Pengelola kata sandi sekali pakai berbasis waktu yang aman"
+    "title": "Autentikator 2FA",
+    "description": "Pengelola autentikasi dua faktor yang aman"
   },
   "nav": {
     "tokens": "Token",

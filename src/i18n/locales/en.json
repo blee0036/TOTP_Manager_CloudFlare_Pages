@@ -1,7 +1,7 @@
 {
   "app": {
-    "title": "TOTP Manager",
-    "description": "Secure Time-based One-Time Password Manager"
+    "title": "2FA Authenticator",
+    "description": "Secure Two-Factor Authentication Manager"
   },
   "common": {
     "close": "Close",

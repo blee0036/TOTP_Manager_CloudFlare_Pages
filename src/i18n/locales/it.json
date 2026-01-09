@@ -1,7 +1,7 @@
 {
   "app": {
-    "title": "Gestore TOTP",
-    "description": "Gestore sicuro di password monouso basate sul tempo"
+    "title": "Autenticatore 2FA",
+    "description": "Gestore sicuro dell'autenticazione a due fattori"
   },
   "nav": {
     "tokens": "Token",

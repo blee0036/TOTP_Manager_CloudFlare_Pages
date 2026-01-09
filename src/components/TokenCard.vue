@@ -1,55 +1,63 @@
 <template>
   <v-card
     class="token-card"
-    :elevation="hover ? 4 : 2"
-    @mouseenter="hover = true"
-    @mouseleave="hover = false"
+    elevation="0"
+    color="surface"
   >
-    <v-card-title class="d-flex justify-space-between align-center">
-      <span class="text-h6">{{ remark }}</span>
-      <v-btn
-        v-if="onManage"
-        icon="mdi-cog"
-        size="small"
-        variant="text"
-        @click="handleManage"
-      />
-    </v-card-title>
+    <v-card-text class="pa-5">
+      <!-- Header: Remark and Settings -->
+      <div class="d-flex justify-space-between align-center mb-4">
+        <span class="text-subtitle-1 font-weight-medium" style="color: rgb(var(--v-theme-on-surface));">
+          {{ remark }}
+        </span>
+        <v-btn
+          icon
+          size="small"
+          variant="text"
+          color="on-surface-variant"
+          @click="handleManage"
+        >
+          <v-icon size="20">mdi-dots-vertical</v-icon>
+        </v-btn>
+      </div>
 
-    <v-card-text>
       <!-- TOTP Token Display -->
-      <div class="token-display">
-        <div v-if="loading" class="text-center">
-          <v-progress-circular indeterminate color="primary" />
+      <div class="token-display mb-3">
+        <div v-if="loading" class="text-center py-4">
+          <v-progress-circular indeterminate color="primary" size="32" />
         </div>
-        <div v-else-if="error" class="error-message">
-          <v-icon color="error">mdi-alert-circle</v-icon>
-          <span class="ml-2">{{ error }}</span>
+        <div v-else-if="error" class="error-message py-4">
+          <v-icon color="error" size="20">mdi-alert-circle</v-icon>
+          <span class="ml-2 text-caption">{{ error }}</span>
         </div>
-        <div v-else class="token-value">
-          <span class="token-digits">{{ formattedToken }}</span>
+        <div v-else class="token-value-wrapper">
+          <div class="token-digits-large">
+            {{ formattedToken }}
+          </div>
           <v-btn
-            icon="mdi-content-copy"
+            icon
             size="small"
             variant="text"
             color="primary"
+            class="copy-btn"
             @click="handleCopy"
             :disabled="!token"
           >
-            <v-icon>{{ copied ? 'mdi-check' : 'mdi-content-copy' }}</v-icon>
+            <v-icon size="20">{{ copied ? 'mdi-check' : 'mdi-content-copy' }}</v-icon>
           </v-btn>
         </div>
       </div>
 
-      <!-- Progress Bar and Time Remaining -->
-      <div class="mt-4">
+      <!-- Progress Bar and Time -->
+      <div class="progress-section">
         <v-progress-linear
           :model-value="progress"
           :color="progressColor"
-          height="6"
+          height="4"
           rounded
+          bg-color="surface-variant"
         />
-        <div class="text-caption text-center mt-1">
+        <div class="text-caption text-center mt-2" style="color: rgb(var(--v-theme-on-surface-variant));">
           {{ timeRemainingText }}
         </div>
       </div>
@@ -95,11 +103,10 @@ const token = ref<string>('');
 const loading = ref<boolean>(false);
 const error = ref<string>('');
 const copied = ref<boolean>(false);
-const hover = ref<boolean>(false);
 
 // 计算属性
 const formattedToken = computed(() => {
-  if (!token.value) return '------';
+  if (!token.value) return '• • • • • •';
   // 格式化为 3-3 格式，例如 123 456
   return token.value.slice(0, 3) + ' ' + token.value.slice(3);
 });
@@ -116,7 +123,7 @@ const timeRemainingText = computed(() => {
   if (timeRemaining.value === 0) {
     return t('token.expired', 'Generating new token...');
   }
-  return t('token.timeRemaining', { seconds: timeRemaining.value }, `${timeRemaining.value}s remaining`);
+  return `${timeRemaining.value}s`;
 });
 
 /**
@@ -129,7 +136,7 @@ const generateToken = async () => {
     token.value = await getCurrentToken(props.secret);
   } catch (err) {
     console.error('Failed to generate token:', err);
-    error.value = t('errors.invalidSecret', 'Invalid secret key format');
+    error.value = t('errors.invalidSecret', 'Invalid secret');
     token.value = '';
   } finally {
     loading.value = false;
@@ -147,7 +154,6 @@ const handleCopy = async () => {
     copied.value = true;
     emit('copy', token.value);
 
-    // 2 秒后重置复制状态
     setTimeout(() => {
       copied.value = false;
     }, 2000);
@@ -167,11 +173,9 @@ const handleManage = () => {
  * 监听时间剩余，当新周期开始时重新生成令牌
  */
 watch(timeRemaining, (remaining, oldRemaining) => {
-  // 当从 0 变为 30 时，表示新周期开始
   if (oldRemaining === 0 && remaining === 30) {
     generateToken();
   }
-  // 或者当剩余时间从小于 30 变为 30 时
   if (oldRemaining !== undefined && oldRemaining < 30 && remaining === 30) {
     generateToken();
   }
@@ -185,29 +189,42 @@ onMounted(() => {
 
 <style scoped>
 .token-card {
-  transition: all 0.3s ease;
+  border: 1px solid rgba(var(--v-theme-on-surface), 0.08);
+  transition: all 0.2s ease;
+}
+
+.token-card:hover {
+  border-color: rgba(var(--v-theme-primary), 0.3);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
 .token-display {
-  min-height: 60px;
+  min-height: 56px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.token-value {
+.token-value-wrapper {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
+  width: 100%;
   gap: 8px;
 }
 
-.token-digits {
-  font-size: 2rem;
-  font-weight: 500;
-  font-family: 'Roboto Mono', monospace;
-  letter-spacing: 0.1em;
-  color: rgb(var(--v-theme-primary));
+.token-digits-large {
+  font-size: 2.25rem;
+  font-weight: 400;
+  font-family: 'Roboto Mono', 'Courier New', monospace;
+  letter-spacing: 0.15em;
+  color: rgb(var(--v-theme-on-surface));
+  flex: 1;
+  text-align: center;
+}
+
+.copy-btn {
+  flex-shrink: 0;
 }
 
 .error-message {
@@ -215,5 +232,9 @@ onMounted(() => {
   align-items: center;
   justify-content: center;
   color: rgb(var(--v-theme-error));
+}
+
+.progress-section {
+  margin-top: 4px;
 }
 </style>

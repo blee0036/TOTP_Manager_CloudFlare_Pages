@@ -1,7 +1,7 @@
 {
   "app": {
-    "title": "TOTP-beheerder",
-    "description": "Veilige tijdgebaseerde eenmalige wachtwoordbeheerder"
+    "title": "2FA Authenticator",
+    "description": "Veilige tweefactorauthenticatiebeheerder"
   },
   "nav": {
     "tokens": "Tokens",

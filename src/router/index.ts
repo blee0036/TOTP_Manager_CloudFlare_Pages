@@ -105,9 +105,9 @@ router.beforeEach(async (to, from, next) => {
   
   // 更新页面标题
   if (to.meta.title) {
-    document.title = `${to.meta.title} - TOTP Manager`;
+    document.title = `${to.meta.title} - 2FA 身份验证器`;
   } else {
-    document.title = 'TOTP Manager';
+    document.title = '2FA 身份验证器';
   }
   
   next();

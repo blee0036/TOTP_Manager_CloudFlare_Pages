@@ -1,7 +1,7 @@
 {
   "app": {
-    "title": "TOTP 管理器",
-    "description": "安全的基于时间的一次性密码管理器"
+    "title": "2FA 身份验证器",
+    "description": "安全便捷的双因素身份验证管理工具"
   },
   "common": {
     "close": "关闭",

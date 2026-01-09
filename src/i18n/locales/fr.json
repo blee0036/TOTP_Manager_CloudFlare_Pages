@@ -1,7 +1,7 @@
 {
   "app": {
-    "title": "Gestionnaire TOTP",
-    "description": "Gestionnaire sécurisé de mots de passe à usage unique basés sur le temps"
+    "title": "Authentification 2FA",
+    "description": "Gestionnaire sécurisé d'authentification à deux facteurs"
   },
   "nav": {
     "tokens": "Jetons",
