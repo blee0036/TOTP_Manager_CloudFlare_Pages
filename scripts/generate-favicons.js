@@ -33,7 +33,7 @@ const lightThemeSvg = svgContent.replace(
   ''
 ).replace(
   '<style>',
-  '<style>.clock-face { fill: #1976d2; } .clock-hand { fill: #ffffff; } .clock-center { fill: #ffffff; } .clock-tick { fill: #4285f4; }'
+  '<style>.shield { fill: #1A73E8; } .key { fill: #ffffff; } .key-hole { fill: #1A73E8; }'
 );
 
 const sizes = [
