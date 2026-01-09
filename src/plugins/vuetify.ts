@@ -1,8 +1,8 @@
 /**
  * Vuetify Plugin Configuration
  * 
- * Configures Material Design 3 (Material You) theme with Google brand colors
- * Supports light and dark themes with proper typography system
+ * Modern, eye-friendly theme with rounded corners and soft colors
+ * Optimized for readability and visual comfort
  */
 
 import { createVuetify } from 'vuetify'
@@ -11,47 +11,51 @@ import * as directives from 'vuetify/directives'
 import { aliases, mdi } from 'vuetify/iconsets/mdi'
 import '@mdi/font/css/materialdesignicons.css'
 
-// Light theme configuration with Google brand colors
+// Light theme - Modern and eye-friendly
 const lightTheme = {
   dark: false,
   colors: {
-    primary: '#1976D2',      // Google Blue
-    secondary: '#424242',    // Grey 800
-    accent: '#82B1FF',       // Blue Accent
-    error: '#D32F2F',        // Red 700
-    info: '#2196F3',         // Blue 500
-    success: '#4CAF50',      // Green 500
-    warning: '#FB8C00',      // Orange 600
-    background: '#FFFFFF',
-    surface: '#FFFFFF',
+    primary: '#3B82F6',      // Modern blue
+    secondary: '#64748B',    // Slate gray
+    accent: '#06B6D4',       // Cyan accent
+    error: '#EF4444',        // Soft red
+    info: '#3B82F6',         // Blue
+    success: '#10B981',      // Emerald green
+    warning: '#F59E0B',      // Amber
+    background: '#F8FAFC',   // Very light gray-blue (护眼)
+    surface: '#FFFFFF',      // Pure white
+    'surface-variant': '#F1F5F9',  // Light slate
     'on-primary': '#FFFFFF',
     'on-secondary': '#FFFFFF',
-    'on-background': '#000000',
-    'on-surface': '#000000',
+    'on-background': '#1E293B',    // Dark slate (高对比度)
+    'on-surface': '#1E293B',       // Dark slate (高对比度)
+    'on-surface-variant': '#475569', // Medium slate
   }
 }
 
-// Dark theme configuration with Material Design dark colors
+// Dark theme - Soft and comfortable for eyes
 const darkTheme = {
   dark: true,
   colors: {
-    primary: '#90CAF9',      // Blue 200
-    secondary: '#424242',    // Grey 800
-    accent: '#82B1FF',       // Blue Accent
-    error: '#EF5350',        // Red 400
-    info: '#42A5F5',         // Blue 400
-    success: '#66BB6A',      // Green 400
-    warning: '#FFA726',      // Orange 400
-    background: '#121212',
-    surface: '#1E1E1E',
-    'on-primary': '#000000',
+    primary: '#60A5FA',      // Lighter blue
+    secondary: '#64748B',    // Slate gray
+    accent: '#22D3EE',       // Bright cyan
+    error: '#F87171',        // Soft red
+    info: '#60A5FA',         // Blue
+    success: '#34D399',      // Emerald
+    warning: '#FBBF24',      // Amber
+    background: '#0F172A',   // Very dark slate (护眼深色)
+    surface: '#1E293B',      // Dark slate (提高对比度)
+    'surface-variant': '#334155',  // Medium slate
+    'on-primary': '#FFFFFF',
     'on-secondary': '#FFFFFF',
-    'on-background': '#FFFFFF',
-    'on-surface': '#FFFFFF',
+    'on-background': '#F1F5F9',    // Light text (高对比度)
+    'on-surface': '#F1F5F9',       // Light text (高对比度)
+    'on-surface-variant': '#CBD5E1', // Light slate
   }
 }
 
-// Create Vuetify instance with Material Design configuration
+// Create Vuetify instance with modern configuration
 export default createVuetify({
   components,
   directives,
@@ -79,30 +83,42 @@ export default createVuetify({
     },
   },
   
-  // Typography configuration (Roboto font)
+  // Modern component defaults with rounded corners
   defaults: {
     VBtn: {
-      style: 'text-transform: uppercase; font-weight: 500;',
-      rounded: 'sm',
+      style: 'text-transform: none; font-weight: 500;', // 去掉全大写
+      rounded: 'lg',  // 更圆滑
+      elevation: 0,   // 扁平化
     },
     VCard: {
-      rounded: 'sm',
-      elevation: 2,
+      rounded: 'xl',  // 更圆滑的卡片
+      elevation: 0,   // 扁平化
+      border: 'sm',   // 添加边框
     },
     VTextField: {
       variant: 'outlined',
       density: 'comfortable',
+      rounded: 'lg',  // 圆角输入框
     },
     VSelect: {
       variant: 'outlined',
       density: 'comfortable',
+      rounded: 'lg',
     },
     VTextarea: {
       variant: 'outlined',
       density: 'comfortable',
+      rounded: 'lg',
     },
     VDialog: {
       maxWidth: 600,
+      rounded: 'xl',  // 圆角对话框
+    },
+    VSheet: {
+      rounded: 'lg',
+    },
+    VChip: {
+      rounded: 'lg',
     },
   },
 })
