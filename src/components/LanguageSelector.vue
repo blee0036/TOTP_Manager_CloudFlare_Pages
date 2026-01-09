@@ -17,6 +17,7 @@
         :value="locale.code"
         @click="changeLocale(locale.code)"
         :active="currentLocale === locale.code"
+        color="primary"
       >
         <template v-slot:prepend>
           <span class="text-h6 mr-3">{{ locale.flag }}</span>

@@ -11,7 +11,7 @@
       density="comfortable"
       hide-details="auto"
       required
-      class="mb-4"
+      class="mb-6"
       @update:model-value="clearRemarkError"
     />
 
@@ -27,7 +27,7 @@
       rows="3"
       hide-details="auto"
       required
-      class="mb-2"
+      class="mb-4"
       @update:model-value="handleSecretInput"
       @blur="handleSecretBlur"
     />

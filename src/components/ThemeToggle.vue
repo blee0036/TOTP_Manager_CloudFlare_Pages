@@ -15,6 +15,7 @@
         :key="option.value"
         :value="option.value"
         :active="theme === option.value"
+        color="primary"
         @click="setTheme(option.value)"
       >
         <template v-slot:prepend>

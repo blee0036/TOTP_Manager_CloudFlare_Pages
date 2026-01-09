@@ -12,13 +12,15 @@
     <!-- Upload Button -->
     <v-btn
       color="primary"
-      variant="outlined"
+      variant="elevated"
       prepend-icon="mdi-qrcode-scan"
       block
       size="large"
+      elevation="2"
       :loading="scanning"
       :disabled="scanning"
       @click="triggerFileInput"
+      class="qr-upload-btn"
     >
       {{ selectedFile ? selectedFile.name : t('keys.uploadQR', 'Upload QR Code') }}
     </v-btn>
@@ -341,6 +343,16 @@ defineExpose({
 <style scoped>
 .qr-scanner {
   width: 100%;
+}
+
+.qr-upload-btn {
+  cursor: pointer !important;
+  transition: all 0.2s ease;
+}
+
+.qr-upload-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15) !important;
 }
 
 .qr-preview {

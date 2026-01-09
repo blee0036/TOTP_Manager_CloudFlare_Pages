@@ -41,8 +41,9 @@
                     variant="outlined"
                     density="comfortable"
                     prepend-inner-icon="mdi-account"
+                    hide-details="auto"
                     required
-                    class="mb-3"
+                    class="mb-5"
                   />
 
                   <v-text-field
@@ -54,8 +55,9 @@
                     variant="outlined"
                     density="comfortable"
                     prepend-inner-icon="mdi-lock"
+                    hide-details="auto"
                     required
-                    class="mb-4"
+                    class="mb-6"
                     @click:append-inner="showLoginPassword = !showLoginPassword"
                   />
 
@@ -65,6 +67,7 @@
                     variant="elevated"
                     size="large"
                     block
+                    elevation="2"
                     :loading="authStore.isLoading"
                     :disabled="!loginValid || authStore.isLoading"
                   >
@@ -83,8 +86,9 @@
                     variant="outlined"
                     density="comfortable"
                     prepend-inner-icon="mdi-account"
+                    hide-details="auto"
                     required
-                    class="mb-3"
+                    class="mb-5"
                   />
 
                   <v-text-field
@@ -96,8 +100,9 @@
                     variant="outlined"
                     density="comfortable"
                     prepend-inner-icon="mdi-lock"
+                    hide-details="auto"
                     required
-                    class="mb-3"
+                    class="mb-5"
                     @click:append-inner="showRegisterPassword = !showRegisterPassword"
                   />
 
@@ -110,8 +115,9 @@
                     variant="outlined"
                     density="comfortable"
                     prepend-inner-icon="mdi-lock"
+                    hide-details="auto"
                     required
-                    class="mb-4"
+                    class="mb-6"
                     @click:append-inner="showConfirmPassword = !showConfirmPassword"
                   />
 
@@ -121,6 +127,7 @@
                     variant="elevated"
                     size="large"
                     block
+                    elevation="2"
                     :loading="authStore.isLoading"
                     :disabled="!registerValid || authStore.isLoading"
                   >

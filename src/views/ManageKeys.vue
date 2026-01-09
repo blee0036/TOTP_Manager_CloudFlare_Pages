@@ -72,6 +72,7 @@
                 variant="elevated"
                 size="large"
                 prepend-icon="mdi-plus"
+                elevation="2"
                 @click="handleAddKey"
               >
                 {{ t('keys.addKey', 'Add Key') }}
@@ -184,6 +185,7 @@
                 :error-messages="editError"
                 variant="outlined"
                 density="comfortable"
+                hide-details="auto"
                 required
                 @update:model-value="editError = ''"
               />
@@ -201,6 +203,7 @@
               <v-btn
                 color="primary"
                 variant="elevated"
+                elevation="2"
                 @click="handleSaveEdit"
                 :loading="isSubmitting"
                 :disabled="!editForm.remark || isSubmitting"
@@ -247,6 +250,7 @@
               <v-btn
                 color="error"
                 variant="elevated"
+                elevation="2"
                 @click="handleConfirmDelete"
                 :loading="isSubmitting"
                 :disabled="isSubmitting"

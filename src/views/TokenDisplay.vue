@@ -85,10 +85,11 @@
           </p>
           <v-btn
             color="primary"
+            variant="elevated"
             size="large"
             prepend-icon="mdi-plus"
             class="text-none font-weight-medium px-6"
-            elevation="0"
+            elevation="2"
             @click="handleAddKey"
           >
             {{ t('keys.addKey', 'Add Key') }}
