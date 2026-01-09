@@ -41,9 +41,9 @@
                     variant="outlined"
                     density="comfortable"
                     prepend-inner-icon="mdi-account"
-                    hide-details="auto"
+                    hide-details
                     required
-                    class="mb-5"
+                    class="mb-8"
                   />
 
                   <v-text-field
@@ -55,9 +55,9 @@
                     variant="outlined"
                     density="comfortable"
                     prepend-inner-icon="mdi-lock"
-                    hide-details="auto"
+                    hide-details
                     required
-                    class="mb-6"
+                    class="mb-8"
                     @click:append-inner="showLoginPassword = !showLoginPassword"
                   />
 
@@ -86,9 +86,9 @@
                     variant="outlined"
                     density="comfortable"
                     prepend-inner-icon="mdi-account"
-                    hide-details="auto"
+                    hide-details
                     required
-                    class="mb-5"
+                    class="mb-8"
                   />
 
                   <v-text-field
@@ -100,9 +100,9 @@
                     variant="outlined"
                     density="comfortable"
                     prepend-inner-icon="mdi-lock"
-                    hide-details="auto"
+                    hide-details
                     required
-                    class="mb-5"
+                    class="mb-8"
                     @click:append-inner="showRegisterPassword = !showRegisterPassword"
                   />
 
@@ -115,9 +115,9 @@
                     variant="outlined"
                     density="comfortable"
                     prepend-inner-icon="mdi-lock"
-                    hide-details="auto"
+                    hide-details
                     required
-                    class="mb-6"
+                    class="mb-8"
                     @click:append-inner="showConfirmPassword = !showConfirmPassword"
                   />
 

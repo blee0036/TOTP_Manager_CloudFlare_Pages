@@ -5,10 +5,11 @@
         <!-- Page Header -->
         <div class="mb-6">
           <v-btn
-            variant="text"
+            variant="plain"
             prepend-icon="mdi-arrow-left"
             @click="handleBack"
             class="mb-4"
+            color="on-surface"
           >
             {{ t('common.back', 'Back') }}
           </v-btn>
@@ -185,7 +186,7 @@
                 :error-messages="editError"
                 variant="outlined"
                 density="comfortable"
-                hide-details="auto"
+                hide-details
                 required
                 @update:model-value="editError = ''"
               />
