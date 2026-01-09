@@ -3,6 +3,22 @@
     "title": "Uwierzytelnianie 2FA",
     "description": "Bezpieczny menedżer uwierzytelniania dwuskładnikowego"
   },
+  "qr": {
+    "scanning": "Skanowanie kodu QR..."
+  },
+  "common": {
+    "back": "Wstecz",
+    "close": "Zamknij",
+    "ok": "OK",
+    "cancel": "Anuluj",
+    "save": "Zapisz",
+    "delete": "Usuń",
+    "edit": "Edytuj",
+    "confirm": "Potwierdź",
+    "loading": "Ładowanie...",
+    "clearSearch": "Wyczyść wyszukiwanie",
+    "clear": "Wyczyść"
+  },
   "nav": {
     "tokens": "Tokeny",
     "addKey": "Dodaj klucz",
@@ -21,6 +37,7 @@
     "confirmPassword": "Potwierdź hasło",
     "temporaryMode": "Tryb tymczasowy",
     "temporaryModeDesc": "Klucze są przechowywane tylko w przeglądarce",
+    "createAccount": "Utwórz konto, aby synchronizować klucze",
     "loginButton": "Zaloguj się",
     "registerButton": "Zarejestruj się",
     "usernameMinLength": "Nazwa użytkownika musi mieć co najmniej 3 znaki",
@@ -36,19 +53,33 @@
     "secret": "Tajny klucz",
     "secretPlaceholder": "Wprowadź klucz Base32 lub wklej URI otpauth://",
     "uploadQR": "Prześlij kod QR",
+    "selectQRFile": "Wybierz obraz kodu QR",
+    "scanQR": "Skanuj kod QR",
+    "manualEntry": "Ręczne wprowadzanie",
     "addKey": "Dodaj klucz",
+    "addKeyDesc": "Dodaj nowy klucz 2FA do swojego konta",
+    "addKeyTempDesc": "Dodaj nowy klucz 2FA (przechowywany lokalnie)",
     "updateKey": "Aktualizuj",
     "deleteKey": "Usuń",
+    "editKey": "Edytuj klucz",
+    "manageDesc": "Edytuj lub usuń swoje klucze 2FA",
     "confirmDelete": "Czy na pewno chcesz usunąć \"{remark}\"?",
+    "confirmDeleteTitle": "Potwierdź usunięcie",
+    "deleteWarning": "Tej czynności nie można cofnąć.",
+    "tempModeWarning": "Klucze są przechowywane tylko w przeglądarce. Zostaną utracone po wyczyszczeniu danych przeglądarki.",
     "search": "Szukaj kluczy...",
     "noKeys": "Nie znaleziono kluczy",
+    "noKeysDesc": "Dodaj swój pierwszy klucz 2FA, aby rozpocząć",
     "noResults": "Nie znaleziono pasujących kluczy",
+    "noResultsDesc": "Spróbuj innego wyszukiwanego hasła",
+    "addedOn": "Dodano",
     "cancel": "Anuluj",
     "save": "Zapisz"
   },
   "token": {
     "copy": "Kopiuj",
     "copied": "Skopiowano do schowka!",
+    "syncedMode": "Klucze zsynchronizowane z kontem",
     "timeRemaining": "Pozostało {seconds}s",
     "expired": "Generowanie nowego tokenu...",
     "generating": "Generowanie..."
@@ -61,14 +92,30 @@
     "serverError": "Wystąpił błąd serwera",
     "validationError": "Błąd walidacji",
     "usernameExists": "Nazwa użytkownika już istnieje",
-    "invalidCredentials": "Nieprawidłowa nazwa użytkownika lub hasło"
+    "invalidCredentials": "Nieprawidłowa nazwa użytkownika lub hasło",
+    "remarkRequired": "Uwaga jest wymagana",
+    "remarkEmpty": "Uwaga nie może być pusta",
+    "secretRequired": "Tajny klucz jest wymagany",
+    "addKeyFailed": "Nie udało się dodać klucza",
+    "updateKeyFailed": "Nie udało się zaktualizować klucza",
+    "deleteKeyFailed": "Nie udało się usunąć klucza",
+    "fetchKeysFailed": "Nie udało się załadować kluczy",
+    "qrExtractionFailed": "Nie udało się wyodrębnić danych z kodu QR",
+    "formValidationFailed": "Popraw powyższe błędy",
+    "invalidFileType": "Wybierz plik obrazu",
+    "noFileSelected": "Najpierw wybierz plik",
+    "qrNotFound": "Nie znaleziono kodu QR na obrazie",
+    "invalidQRContent": "Kod QR nie zawiera prawidłowego URI OTPAuth",
+    "imageLoadFailed": "Nie udało się załadować obrazu",
+    "fileReadFailed": "Nie udało się odczytać pliku"
   },
   "success": {
     "keyAdded": "Klucz został pomyślnie dodany",
     "keyUpdated": "Klucz został pomyślnie zaktualizowany",
     "keyDeleted": "Klucz został pomyślnie usunięty",
     "loginSuccess": "Logowanie powiodło się",
-    "registerSuccess": "Rejestracja powiodła się"
+    "registerSuccess": "Rejestracja powiodła się",
+    "qrScanned": "Kod QR został pomyślnie zeskanowany!"
   },
   "theme": {
     "light": "Jasny",

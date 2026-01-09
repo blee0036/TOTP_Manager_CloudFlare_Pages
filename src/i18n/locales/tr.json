@@ -3,6 +3,22 @@
     "title": "2FA Kimlik Doğrulayıcı",
     "description": "Güvenli iki faktörlü kimlik doğrulama yöneticisi"
   },
+  "qr": {
+    "scanning": "QR kodu taranıyor..."
+  },
+  "common": {
+    "back": "Geri",
+    "close": "Kapat",
+    "ok": "Tamam",
+    "cancel": "İptal",
+    "save": "Kaydet",
+    "delete": "Sil",
+    "edit": "Düzenle",
+    "confirm": "Onayla",
+    "loading": "Yükleniyor...",
+    "clearSearch": "Aramayı temizle",
+    "clear": "Temizle"
+  },
   "nav": {
     "tokens": "Tokenler",
     "addKey": "Anahtar Ekle",
@@ -21,6 +37,7 @@
     "confirmPassword": "Şifreyi Onayla",
     "temporaryMode": "Geçici Mod",
     "temporaryModeDesc": "Anahtarlar yalnızca tarayıcıda saklanır",
+    "createAccount": "Anahtarları senkronize etmek için hesap oluştur",
     "loginButton": "Giriş Yap",
     "registerButton": "Kayıt Ol",
     "usernameMinLength": "Kullanıcı adı en az 3 karakter olmalıdır",
@@ -36,19 +53,33 @@
     "secret": "Gizli Anahtar",
     "secretPlaceholder": "Base32 anahtarını girin veya otpauth:// URI'sini yapıştırın",
     "uploadQR": "QR Kodu Yükle",
+    "selectQRFile": "QR kodu görüntüsünü seç",
+    "scanQR": "QR Kodu Tara",
+    "manualEntry": "Manuel Giriş",
     "addKey": "Anahtar Ekle",
+    "addKeyDesc": "Hesabınıza yeni 2FA anahtarı ekleyin",
+    "addKeyTempDesc": "Yeni 2FA anahtarı ekleyin (yerel olarak saklanır)",
     "updateKey": "Güncelle",
     "deleteKey": "Sil",
+    "editKey": "Anahtarı Düzenle",
+    "manageDesc": "2FA anahtarlarınızı düzenleyin veya silin",
     "confirmDelete": "\"{remark}\" öğesini silmek istediğinizden emin misiniz?",
+    "confirmDeleteTitle": "Silmeyi Onayla",
+    "deleteWarning": "Bu işlem geri alınamaz.",
+    "tempModeWarning": "Anahtarlar yalnızca tarayıcınızda saklanır. Tarayıcı verilerini temizlerseniz kaybolacaktır.",
     "search": "Anahtar ara...",
     "noKeys": "Anahtar bulunamadı",
+    "noKeysDesc": "Başlamak için ilk 2FA anahtarınızı ekleyin",
     "noResults": "Eşleşen anahtar bulunamadı",
+    "noResultsDesc": "Farklı bir arama terimi deneyin",
+    "addedOn": "Eklenme tarihi",
     "cancel": "İptal",
     "save": "Kaydet"
   },
   "token": {
     "copy": "Kopyala",
     "copied": "Panoya kopyalandı!",
+    "syncedMode": "Anahtarlar hesabınızla senkronize edildi",
     "timeRemaining": "{seconds}s kaldı",
     "expired": "Yeni token oluşturuluyor...",
     "generating": "Oluşturuluyor..."
@@ -61,14 +92,30 @@
     "serverError": "Sunucu hatası oluştu",
     "validationError": "Doğrulama hatası",
     "usernameExists": "Kullanıcı adı zaten mevcut",
-    "invalidCredentials": "Geçersiz kullanıcı adı veya şifre"
+    "invalidCredentials": "Geçersiz kullanıcı adı veya şifre",
+    "remarkRequired": "Not gereklidir",
+    "remarkEmpty": "Not boş olamaz",
+    "secretRequired": "Gizli anahtar gereklidir",
+    "addKeyFailed": "Anahtar eklenemedi",
+    "updateKeyFailed": "Anahtar güncellenemedi",
+    "deleteKeyFailed": "Anahtar silinemedi",
+    "fetchKeysFailed": "Anahtarlar yüklenemedi",
+    "qrExtractionFailed": "QR kodundan veri çıkarılamadı",
+    "formValidationFailed": "Lütfen yukarıdaki hataları düzeltin",
+    "invalidFileType": "Lütfen bir resim dosyası seçin",
+    "noFileSelected": "Lütfen önce bir dosya seçin",
+    "qrNotFound": "Resimde QR kodu bulunamadı",
+    "invalidQRContent": "QR kodu geçerli bir OTPAuth URI içermiyor",
+    "imageLoadFailed": "Resim yüklenemedi",
+    "fileReadFailed": "Dosya okunamadı"
   },
   "success": {
     "keyAdded": "Anahtar başarıyla eklendi",
     "keyUpdated": "Anahtar başarıyla güncellendi",
     "keyDeleted": "Anahtar başarıyla silindi",
     "loginSuccess": "Giriş başarılı",
-    "registerSuccess": "Kayıt başarılı"
+    "registerSuccess": "Kayıt başarılı",
+    "qrScanned": "QR kodu başarıyla tarandı!"
   },
   "theme": {
     "light": "Açık",

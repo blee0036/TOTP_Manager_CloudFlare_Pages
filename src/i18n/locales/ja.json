@@ -3,6 +3,22 @@
     "title": "2FA 認証",
     "description": "安全で便利な二要素認証管理ツール"
   },
+  "qr": {
+    "scanning": "QRコードをスキャン中..."
+  },
+  "common": {
+    "back": "戻る",
+    "close": "閉じる",
+    "ok": "OK",
+    "cancel": "キャンセル",
+    "save": "保存",
+    "delete": "削除",
+    "edit": "編集",
+    "confirm": "確認",
+    "loading": "読み込み中...",
+    "clearSearch": "検索をクリア",
+    "clear": "クリア"
+  },
   "nav": {
     "tokens": "トークン",
     "addKey": "キーを追加",
@@ -21,6 +37,7 @@
     "confirmPassword": "パスワード確認",
     "temporaryMode": "一時モード",
     "temporaryModeDesc": "キーはブラウザにのみ保存されます",
+    "createAccount": "キーを同期するアカウントを作成",
     "loginButton": "サインイン",
     "registerButton": "サインアップ",
     "usernameMinLength": "ユーザー名は3文字以上である必要があります",
@@ -36,21 +53,33 @@
     "secret": "シークレットキー",
     "secretPlaceholder": "Base32キーを入力するか、otpauth:// URIを貼り付けてください",
     "uploadQR": "QRコードをアップロード",
+    "selectQRFile": "QRコード画像を選択",
+    "scanQR": "QRコードをスキャン",
+    "manualEntry": "手動入力",
     "addKey": "キーを追加",
+    "addKeyDesc": "アカウントに新しい2FAキーを追加",
+    "addKeyTempDesc": "新しい2FAキーを追加（ローカル保存）",
     "updateKey": "更新",
     "deleteKey": "削除",
+    "editKey": "キーを編集",
+    "manageDesc": "2FAキーを編集または削除",
     "confirmDelete": "「{remark}」を削除してもよろしいですか？",
+    "confirmDeleteTitle": "削除の確認",
+    "deleteWarning": "この操作は元に戻せません。",
+    "tempModeWarning": "キーはブラウザにのみ保存されます。ブラウザデータをクリアすると失われます。",
     "search": "キーを検索...",
     "noKeys": "キーが見つかりません",
     "noKeysDesc": "最初の2FAキーを追加して開始",
     "noResults": "一致するキーが見つかりません",
     "noResultsDesc": "別の検索語を試してください",
+    "addedOn": "追加日",
     "cancel": "キャンセル",
     "save": "保存"
   },
   "token": {
     "copy": "コピー",
     "copied": "クリップボードにコピーしました！",
+    "syncedMode": "キーはアカウントに同期されています",
     "timeRemaining": "残り{seconds}秒",
     "expired": "新しいトークンを生成中...",
     "generating": "生成中..."
@@ -63,14 +92,30 @@
     "serverError": "サーバーエラーが発生しました",
     "validationError": "検証エラー",
     "usernameExists": "ユーザー名は既に存在します",
-    "invalidCredentials": "ユーザー名またはパスワードが無効です"
+    "invalidCredentials": "ユーザー名またはパスワードが無効です",
+    "remarkRequired": "備考は必須です",
+    "remarkEmpty": "備考を空にすることはできません",
+    "secretRequired": "シークレットキーは必須です",
+    "addKeyFailed": "キーの追加に失敗しました",
+    "updateKeyFailed": "キーの更新に失敗しました",
+    "deleteKeyFailed": "キーの削除に失敗しました",
+    "fetchKeysFailed": "キーの読み込みに失敗しました",
+    "qrExtractionFailed": "QRコードからのデータ抽出に失敗しました",
+    "formValidationFailed": "上記のエラーを修正してください",
+    "invalidFileType": "画像ファイルを選択してください",
+    "noFileSelected": "最初にファイルを選択してください",
+    "qrNotFound": "画像にQRコードが見つかりません",
+    "invalidQRContent": "QRコードに有効なOTPAuth URIが含まれていません",
+    "imageLoadFailed": "画像の読み込みに失敗しました",
+    "fileReadFailed": "ファイルの読み取りに失敗しました"
   },
   "success": {
     "keyAdded": "キーが正常に追加されました",
     "keyUpdated": "キーが正常に更新されました",
     "keyDeleted": "キーが正常に削除されました",
     "loginSuccess": "ログインに成功しました",
-    "registerSuccess": "登録に成功しました"
+    "registerSuccess": "登録に成功しました",
+    "qrScanned": "QRコードのスキャンに成功しました！"
   },
   "theme": {
     "light": "ライト",

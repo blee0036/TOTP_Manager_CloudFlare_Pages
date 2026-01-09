@@ -3,6 +3,22 @@
     "title": "Autenticatore 2FA",
     "description": "Gestore sicuro dell'autenticazione a due fattori"
   },
+  "qr": {
+    "scanning": "Scansione del codice QR..."
+  },
+  "common": {
+    "back": "Indietro",
+    "close": "Chiudi",
+    "ok": "OK",
+    "cancel": "Annulla",
+    "save": "Salva",
+    "delete": "Elimina",
+    "edit": "Modifica",
+    "confirm": "Conferma",
+    "loading": "Caricamento...",
+    "clearSearch": "Cancella ricerca",
+    "clear": "Cancella"
+  },
   "nav": {
     "tokens": "Token",
     "addKey": "Aggiungi chiave",
@@ -21,6 +37,7 @@
     "confirmPassword": "Conferma password",
     "temporaryMode": "Modalità temporanea",
     "temporaryModeDesc": "Le chiavi sono memorizzate solo nel browser",
+    "createAccount": "Crea un account per sincronizzare le chiavi",
     "loginButton": "Accedi",
     "registerButton": "Registrati",
     "usernameMinLength": "Il nome utente deve contenere almeno 3 caratteri",
@@ -31,26 +48,38 @@
   },
   "keys": {
     "remark": "Nota",
-    "remarkPlaceholder": "es. Google, GitHub",
+    "remarkPlaceholder": "es., Google, GitHub",
     "remarkRequired": "La nota è obbligatoria",
     "secret": "Chiave segreta",
     "secretPlaceholder": "Inserisci la chiave Base32 o incolla l'URI otpauth://",
     "uploadQR": "Carica codice QR",
+    "selectQRFile": "Seleziona immagine del codice QR",
+    "scanQR": "Scansiona codice QR",
+    "manualEntry": "Inserimento manuale",
     "addKey": "Aggiungi chiave",
+    "addKeyDesc": "Aggiungi una nuova chiave 2FA al tuo account",
+    "addKeyTempDesc": "Aggiungi una nuova chiave 2FA (memorizzata localmente)",
     "updateKey": "Aggiorna",
     "deleteKey": "Elimina",
+    "editKey": "Modifica chiave",
+    "manageDesc": "Modifica o elimina le tue chiavi 2FA",
     "confirmDelete": "Sei sicuro di voler eliminare \"{remark}\"?",
+    "confirmDeleteTitle": "Conferma eliminazione",
+    "deleteWarning": "Questa azione non può essere annullata.",
+    "tempModeWarning": "Le chiavi sono memorizzate solo nel tuo browser. Andranno perse se cancelli i dati del browser.",
     "search": "Cerca chiavi...",
     "noKeys": "Nessuna chiave trovata",
     "noKeysDesc": "Aggiungi la tua prima chiave 2FA per iniziare",
     "noResults": "Nessuna chiave corrispondente trovata",
     "noResultsDesc": "Prova un termine di ricerca diverso",
+    "addedOn": "Aggiunto il",
     "cancel": "Annulla",
     "save": "Salva"
   },
   "token": {
     "copy": "Copia",
     "copied": "Copiato negli appunti!",
+    "syncedMode": "Chiavi sincronizzate con il tuo account",
     "timeRemaining": "{seconds}s rimanenti",
     "expired": "Generazione nuovo token...",
     "generating": "Generazione..."
@@ -63,14 +92,30 @@
     "serverError": "Si è verificato un errore del server",
     "validationError": "Errore di validazione",
     "usernameExists": "Il nome utente esiste già",
-    "invalidCredentials": "Nome utente o password non validi"
+    "invalidCredentials": "Nome utente o password non validi",
+    "remarkRequired": "La nota è obbligatoria",
+    "remarkEmpty": "La nota non può essere vuota",
+    "secretRequired": "La chiave segreta è obbligatoria",
+    "addKeyFailed": "Impossibile aggiungere la chiave",
+    "updateKeyFailed": "Impossibile aggiornare la chiave",
+    "deleteKeyFailed": "Impossibile eliminare la chiave",
+    "fetchKeysFailed": "Impossibile caricare le chiavi",
+    "qrExtractionFailed": "Impossibile estrarre i dati dal codice QR",
+    "formValidationFailed": "Correggi gli errori sopra",
+    "invalidFileType": "Seleziona un file immagine",
+    "noFileSelected": "Seleziona prima un file",
+    "qrNotFound": "Nessun codice QR trovato nell'immagine",
+    "invalidQRContent": "Il codice QR non contiene un URI OTPAuth valido",
+    "imageLoadFailed": "Impossibile caricare l'immagine",
+    "fileReadFailed": "Impossibile leggere il file"
   },
   "success": {
     "keyAdded": "Chiave aggiunta con successo",
     "keyUpdated": "Chiave aggiornata con successo",
     "keyDeleted": "Chiave eliminata con successo",
     "loginSuccess": "Accesso effettuato con successo",
-    "registerSuccess": "Registrazione effettuata con successo"
+    "registerSuccess": "Registrazione effettuata con successo",
+    "qrScanned": "Codice QR scansionato con successo!"
   },
   "theme": {
     "light": "Chiaro",

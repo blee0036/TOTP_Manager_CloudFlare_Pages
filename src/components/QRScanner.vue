@@ -1,31 +1,39 @@
 <template>
   <div class="qr-scanner">
-    <!-- File Upload Button -->
-    <v-file-input
-      v-model="selectedFile"
-      :label="label"
-      :placeholder="placeholder"
+    <!-- Hidden File Input -->
+    <input
+      ref="fileInputRef"
+      type="file"
       :accept="accept"
-      prepend-icon="mdi-qrcode-scan"
+      style="display: none"
+      @change="handleFileChange"
+    />
+    
+    <!-- Upload Button -->
+    <v-btn
+      color="primary"
       variant="outlined"
-      density="comfortable"
+      prepend-icon="mdi-qrcode-scan"
+      block
+      size="large"
       :loading="scanning"
       :disabled="scanning"
-      show-size
-      @update:model-value="handleFileSelect"
-      @click:clear="handleClear"
+      @click="triggerFileInput"
     >
-      <template #append>
-        <v-btn
-          v-if="selectedFile"
-          icon="mdi-magnify-scan"
-          size="small"
-          color="primary"
-          :loading="scanning"
-          @click="scanQRCode"
-        />
-      </template>
-    </v-file-input>
+      {{ selectedFile ? selectedFile.name : t('keys.uploadQR', 'Upload QR Code') }}
+    </v-btn>
+    
+    <!-- Clear Button (shown when file is selected) -->
+    <v-btn
+      v-if="selectedFile && !scanning"
+      variant="text"
+      size="small"
+      color="error"
+      class="mt-2"
+      @click="handleClear"
+    >
+      {{ t('common.clear', 'Clear') }}
+    </v-btn>
 
     <!-- Preview Image (Optional) -->
     <div v-if="previewUrl && showPreview" class="mt-4">
@@ -86,7 +94,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed } from 'vue';
+import { ref } from 'vue';
 import { useI18n } from 'vue-i18n';
 import jsQR from 'jsqr';
 import { useKeyValidation } from '../composables/useKeyValidation';
@@ -131,29 +139,34 @@ const { t } = useI18n();
 const { isOtpAuthUri, extractKeyData } = useKeyValidation();
 
 // 组件状态
-const selectedFile = ref<File[] | null>(null);
+const fileInputRef = ref<HTMLInputElement | null>(null);
+const selectedFile = ref<File | null>(null);
 const previewUrl = ref<string>('');
 const scanning = ref<boolean>(false);
 const successMessage = ref<string>('');
 const errorMessage = ref<string>('');
 
-// 默认标签和占位符
-const label = computed(() => props.label || t('keys.uploadQR', 'Upload QR Code'));
-const placeholder = computed(() => props.placeholder || t('keys.selectQRFile', 'Select QR code image'));
+/**
+ * 触发文件选择
+ */
+const triggerFileInput = () => {
+  fileInputRef.value?.click();
+};
 
 /**
- * 处理文件选择
+ * 处理文件变化
  */
-const handleFileSelect = (files: File | File[] | null) => {
-  if (!files) {
-    handleClear();
+const handleFileChange = (event: Event) => {
+  const target = event.target as HTMLInputElement;
+  const files = target.files;
+  
+  if (!files || files.length === 0) {
     return;
   }
-
-  const file = Array.isArray(files) ? files[0] : files;
+  
+  const file = files[0];
   
   if (!file) {
-    handleClear();
     return;
   }
   
@@ -163,6 +176,8 @@ const handleFileSelect = (files: File | File[] | null) => {
     selectedFile.value = null;
     return;
   }
+
+  selectedFile.value = file;
 
   // 创建预览 URL
   if (previewUrl.value) {
@@ -184,17 +199,12 @@ const handleFileSelect = (files: File | File[] | null) => {
  * 扫描二维码
  */
 const scanQRCode = async () => {
-  if (!selectedFile.value || selectedFile.value.length === 0) {
+  if (!selectedFile.value) {
     errorMessage.value = t('errors.noFileSelected', 'Please select a file first');
     return;
   }
 
-  const file = Array.isArray(selectedFile.value) ? selectedFile.value[0] : selectedFile.value;
-  
-  if (!file) {
-    errorMessage.value = t('errors.noFileSelected', 'Please select a file first');
-    return;
-  }
+  const file = selectedFile.value;
   
   scanning.value = true;
   errorMessage.value = '';
@@ -292,6 +302,10 @@ const loadImage = (file: File): Promise<ImageData> => {
  */
 const handleClear = () => {
   selectedFile.value = null;
+  
+  if (fileInputRef.value) {
+    fileInputRef.value.value = '';
+  }
   
   if (previewUrl.value) {
     URL.revokeObjectURL(previewUrl.value);

@@ -3,6 +3,22 @@
     "title": "2FA Authenticator",
     "description": "Veilige tweefactorauthenticatiebeheerder"
   },
+  "qr": {
+    "scanning": "QR-code scannen..."
+  },
+  "common": {
+    "back": "Terug",
+    "close": "Sluiten",
+    "ok": "OK",
+    "cancel": "Annuleren",
+    "save": "Opslaan",
+    "delete": "Verwijderen",
+    "edit": "Bewerken",
+    "confirm": "Bevestigen",
+    "loading": "Laden...",
+    "clearSearch": "Zoekopdracht wissen",
+    "clear": "Wissen"
+  },
   "nav": {
     "tokens": "Tokens",
     "addKey": "Sleutel toevoegen",
@@ -21,6 +37,7 @@
     "confirmPassword": "Bevestig wachtwoord",
     "temporaryMode": "Tijdelijke modus",
     "temporaryModeDesc": "Sleutels worden alleen in de browser opgeslagen",
+    "createAccount": "Maak een account aan om sleutels te synchroniseren",
     "loginButton": "Inloggen",
     "registerButton": "Registreren",
     "usernameMinLength": "Gebruikersnaam moet minimaal 3 tekens bevatten",
@@ -36,21 +53,33 @@
     "secret": "Geheime sleutel",
     "secretPlaceholder": "Voer Base32-sleutel in of plak otpauth:// URI",
     "uploadQR": "QR-code uploaden",
+    "selectQRFile": "Selecteer QR-code afbeelding",
+    "scanQR": "QR-code scannen",
+    "manualEntry": "Handmatige invoer",
     "addKey": "Sleutel toevoegen",
+    "addKeyDesc": "Voeg een nieuwe 2FA-sleutel toe aan uw account",
+    "addKeyTempDesc": "Voeg een nieuwe 2FA-sleutel toe (lokaal opgeslagen)",
     "updateKey": "Bijwerken",
     "deleteKey": "Verwijderen",
+    "editKey": "Sleutel bewerken",
+    "manageDesc": "Bewerk of verwijder uw 2FA-sleutels",
     "confirmDelete": "Weet je zeker dat je \"{remark}\" wilt verwijderen?",
+    "confirmDeleteTitle": "Verwijderen bevestigen",
+    "deleteWarning": "Deze actie kan niet ongedaan worden gemaakt.",
+    "tempModeWarning": "Sleutels worden alleen in uw browser opgeslagen. Ze gaan verloren als u browsergegevens wist.",
     "search": "Sleutels zoeken...",
     "noKeys": "Geen sleutels gevonden",
     "noKeysDesc": "Voeg uw eerste 2FA-sleutel toe om te beginnen",
     "noResults": "Geen overeenkomende sleutels gevonden",
     "noResultsDesc": "Probeer een andere zoekterm",
+    "addedOn": "Toegevoegd op",
     "cancel": "Annuleren",
     "save": "Opslaan"
   },
   "token": {
     "copy": "Kopiëren",
     "copied": "Gekopieerd naar klembord!",
+    "syncedMode": "Sleutels gesynchroniseerd met uw account",
     "timeRemaining": "{seconds}s resterend",
     "expired": "Nieuwe token genereren...",
     "generating": "Genereren..."
@@ -63,14 +92,30 @@
     "serverError": "Er is een serverfout opgetreden",
     "validationError": "Validatiefout",
     "usernameExists": "Gebruikersnaam bestaat al",
-    "invalidCredentials": "Ongeldige gebruikersnaam of wachtwoord"
+    "invalidCredentials": "Ongeldige gebruikersnaam of wachtwoord",
+    "remarkRequired": "Opmerking is verplicht",
+    "remarkEmpty": "Opmerking mag niet leeg zijn",
+    "secretRequired": "Geheime sleutel is verplicht",
+    "addKeyFailed": "Sleutel toevoegen mislukt",
+    "updateKeyFailed": "Sleutel bijwerken mislukt",
+    "deleteKeyFailed": "Sleutel verwijderen mislukt",
+    "fetchKeysFailed": "Sleutels laden mislukt",
+    "qrExtractionFailed": "Gegevens uit QR-code extraheren mislukt",
+    "formValidationFailed": "Corrigeer de bovenstaande fouten",
+    "invalidFileType": "Selecteer een afbeeldingsbestand",
+    "noFileSelected": "Selecteer eerst een bestand",
+    "qrNotFound": "Geen QR-code gevonden in de afbeelding",
+    "invalidQRContent": "QR-code bevat geen geldige OTPAuth URI",
+    "imageLoadFailed": "Afbeelding laden mislukt",
+    "fileReadFailed": "Bestand lezen mislukt"
   },
   "success": {
     "keyAdded": "Sleutel succesvol toegevoegd",
     "keyUpdated": "Sleutel succesvol bijgewerkt",
     "keyDeleted": "Sleutel succesvol verwijderd",
     "loginSuccess": "Succesvol ingelogd",
-    "registerSuccess": "Succesvol geregistreerd"
+    "registerSuccess": "Succesvol geregistreerd",
+    "qrScanned": "QR-code succesvol gescand!"
   },
   "theme": {
     "light": "Licht",

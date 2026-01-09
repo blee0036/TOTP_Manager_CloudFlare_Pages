@@ -3,6 +3,22 @@
     "title": "Xác thực 2FA",
     "description": "Trình quản lý xác thực hai yếu tố an toàn"
   },
+  "qr": {
+    "scanning": "Đang quét mã QR..."
+  },
+  "common": {
+    "back": "Quay lại",
+    "close": "Đóng",
+    "ok": "OK",
+    "cancel": "Hủy",
+    "save": "Lưu",
+    "delete": "Xóa",
+    "edit": "Chỉnh sửa",
+    "confirm": "Xác nhận",
+    "loading": "Đang tải...",
+    "clearSearch": "Xóa tìm kiếm",
+    "clear": "Xóa"
+  },
   "nav": {
     "tokens": "Token",
     "addKey": "Thêm khóa",
@@ -21,6 +37,7 @@
     "confirmPassword": "Xác nhận mật khẩu",
     "temporaryMode": "Chế độ tạm thời",
     "temporaryModeDesc": "Khóa chỉ được lưu trữ trong trình duyệt",
+    "createAccount": "Tạo tài khoản để đồng bộ khóa",
     "loginButton": "Đăng nhập",
     "registerButton": "Đăng ký",
     "usernameMinLength": "Tên người dùng phải có ít nhất 3 ký tự",
@@ -36,21 +53,33 @@
     "secret": "Khóa bí mật",
     "secretPlaceholder": "Nhập khóa Base32 hoặc dán URI otpauth://",
     "uploadQR": "Tải lên mã QR",
+    "selectQRFile": "Chọn hình ảnh mã QR",
+    "scanQR": "Quét mã QR",
+    "manualEntry": "Nhập thủ công",
     "addKey": "Thêm khóa",
+    "addKeyDesc": "Thêm khóa 2FA mới vào tài khoản của bạn",
+    "addKeyTempDesc": "Thêm khóa 2FA mới (lưu trữ cục bộ)",
     "updateKey": "Cập nhật",
     "deleteKey": "Xóa",
+    "editKey": "Chỉnh sửa khóa",
+    "manageDesc": "Chỉnh sửa hoặc xóa khóa 2FA của bạn",
     "confirmDelete": "Bạn có chắc chắn muốn xóa \"{remark}\"?",
+    "confirmDeleteTitle": "Xác nhận xóa",
+    "deleteWarning": "Hành động này không thể hoàn tác.",
+    "tempModeWarning": "Khóa chỉ được lưu trữ trong trình duyệt của bạn. Chúng sẽ bị mất nếu bạn xóa dữ liệu trình duyệt.",
     "search": "Tìm kiếm khóa...",
     "noKeys": "Không tìm thấy khóa",
     "noKeysDesc": "Thêm khóa 2FA đầu tiên của bạn để bắt đầu",
     "noResults": "Không tìm thấy khóa phù hợp",
     "noResultsDesc": "Thử một từ khóa tìm kiếm khác",
+    "addedOn": "Đã thêm vào",
     "cancel": "Hủy",
     "save": "Lưu"
   },
   "token": {
     "copy": "Sao chép",
     "copied": "Đã sao chép vào clipboard!",
+    "syncedMode": "Khóa đã được đồng bộ với tài khoản của bạn",
     "timeRemaining": "Còn {seconds}s",
     "expired": "Đang tạo token mới...",
     "generating": "Đang tạo..."
@@ -63,14 +92,30 @@
     "serverError": "Đã xảy ra lỗi máy chủ",
     "validationError": "Lỗi xác thực",
     "usernameExists": "Tên người dùng đã tồn tại",
-    "invalidCredentials": "Tên người dùng hoặc mật khẩu không hợp lệ"
+    "invalidCredentials": "Tên người dùng hoặc mật khẩu không hợp lệ",
+    "remarkRequired": "Ghi chú là bắt buộc",
+    "remarkEmpty": "Ghi chú không được để trống",
+    "secretRequired": "Khóa bí mật là bắt buộc",
+    "addKeyFailed": "Thêm khóa thất bại",
+    "updateKeyFailed": "Cập nhật khóa thất bại",
+    "deleteKeyFailed": "Xóa khóa thất bại",
+    "fetchKeysFailed": "Tải khóa thất bại",
+    "qrExtractionFailed": "Trích xuất dữ liệu từ mã QR thất bại",
+    "formValidationFailed": "Vui lòng sửa các lỗi ở trên",
+    "invalidFileType": "Vui lòng chọn tệp hình ảnh",
+    "noFileSelected": "Vui lòng chọn tệp trước",
+    "qrNotFound": "Không tìm thấy mã QR trong hình ảnh",
+    "invalidQRContent": "Mã QR không chứa URI OTPAuth hợp lệ",
+    "imageLoadFailed": "Tải hình ảnh thất bại",
+    "fileReadFailed": "Đọc tệp thất bại"
   },
   "success": {
     "keyAdded": "Đã thêm khóa thành công",
     "keyUpdated": "Đã cập nhật khóa thành công",
     "keyDeleted": "Đã xóa khóa thành công",
     "loginSuccess": "Đăng nhập thành công",
-    "registerSuccess": "Đăng ký thành công"
+    "registerSuccess": "Đăng ký thành công",
+    "qrScanned": "Quét mã QR thành công!"
   },
   "theme": {
     "light": "Sáng",

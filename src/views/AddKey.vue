@@ -17,8 +17,8 @@
           </h1>
           <p class="text-subtitle-1 text-medium-emphasis mt-2">
             {{ isTemporaryMode 
-              ? t('keys.addKeyTempDesc', 'Add a new TOTP key (stored locally)')
-              : t('keys.addKeyDesc', 'Add a new TOTP key to your account')
+              ? t('keys.addKeyTempDesc', 'Add a new 2FA key (stored locally)')
+              : t('keys.addKeyDesc', 'Add a new 2FA key to your account')
             }}
           </p>
         </div>

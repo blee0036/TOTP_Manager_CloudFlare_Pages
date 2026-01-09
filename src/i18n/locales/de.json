@@ -3,6 +3,22 @@
     "title": "2FA Authentifikator",
     "description": "Sicherer Zwei-Faktor-Authentifizierungs-Manager"
   },
+  "qr": {
+    "scanning": "QR-Code wird gescannt..."
+  },
+  "common": {
+    "back": "Zurück",
+    "close": "Schließen",
+    "ok": "OK",
+    "cancel": "Abbrechen",
+    "save": "Speichern",
+    "delete": "Löschen",
+    "edit": "Bearbeiten",
+    "confirm": "Bestätigen",
+    "loading": "Laden...",
+    "clearSearch": "Suche löschen",
+    "clear": "Löschen"
+  },
   "nav": {
     "tokens": "Token",
     "addKey": "Schlüssel hinzufügen",
@@ -21,6 +37,7 @@
     "confirmPassword": "Passwort bestätigen",
     "temporaryMode": "Temporärer Modus",
     "temporaryModeDesc": "Schlüssel werden nur im Browser gespeichert",
+    "createAccount": "Konto erstellen, um Schlüssel zu synchronisieren",
     "loginButton": "Anmelden",
     "registerButton": "Registrieren",
     "usernameMinLength": "Der Benutzername muss mindestens 3 Zeichen lang sein",
@@ -36,21 +53,33 @@
     "secret": "Geheimer Schlüssel",
     "secretPlaceholder": "Base32-Schlüssel eingeben oder otpauth:// URI einfügen",
     "uploadQR": "QR-Code hochladen",
+    "selectQRFile": "QR-Code-Bild auswählen",
+    "scanQR": "QR-Code scannen",
+    "manualEntry": "Manuelle Eingabe",
     "addKey": "Schlüssel hinzufügen",
+    "addKeyDesc": "Neuen 2FA-Schlüssel zu Ihrem Konto hinzufügen",
+    "addKeyTempDesc": "Neuen 2FA-Schlüssel hinzufügen (lokal gespeichert)",
     "updateKey": "Aktualisieren",
     "deleteKey": "Löschen",
+    "editKey": "Schlüssel bearbeiten",
+    "manageDesc": "2FA-Schlüssel bearbeiten oder löschen",
     "confirmDelete": "Möchten Sie \"{remark}\" wirklich löschen?",
+    "confirmDeleteTitle": "Löschen bestätigen",
+    "deleteWarning": "Diese Aktion kann nicht rückgängig gemacht werden.",
+    "tempModeWarning": "Schlüssel werden nur in Ihrem Browser gespeichert. Sie gehen verloren, wenn Sie Browserdaten löschen.",
     "search": "Schlüssel suchen...",
     "noKeys": "Keine Schlüssel gefunden",
     "noKeysDesc": "Fügen Sie Ihren ersten 2FA-Schlüssel hinzu, um zu beginnen",
     "noResults": "Keine übereinstimmenden Schlüssel gefunden",
     "noResultsDesc": "Versuchen Sie einen anderen Suchbegriff",
+    "addedOn": "Hinzugefügt am",
     "cancel": "Abbrechen",
     "save": "Speichern"
   },
   "token": {
     "copy": "Kopieren",
     "copied": "In die Zwischenablage kopiert!",
+    "syncedMode": "Schlüssel mit Ihrem Konto synchronisiert",
     "timeRemaining": "{seconds}s verbleibend",
     "expired": "Neues Token wird generiert...",
     "generating": "Wird generiert..."
@@ -63,14 +92,30 @@
     "serverError": "Serverfehler aufgetreten",
     "validationError": "Validierungsfehler",
     "usernameExists": "Benutzername existiert bereits",
-    "invalidCredentials": "Ungültiger Benutzername oder Passwort"
+    "invalidCredentials": "Ungültiger Benutzername oder Passwort",
+    "remarkRequired": "Bemerkung ist erforderlich",
+    "remarkEmpty": "Bemerkung darf nicht leer sein",
+    "secretRequired": "Geheimer Schlüssel ist erforderlich",
+    "addKeyFailed": "Fehler beim Hinzufügen des Schlüssels",
+    "updateKeyFailed": "Fehler beim Aktualisieren des Schlüssels",
+    "deleteKeyFailed": "Fehler beim Löschen des Schlüssels",
+    "fetchKeysFailed": "Fehler beim Laden der Schlüssel",
+    "qrExtractionFailed": "Fehler beim Extrahieren der Daten aus dem QR-Code",
+    "formValidationFailed": "Bitte beheben Sie die oben genannten Fehler",
+    "invalidFileType": "Bitte wählen Sie eine Bilddatei aus",
+    "noFileSelected": "Bitte wählen Sie zuerst eine Datei aus",
+    "qrNotFound": "Kein QR-Code im Bild gefunden",
+    "invalidQRContent": "QR-Code enthält keine gültige OTPAuth-URI",
+    "imageLoadFailed": "Fehler beim Laden des Bildes",
+    "fileReadFailed": "Fehler beim Lesen der Datei"
   },
   "success": {
     "keyAdded": "Schlüssel erfolgreich hinzugefügt",
     "keyUpdated": "Schlüssel erfolgreich aktualisiert",
     "keyDeleted": "Schlüssel erfolgreich gelöscht",
     "loginSuccess": "Anmeldung erfolgreich",
-    "registerSuccess": "Registrierung erfolgreich"
+    "registerSuccess": "Registrierung erfolgreich",
+    "qrScanned": "QR-Code erfolgreich gescannt!"
   },
   "theme": {
     "light": "Hell",

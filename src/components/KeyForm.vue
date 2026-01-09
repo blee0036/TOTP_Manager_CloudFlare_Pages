@@ -9,6 +9,7 @@
       :error-messages="remarkError"
       variant="outlined"
       density="comfortable"
+      hide-details="auto"
       required
       class="mb-4"
       @update:model-value="clearRemarkError"
@@ -24,6 +25,7 @@
       variant="outlined"
       density="comfortable"
       rows="3"
+      hide-details="auto"
       required
       class="mb-2"
       @update:model-value="handleSecretInput"

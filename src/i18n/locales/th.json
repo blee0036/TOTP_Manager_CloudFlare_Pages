@@ -3,6 +3,22 @@
     "title": "ตัวยืนยันตัวตน 2FA",
     "description": "ตัวจัดการการยืนยันตัวตนแบบสองปัจจัยที่ปลอดภัย"
   },
+  "qr": {
+    "scanning": "กำลังสแกนคิวอาร์โค้ด..."
+  },
+  "common": {
+    "back": "ย้อนกลับ",
+    "close": "ปิด",
+    "ok": "ตกลง",
+    "cancel": "ยกเลิก",
+    "save": "บันทึก",
+    "delete": "ลบ",
+    "edit": "แก้ไข",
+    "confirm": "ยืนยัน",
+    "loading": "กำลังโหลด...",
+    "clearSearch": "ล้างการค้นหา",
+    "clear": "ล้าง"
+  },
   "nav": {
     "tokens": "โทเค็น",
     "addKey": "เพิ่มคีย์",
@@ -21,6 +37,7 @@
     "confirmPassword": "ยืนยันรหัสผ่าน",
     "temporaryMode": "โหมดชั่วคราว",
     "temporaryModeDesc": "คีย์จะถูกเก็บไว้ในเบราว์เซอร์เท่านั้น",
+    "createAccount": "สร้างบัญชีเพื่อซิงค์คีย์",
     "loginButton": "เข้าสู่ระบบ",
     "registerButton": "ลงทะเบียน",
     "usernameMinLength": "ชื่อผู้ใช้ต้องมีอย่างน้อย 3 ตัวอักษร",
@@ -36,21 +53,33 @@
     "secret": "คีย์ลับ",
     "secretPlaceholder": "ป้อนคีย์ Base32 หรือวาง URI otpauth://",
     "uploadQR": "อัปโหลดคิวอาร์โค้ด",
+    "selectQRFile": "เลือกภาพคิวอาร์โค้ด",
+    "scanQR": "สแกนคิวอาร์โค้ด",
+    "manualEntry": "ป้อนด้วยตนเอง",
     "addKey": "เพิ่มคีย์",
+    "addKeyDesc": "เพิ่มคีย์ 2FA ใหม่ไปยังบัญชีของคุณ",
+    "addKeyTempDesc": "เพิ่มคีย์ 2FA ใหม่ (เก็บไว้ในเครื่อง)",
     "updateKey": "อัปเดต",
     "deleteKey": "ลบ",
+    "editKey": "แก้ไขคีย์",
+    "manageDesc": "แก้ไขหรือลบคีย์ 2FA ของคุณ",
     "confirmDelete": "คุณแน่ใจหรือไม่ว่าต้องการลบ \"{remark}\"?",
+    "confirmDeleteTitle": "ยืนยันการลบ",
+    "deleteWarning": "การดำเนินการนี้ไม่สามารถยกเลิกได้",
+    "tempModeWarning": "คีย์จะถูกเก็บไว้ในเบราว์เซอร์ของคุณเท่านั้น จะสูญหายหากคุณล้างข้อมูลเบราว์เซอร์",
     "search": "ค้นหาคีย์...",
     "noKeys": "ไม่พบคีย์",
     "noKeysDesc": "เพิ่มคีย์ 2FA แรกของคุณเพื่อเริ่มต้น",
     "noResults": "ไม่พบคีย์ที่ตรงกัน",
     "noResultsDesc": "ลองใช้คำค้นหาอื่น",
+    "addedOn": "เพิ่มเมื่อ",
     "cancel": "ยกเลิก",
     "save": "บันทึก"
   },
   "token": {
     "copy": "คัดลอก",
     "copied": "คัดลอกไปยังคลิปบอร์ดแล้ว!",
+    "syncedMode": "คีย์ซิงค์กับบัญชีของคุณแล้ว",
     "timeRemaining": "เหลือ {seconds} วินาที",
     "expired": "กำลังสร้างโทเค็นใหม่...",
     "generating": "กำลังสร้าง..."
@@ -63,14 +92,30 @@
     "serverError": "เกิดข้อผิดพลาดของเซิร์ฟเวอร์",
     "validationError": "ข้อผิดพลาดในการตรวจสอบ",
     "usernameExists": "ชื่อผู้ใช้มีอยู่แล้ว",
-    "invalidCredentials": "ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง"
+    "invalidCredentials": "ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง",
+    "remarkRequired": "จำเป็นต้องระบุหมายเหตุ",
+    "remarkEmpty": "หมายเหตุไม่สามารถเว้นว่างได้",
+    "secretRequired": "จำเป็นต้องระบุคีย์ลับ",
+    "addKeyFailed": "การเพิ่มคีย์ล้มเหลว",
+    "updateKeyFailed": "การอัปเดตคีย์ล้มเหลว",
+    "deleteKeyFailed": "การลบคีย์ล้มเหลว",
+    "fetchKeysFailed": "การโหลดคีย์ล้มเหลว",
+    "qrExtractionFailed": "การดึงข้อมูลจากคิวอาร์โค้ดล้มเหลว",
+    "formValidationFailed": "กรุณาแก้ไขข้อผิดพลาดด้านบน",
+    "invalidFileType": "กรุณาเลือกไฟล์ภาพ",
+    "noFileSelected": "กรุณาเลือกไฟล์ก่อน",
+    "qrNotFound": "ไม่พบคิวอาร์โค้ดในภาพ",
+    "invalidQRContent": "คิวอาร์โค้ดไม่มี URI OTPAuth ที่ถูกต้อง",
+    "imageLoadFailed": "การโหลดภาพล้มเหลว",
+    "fileReadFailed": "การอ่านไฟล์ล้มเหลว"
   },
   "success": {
     "keyAdded": "เพิ่มคีย์สำเร็จ",
     "keyUpdated": "อัปเดตคีย์สำเร็จ",
     "keyDeleted": "ลบคีย์สำเร็จ",
     "loginSuccess": "เข้าสู่ระบบสำเร็จ",
-    "registerSuccess": "ลงทะเบียนสำเร็จ"
+    "registerSuccess": "ลงทะเบียนสำเร็จ",
+    "qrScanned": "สแกนคิวอาร์โค้ดสำเร็จ!"
   },
   "theme": {
     "light": "สว่าง",

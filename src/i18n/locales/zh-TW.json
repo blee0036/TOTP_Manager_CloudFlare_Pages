@@ -3,6 +3,22 @@
     "title": "2FA 身份驗證器",
     "description": "安全便捷的雙因素身份驗證管理工具"
   },
+  "qr": {
+    "scanning": "正在掃描 QR 碼..."
+  },
+  "common": {
+    "back": "返回",
+    "close": "關閉",
+    "ok": "確定",
+    "cancel": "取消",
+    "save": "儲存",
+    "delete": "刪除",
+    "edit": "編輯",
+    "confirm": "確認",
+    "loading": "載入中...",
+    "clearSearch": "清除搜尋",
+    "clear": "清除"
+  },
   "nav": {
     "tokens": "令牌",
     "addKey": "新增金鑰",
@@ -21,6 +37,7 @@
     "confirmPassword": "確認密碼",
     "temporaryMode": "臨時模式",
     "temporaryModeDesc": "金鑰僅儲存在瀏覽器中",
+    "createAccount": "建立帳戶以同步金鑰",
     "loginButton": "登入",
     "registerButton": "註冊",
     "usernameMinLength": "使用者名稱至少需要 3 個字元",
@@ -36,19 +53,33 @@
     "secret": "金鑰",
     "secretPlaceholder": "輸入 Base32 金鑰或貼上 otpauth:// URI",
     "uploadQR": "上傳 QR 碼",
+    "selectQRFile": "選擇 QR 碼圖片",
+    "scanQR": "掃描 QR 碼",
+    "manualEntry": "手動輸入",
     "addKey": "新增金鑰",
+    "addKeyDesc": "新增 2FA 金鑰到您的帳戶",
+    "addKeyTempDesc": "新增 2FA 金鑰（本機儲存）",
     "updateKey": "更新",
     "deleteKey": "刪除",
+    "editKey": "編輯金鑰",
+    "manageDesc": "編輯或刪除您的 2FA 金鑰",
     "confirmDelete": "確定要刪除\"{remark}\"嗎？",
+    "confirmDeleteTitle": "確認刪除",
+    "deleteWarning": "此操作無法復原。",
+    "tempModeWarning": "金鑰僅儲存在您的瀏覽器中。如果清除瀏覽器資料，金鑰將遺失。",
     "search": "搜尋金鑰...",
     "noKeys": "未找到金鑰",
+    "noKeysDesc": "新增您的第一個 2FA 金鑰以開始使用",
     "noResults": "未找到符合的金鑰",
+    "noResultsDesc": "嘗試不同的搜尋詞",
+    "addedOn": "新增於",
     "cancel": "取消",
     "save": "儲存"
   },
   "token": {
     "copy": "複製",
     "copied": "已複製到剪貼簿！",
+    "syncedMode": "金鑰已同步到您的帳戶",
     "timeRemaining": "剩餘 {seconds} 秒",
     "expired": "正在產生新令牌...",
     "generating": "產生中..."
@@ -61,14 +92,30 @@
     "serverError": "伺服器錯誤",
     "validationError": "驗證錯誤",
     "usernameExists": "使用者名稱已存在",
-    "invalidCredentials": "使用者名稱或密碼錯誤"
+    "invalidCredentials": "使用者名稱或密碼錯誤",
+    "remarkRequired": "備註為必填項",
+    "remarkEmpty": "備註不能為空",
+    "secretRequired": "金鑰為必填項",
+    "addKeyFailed": "新增金鑰失敗",
+    "updateKeyFailed": "更新金鑰失敗",
+    "deleteKeyFailed": "刪除金鑰失敗",
+    "fetchKeysFailed": "載入金鑰失敗",
+    "qrExtractionFailed": "從 QR 碼提取資料失敗",
+    "formValidationFailed": "請修正上述錯誤",
+    "invalidFileType": "請選擇圖片檔案",
+    "noFileSelected": "請先選擇檔案",
+    "qrNotFound": "圖片中未找到 QR 碼",
+    "invalidQRContent": "QR 碼不包含有效的 OTPAuth URI",
+    "imageLoadFailed": "載入圖片失敗",
+    "fileReadFailed": "讀取檔案失敗"
   },
   "success": {
     "keyAdded": "金鑰新增成功",
     "keyUpdated": "金鑰更新成功",
     "keyDeleted": "金鑰刪除成功",
     "loginSuccess": "登入成功",
-    "registerSuccess": "註冊成功"
+    "registerSuccess": "註冊成功",
+    "qrScanned": "QR 碼掃描成功！"
   },
   "theme": {
     "light": "淺色",

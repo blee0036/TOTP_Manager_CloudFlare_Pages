@@ -16,7 +16,7 @@
             {{ t('nav.manage', 'Manage Keys') }}
           </h1>
           <p class="text-subtitle-1 text-medium-emphasis mt-2">
-            {{ t('keys.manageDesc', 'Edit or delete your TOTP keys') }}
+            {{ t('keys.manageDesc', 'Edit or delete your 2FA keys') }}
           </p>
         </div>
 
@@ -65,7 +65,7 @@
                 {{ t('keys.noKeys', 'No keys found') }}
               </h2>
               <p class="text-body-1 text-medium-emphasis mb-4">
-                {{ t('keys.noKeysDesc', 'Add your first TOTP key to get started') }}
+                {{ t('keys.noKeysDesc', 'Add your first 2FA key to get started') }}
               </p>
               <v-btn
                 color="primary"

@@ -3,6 +3,22 @@
     "title": "Authentification 2FA",
     "description": "Gestionnaire sécurisé d'authentification à deux facteurs"
   },
+  "qr": {
+    "scanning": "Scan du code QR en cours..."
+  },
+  "common": {
+    "back": "Retour",
+    "close": "Fermer",
+    "ok": "OK",
+    "cancel": "Annuler",
+    "save": "Enregistrer",
+    "delete": "Supprimer",
+    "edit": "Modifier",
+    "confirm": "Confirmer",
+    "loading": "Chargement...",
+    "clearSearch": "Effacer la recherche",
+    "clear": "Effacer"
+  },
   "nav": {
     "tokens": "Jetons",
     "addKey": "Ajouter une clé",
@@ -21,6 +37,7 @@
     "confirmPassword": "Confirmer le mot de passe",
     "temporaryMode": "Mode temporaire",
     "temporaryModeDesc": "Les clés sont stockées uniquement dans le navigateur",
+    "createAccount": "Créer un compte pour synchroniser les clés",
     "loginButton": "Se connecter",
     "registerButton": "S'inscrire",
     "usernameMinLength": "Le nom d'utilisateur doit contenir au moins 3 caractères",
@@ -36,21 +53,33 @@
     "secret": "Clé secrète",
     "secretPlaceholder": "Entrez la clé Base32 ou collez l'URI otpauth://",
     "uploadQR": "Télécharger le code QR",
+    "selectQRFile": "Sélectionner l'image du code QR",
+    "scanQR": "Scanner le code QR",
+    "manualEntry": "Saisie manuelle",
     "addKey": "Ajouter une clé",
+    "addKeyDesc": "Ajouter une nouvelle clé 2FA à votre compte",
+    "addKeyTempDesc": "Ajouter une nouvelle clé 2FA (stockée localement)",
     "updateKey": "Mettre à jour",
     "deleteKey": "Supprimer",
+    "editKey": "Modifier la clé",
+    "manageDesc": "Modifier ou supprimer vos clés 2FA",
     "confirmDelete": "Êtes-vous sûr de vouloir supprimer « {remark} » ?",
+    "confirmDeleteTitle": "Confirmer la suppression",
+    "deleteWarning": "Cette action ne peut pas être annulée.",
+    "tempModeWarning": "Les clés sont stockées uniquement dans votre navigateur. Elles seront perdues si vous effacez les données du navigateur.",
     "search": "Rechercher des clés...",
     "noKeys": "Aucune clé trouvée",
     "noKeysDesc": "Ajoutez votre première clé 2FA pour commencer",
     "noResults": "Aucune clé correspondante trouvée",
     "noResultsDesc": "Essayez un autre terme de recherche",
+    "addedOn": "Ajouté le",
     "cancel": "Annuler",
     "save": "Enregistrer"
   },
   "token": {
     "copy": "Copier",
     "copied": "Copié dans le presse-papiers !",
+    "syncedMode": "Clés synchronisées avec votre compte",
     "timeRemaining": "{seconds}s restantes",
     "expired": "Génération d'un nouveau jeton...",
     "generating": "Génération..."
@@ -63,14 +92,30 @@
     "serverError": "Une erreur serveur s'est produite",
     "validationError": "Erreur de validation",
     "usernameExists": "Le nom d'utilisateur existe déjà",
-    "invalidCredentials": "Nom d'utilisateur ou mot de passe invalide"
+    "invalidCredentials": "Nom d'utilisateur ou mot de passe invalide",
+    "remarkRequired": "La remarque est obligatoire",
+    "remarkEmpty": "La remarque ne peut pas être vide",
+    "secretRequired": "La clé secrète est obligatoire",
+    "addKeyFailed": "Échec de l'ajout de la clé",
+    "updateKeyFailed": "Échec de la mise à jour de la clé",
+    "deleteKeyFailed": "Échec de la suppression de la clé",
+    "fetchKeysFailed": "Échec du chargement des clés",
+    "qrExtractionFailed": "Échec de l'extraction des données du code QR",
+    "formValidationFailed": "Veuillez corriger les erreurs ci-dessus",
+    "invalidFileType": "Veuillez sélectionner un fichier image",
+    "noFileSelected": "Veuillez d'abord sélectionner un fichier",
+    "qrNotFound": "Aucun code QR trouvé dans l'image",
+    "invalidQRContent": "Le code QR ne contient pas d'URI OTPAuth valide",
+    "imageLoadFailed": "Échec du chargement de l'image",
+    "fileReadFailed": "Échec de la lecture du fichier"
   },
   "success": {
     "keyAdded": "Clé ajoutée avec succès",
     "keyUpdated": "Clé mise à jour avec succès",
     "keyDeleted": "Clé supprimée avec succès",
     "loginSuccess": "Connexion réussie",
-    "registerSuccess": "Inscription réussie"
+    "registerSuccess": "Inscription réussie",
+    "qrScanned": "Code QR scanné avec succès !"
   },
   "theme": {
     "light": "Clair",

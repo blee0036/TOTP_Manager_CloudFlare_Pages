@@ -3,14 +3,21 @@
     "title": "2FA Authenticator",
     "description": "Secure Two-Factor Authentication Manager"
   },
+  "qr": {
+    "scanning": "Scanning QR code..."
+  },
   "common": {
+    "back": "Back",
     "close": "Close",
     "ok": "OK",
     "cancel": "Cancel",
     "save": "Save",
     "delete": "Delete",
     "edit": "Edit",
-    "confirm": "Confirm"
+    "confirm": "Confirm",
+    "loading": "Loading...",
+    "clearSearch": "Clear Search",
+    "clear": "Clear"
   },
   "nav": {
     "tokens": "Tokens",
@@ -30,6 +37,7 @@
     "confirmPassword": "Confirm Password",
     "temporaryMode": "Temporary Mode",
     "temporaryModeDesc": "Keys stored in browser only",
+    "createAccount": "Create an account to sync keys",
     "loginButton": "Sign In",
     "registerButton": "Sign Up",
     "usernameMinLength": "Username must be at least 3 characters",
@@ -45,21 +53,33 @@
     "secret": "Secret Key",
     "secretPlaceholder": "Enter Base32 key or paste otpauth:// URI",
     "uploadQR": "Upload QR Code",
+    "selectQRFile": "Select QR code image",
+    "scanQR": "Scan QR Code",
+    "manualEntry": "Manual Entry",
     "addKey": "Add Key",
+    "addKeyDesc": "Add a new 2FA key to your account",
+    "addKeyTempDesc": "Add a new 2FA key (stored locally)",
     "updateKey": "Update",
     "deleteKey": "Delete",
+    "editKey": "Edit Key",
+    "manageDesc": "Edit or delete your 2FA keys",
     "confirmDelete": "Are you sure you want to delete \"{remark}\"?",
+    "confirmDeleteTitle": "Confirm Delete",
+    "deleteWarning": "This action cannot be undone.",
+    "tempModeWarning": "Keys are stored in your browser only. They will be lost if you clear browser data.",
     "search": "Search keys...",
     "noKeys": "No keys found",
     "noKeysDesc": "Add your first 2FA key to get started",
     "noResults": "No matching keys found",
     "noResultsDesc": "Try a different search term",
+    "addedOn": "Added on",
     "cancel": "Cancel",
     "save": "Save"
   },
   "token": {
     "copy": "Copy",
     "copied": "Copied to clipboard!",
+    "syncedMode": "Keys synced to your account",
     "timeRemaining": "{seconds}s remaining",
     "expired": "Generating new token...",
     "generating": "Generating..."
@@ -72,14 +92,30 @@
     "serverError": "Server error occurred",
     "validationError": "Validation error",
     "usernameExists": "Username already exists",
-    "invalidCredentials": "Invalid username or password"
+    "invalidCredentials": "Invalid username or password",
+    "remarkRequired": "Remark is required",
+    "remarkEmpty": "Remark cannot be empty",
+    "secretRequired": "Secret key is required",
+    "addKeyFailed": "Failed to add key",
+    "updateKeyFailed": "Failed to update key",
+    "deleteKeyFailed": "Failed to delete key",
+    "fetchKeysFailed": "Failed to load keys",
+    "qrExtractionFailed": "Failed to extract data from QR code",
+    "formValidationFailed": "Please fix the errors above",
+    "invalidFileType": "Please select an image file",
+    "noFileSelected": "Please select a file first",
+    "qrNotFound": "No QR code found in the image",
+    "invalidQRContent": "QR code does not contain a valid OTPAuth URI",
+    "imageLoadFailed": "Failed to load image",
+    "fileReadFailed": "Failed to read file"
   },
   "success": {
     "keyAdded": "Key added successfully",
     "keyUpdated": "Key updated successfully",
     "keyDeleted": "Key deleted successfully",
     "loginSuccess": "Login successful",
-    "registerSuccess": "Registration successful"
+    "registerSuccess": "Registration successful",
+    "qrScanned": "QR code scanned successfully!"
   },
   "theme": {
     "light": "Light",

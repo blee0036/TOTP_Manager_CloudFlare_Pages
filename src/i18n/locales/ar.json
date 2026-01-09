@@ -1,7 +1,23 @@
 {
   "app": {
-    "title": "مصادقة ثنائية 2FA",
+    "title": "مصادقة 2FA",
     "description": "مدير آمن للمصادقة الثنائية"
+  },
+  "qr": {
+    "scanning": "جارٍ مسح رمز QR..."
+  },
+  "common": {
+    "back": "رجوع",
+    "close": "إغلاق",
+    "ok": "موافق",
+    "cancel": "إلغاء",
+    "save": "حفظ",
+    "delete": "حذف",
+    "edit": "تعديل",
+    "confirm": "تأكيد",
+    "loading": "جارٍ التحميل...",
+    "clearSearch": "مسح البحث",
+    "clear": "مسح"
   },
   "nav": {
     "tokens": "الرموز",
@@ -21,12 +37,13 @@
     "confirmPassword": "تأكيد كلمة المرور",
     "temporaryMode": "الوضع المؤقت",
     "temporaryModeDesc": "يتم تخزين المفاتيح في المتصفح فقط",
+    "createAccount": "إنشاء حساب لمزامنة المفاتيح",
     "loginButton": "تسجيل الدخول",
     "registerButton": "التسجيل",
     "usernameMinLength": "يجب أن يحتوي اسم المستخدم على 3 أحرف على الأقل",
     "passwordMinLength": "يجب أن تحتوي كلمة المرور على 6 أحرف على الأقل",
     "passwordMismatch": "كلمات المرور غير متطابقة",
-    "switchToLogin": "هل لديك حساب؟ تسجيل الدخول",
+    "switchToLogin": "هل لديك حساب بالفعل؟ تسجيل الدخول",
     "switchToRegister": "ليس لديك حساب؟ التسجيل"
   },
   "keys": {
@@ -36,21 +53,33 @@
     "secret": "المفتاح السري",
     "secretPlaceholder": "أدخل مفتاح Base32 أو الصق URI otpauth://",
     "uploadQR": "تحميل رمز QR",
+    "selectQRFile": "حدد صورة رمز QR",
+    "scanQR": "مسح رمز QR",
+    "manualEntry": "الإدخال اليدوي",
     "addKey": "إضافة مفتاح",
+    "addKeyDesc": "إضافة مفتاح 2FA جديد إلى حسابك",
+    "addKeyTempDesc": "إضافة مفتاح 2FA جديد (مخزن محلياً)",
     "updateKey": "تحديث",
     "deleteKey": "حذف",
-    "confirmDelete": "هل أنت متأكد من حذف \"{remark}\"؟",
+    "editKey": "تعديل المفتاح",
+    "manageDesc": "تعديل أو حذف مفاتيح 2FA الخاصة بك",
+    "confirmDelete": "هل أنت متأكد من أنك تريد حذف \"{remark}\"؟",
+    "confirmDeleteTitle": "تأكيد الحذف",
+    "deleteWarning": "لا يمكن التراجع عن هذا الإجراء.",
+    "tempModeWarning": "يتم تخزين المفاتيح في متصفحك فقط. ستفقد إذا قمت بمسح بيانات المتصفح.",
     "search": "البحث عن المفاتيح...",
     "noKeys": "لم يتم العثور على مفاتيح",
     "noKeysDesc": "أضف مفتاح 2FA الأول للبدء",
     "noResults": "لم يتم العثور على مفاتيح مطابقة",
     "noResultsDesc": "جرب مصطلح بحث مختلف",
+    "addedOn": "تمت الإضافة في",
     "cancel": "إلغاء",
     "save": "حفظ"
   },
   "token": {
     "copy": "نسخ",
     "copied": "تم النسخ إلى الحافظة!",
+    "syncedMode": "تمت مزامنة المفاتيح مع حسابك",
     "timeRemaining": "{seconds}ث متبقية",
     "expired": "جارٍ إنشاء رمز جديد...",
     "generating": "جارٍ الإنشاء..."
@@ -63,19 +92,35 @@
     "serverError": "حدث خطأ في الخادم",
     "validationError": "خطأ في التحقق",
     "usernameExists": "اسم المستخدم موجود بالفعل",
-    "invalidCredentials": "اسم المستخدم أو كلمة المرور غير صحيحة"
+    "invalidCredentials": "اسم المستخدم أو كلمة المرور غير صالحة",
+    "remarkRequired": "الملاحظة مطلوبة",
+    "remarkEmpty": "لا يمكن أن تكون الملاحظة فارغة",
+    "secretRequired": "المفتاح السري مطلوب",
+    "addKeyFailed": "فشل إضافة المفتاح",
+    "updateKeyFailed": "فشل تحديث المفتاح",
+    "deleteKeyFailed": "فشل حذف المفتاح",
+    "fetchKeysFailed": "فشل تحميل المفاتيح",
+    "qrExtractionFailed": "فشل استخراج البيانات من رمز QR",
+    "formValidationFailed": "يرجى تصحيح الأخطاء أعلاه",
+    "invalidFileType": "يرجى تحديد ملف صورة",
+    "noFileSelected": "يرجى تحديد ملف أولاً",
+    "qrNotFound": "لم يتم العثور على رمز QR في الصورة",
+    "invalidQRContent": "رمز QR لا يحتوي على URI OTPAuth صالح",
+    "imageLoadFailed": "فشل تحميل الصورة",
+    "fileReadFailed": "فشل قراءة الملف"
   },
   "success": {
     "keyAdded": "تمت إضافة المفتاح بنجاح",
     "keyUpdated": "تم تحديث المفتاح بنجاح",
     "keyDeleted": "تم حذف المفتاح بنجاح",
     "loginSuccess": "تم تسجيل الدخول بنجاح",
-    "registerSuccess": "تم التسجيل بنجاح"
+    "registerSuccess": "تم التسجيل بنجاح",
+    "qrScanned": "تم مسح رمز QR بنجاح!"
   },
   "theme": {
     "light": "فاتح",
     "dark": "داكن",
     "auto": "تلقائي",
-    "toggle": "تبديل المظهر"
+    "toggle": "تبديل السمة"
   }
 }
