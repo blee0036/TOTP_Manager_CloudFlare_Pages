@@ -58,11 +58,14 @@ npm run db:query:remote -- --command "SELECT COUNT(*) FROM users"
 # 生成随机盐值
 openssl rand -hex 32
 
+# 生成随机盐值
+openssl rand -hex 32
+
 # 设置密钥
-wrangler secret put HASH_SALT
+wrangler pages secret put HASH_SALT --project-name=totp-manager
 
 # 列出密钥
-wrangler secret list
+wrangler pages secret list --project-name=totp-manager
 
 # 删除密钥
 wrangler secret delete HASH_SALT
@@ -131,7 +134,7 @@ npx vue-tsc --noEmit
 ### 环境变量
 
 - [ ] 生成盐值: `openssl rand -hex 32`
-- [ ] 设置 HASH_SALT: `wrangler secret put HASH_SALT`
+- [ ] 设置 HASH_SALT: `wrangler pages secret put HASH_SALT --project-name=totp-manager`
 - [ ] 设置 PW_ITERATIONS（可选）
 
 ### 部署
@@ -152,7 +155,7 @@ npx vue-tsc --noEmit
 
 | 问题 | 解决方案 |
 |------|----------|
-| `HASH_SALT is not set` | `wrangler secret put HASH_SALT` |
+| `HASH_SALT is not set` | `wrangler pages secret put HASH_SALT --project-name=totp-manager` |
 | `D1_ERROR: no such table` | `npm run db:migrate:local` 或 `npm run db:migrate:remote` |
 | `no such database` | 检查 `wrangler.toml` 中的 `database_id` |
 | 环境变量未生效 | 重新部署: `npm run deploy` |

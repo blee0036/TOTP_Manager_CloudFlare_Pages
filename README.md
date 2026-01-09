@@ -191,9 +191,14 @@ npm run db:migrate:remote
 3. **Set environment variables**
 
 ```bash
-# Set password hash salt (required)
-wrangler secret put HASH_SALT
-# Enter a secure random string, e.g.: your-secure-random-salt-value
+# 1. Generate secure random salt
+openssl rand -hex 32
+# Or use Node.js: node -e "console.log(require('crypto').randomBytes(32).toString('hex'))"
+
+# 2. Set password hash salt (required)
+# Note: Create Pages project first, or it will be created automatically on first deployment
+wrangler pages secret put HASH_SALT --project-name=totp-manager
+# Paste the generated random value above
 ```
 
 4. **Build and deploy**
@@ -242,7 +247,7 @@ npm run deploy
 
 | Variable | Description | Default | Setup Method |
 |----------|-------------|---------|--------------|
-| `HASH_SALT` | Password hash salt (required) | None | `wrangler secret put HASH_SALT` |
+| `HASH_SALT` | Password hash salt (required) | None | `wrangler pages secret put HASH_SALT --project-name=totp-manager` |
 
 ### Optional Variables
 

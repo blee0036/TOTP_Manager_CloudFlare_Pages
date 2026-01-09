@@ -3,6 +3,7 @@ import vue from '@vitejs/plugin-vue'
 import vuetify from 'vite-plugin-vuetify'
 import { VitePWA } from 'vite-plugin-pwa'
 import { fileURLToPath, URL } from 'node:url'
+import { copyFileSync } from 'node:fs'
 
 // https://vite.dev/config/
 export default defineConfig({
@@ -113,6 +114,18 @@ export default defineConfig({
         enabled: false, // 开发环境禁用 Service Worker
       },
     }),
+    // 复制 _routes.json 到 dist 目录
+    {
+      name: 'copy-routes',
+      closeBundle() {
+        try {
+          copyFileSync('_routes.json', 'dist/_routes.json')
+          console.log('✓ Copied _routes.json to dist/')
+        } catch (err) {
+          console.error('Failed to copy _routes.json:', err)
+        }
+      }
+    }
   ],
   resolve: {
     alias: {

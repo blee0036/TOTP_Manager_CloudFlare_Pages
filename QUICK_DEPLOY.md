@@ -44,8 +44,11 @@ echo $salt
 # Linux/Mac:
 openssl rand -base64 32
 
+# 生成随机盐值
+openssl rand -hex 32
+
 # 设置密钥
-wrangler secret put HASH_SALT
+wrangler pages secret put HASH_SALT --project-name=totp-manager
 # 粘贴上面生成的盐值
 ```
 
@@ -143,7 +146,11 @@ wrangler pages deploy dist
 
 **解决：**
 ```bash
-wrangler secret put HASH_SALT
+# 生成盐值
+openssl rand -hex 32
+
+# 设置密钥
+wrangler pages secret put HASH_SALT --project-name=totp-manager
 ```
 
 ## 更新部署

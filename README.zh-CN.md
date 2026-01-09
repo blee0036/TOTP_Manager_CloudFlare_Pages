@@ -191,9 +191,14 @@ npm run db:migrate:remote
 3. **设置环境变量**
 
 ```bash
-# 设置密码哈希盐值（必需）
-wrangler secret put HASH_SALT
-# 输入一个安全的随机字符串，例如：your-secure-random-salt-value
+# 1. 生成安全的随机盐值
+openssl rand -hex 32
+# 或使用 Node.js: node -e "console.log(require('crypto').randomBytes(32).toString('hex'))"
+
+# 2. 设置密码哈希盐值（必需）
+# 注意：首次使用需要先创建 Pages 项目，或者在首次部署时会自动创建
+wrangler pages secret put HASH_SALT --project-name=totp-manager
+# 粘贴上面生成的随机值
 ```
 
 4. **构建并部署**
@@ -242,7 +247,7 @@ npm run deploy
 
 | 变量名 | 说明 | 默认值 | 设置方法 |
 |--------|------|--------|----------|
-| `HASH_SALT` | 密码哈希盐值（必需） | 无 | `wrangler secret put HASH_SALT` |
+| `HASH_SALT` | 密码哈希盐值（必需） | 无 | `wrangler pages secret put HASH_SALT --project-name=totp-manager` |
 
 ### 可选的环境变量
 

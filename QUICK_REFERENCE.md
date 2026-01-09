@@ -58,11 +58,14 @@ npm run db:query:remote -- --command "SELECT COUNT(*) FROM users"
 # Generate random salt
 openssl rand -hex 32
 
+# Generate random salt
+openssl rand -hex 32
+
 # Set secret
-wrangler secret put HASH_SALT
+wrangler pages secret put HASH_SALT --project-name=totp-manager
 
 # List secrets
-wrangler secret list
+wrangler pages secret list --project-name=totp-manager
 
 # Delete secret
 wrangler secret delete HASH_SALT
@@ -131,7 +134,7 @@ npx vue-tsc --noEmit
 ### Environment Variables
 
 - [ ] Generate salt: `openssl rand -hex 32`
-- [ ] Set HASH_SALT: `wrangler secret put HASH_SALT`
+- [ ] Set HASH_SALT: `wrangler pages secret put HASH_SALT --project-name=totp-manager`
 - [ ] Set PW_ITERATIONS (optional)
 
 ### Deployment
@@ -152,7 +155,7 @@ npx vue-tsc --noEmit
 
 | Issue | Solution |
 |-------|----------|
-| `HASH_SALT is not set` | `wrangler secret put HASH_SALT` |
+| `HASH_SALT is not set` | `wrangler pages secret put HASH_SALT --project-name=totp-manager` |
 | `D1_ERROR: no such table` | `npm run db:migrate:local` or `npm run db:migrate:remote` |
 | `no such database` | Check `database_id` in `wrangler.toml` |
 | Environment variables not effective | Redeploy: `npm run deploy` |
