@@ -5,11 +5,11 @@
         <!-- Page Header -->
         <div class="mb-6">
           <v-btn
-            variant="plain"
+            variant="text"
             prepend-icon="mdi-arrow-left"
             @click="handleBack"
             class="mb-4"
-            color="on-surface"
+            style="color: rgb(var(--v-theme-on-surface));"
           >
             {{ t('common.back', 'Back') }}
           </v-btn>
@@ -72,10 +72,9 @@
                 {{ t('keys.tempModeWarning', 'Keys are stored in your browser only. They will be lost if you clear browser data.') }}
               </div>
               <v-btn
-                variant="text"
+                variant="plain"
                 size="small"
-                class="mt-2 px-0"
-                style="color: rgb(var(--v-theme-on-surface));"
+                class="mt-2 px-0 warning-text-btn"
                 @click="handleGoToLogin"
               >
                 {{ t('auth.createAccount', 'Create an account to sync keys') }}
@@ -253,6 +252,15 @@ const handleGoToLogin = () => {
 .add-key-card {
   border-radius: 12px;
   background: rgb(var(--v-theme-surface));
+}
+
+/* 警告文字按钮样式 */
+:deep(.warning-text-btn) {
+  color: rgb(var(--v-theme-warning)) !important;
+}
+
+:deep(.warning-text-btn:hover) {
+  background-color: rgba(var(--v-theme-warning), 0.08) !important;
 }
 
 /* 确保卡片内容背景透明 */

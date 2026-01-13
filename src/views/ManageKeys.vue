@@ -5,11 +5,11 @@
         <!-- Page Header -->
         <div class="mb-6">
           <v-btn
-            variant="plain"
+            variant="text"
             prepend-icon="mdi-arrow-left"
             @click="handleBack"
             class="mb-4"
-            color="on-surface"
+            style="color: rgb(var(--v-theme-on-surface));"
           >
             {{ t('common.back', 'Back') }}
           </v-btn>
