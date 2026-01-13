@@ -1,10 +1,13 @@
 /**
  * Global Styles for TOTP Manager
- * Material Design 3 (Material You) with Roboto font
+ * Modern Black-Purple Theme with Glassmorphism
  */
 
 /* Import Roboto font from Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+/* Import JetBrains Mono for monospace code display */
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap');
 
 /* Reset and base styles */
 * {
@@ -19,6 +22,60 @@
   font-size: 16px;
   line-height: 1.5;
   font-weight: 400;
+
+  /* Monospace font for TOTP codes */
+  --font-mono: 'JetBrains Mono', 'Fira Code', 'Consolas', 'Courier New', monospace;
+
+  /* Purple gradient colors */
+  --purple-50: #FAF5FF;
+  --purple-100: #F3E8FF;
+  --purple-200: #E9D5FF;
+  --purple-300: #D8B4FE;
+  --purple-400: #C084FC;
+  --purple-500: #A855F7;
+  --purple-600: #9333EA;
+  --purple-700: #7C3AED;
+  --purple-800: #6D28D9;
+  --purple-900: #581C87;
+
+  /* Primary purple shades */
+  --primary: #7C3AED;
+  --primary-light: #8B5CF6;
+  --primary-dark: #6D28D9;
+  --primary-darker: #5B21B6;
+
+  /* Gradient definitions */
+  --gradient-primary: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+  --gradient-primary-hover: linear-gradient(135deg, var(--primary-light) 0%, var(--primary) 100%);
+  --gradient-purple-glow: linear-gradient(135deg, rgba(139, 92, 246, 0.4) 0%, rgba(124, 58, 237, 0.2) 100%);
+  --gradient-radial-purple: radial-gradient(circle at center, rgba(139, 92, 246, 0.3) 0%, transparent 70%);
+
+  /* Glassmorphism variables */
+  --glass-bg-light: rgba(255, 255, 255, 0.7);
+  --glass-bg-dark: rgba(24, 24, 27, 0.8);
+  --glass-blur: blur(12px);
+  --glass-blur-heavy: blur(20px);
+  --glass-border-light: rgba(255, 255, 255, 0.2);
+  --glass-border-dark: rgba(139, 92, 246, 0.2);
+
+  /* Animation durations (WCAG compliant: 200-400ms) */
+  --duration-fast: 200ms;
+  --duration-normal: 300ms;
+  --duration-slow: 400ms;
+
+  /* Easing functions */
+  --ease-out: cubic-bezier(0.33, 1, 0.68, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  /* Shadows with purple tint */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+  --shadow-purple: 0 4px 14px 0 rgba(139, 92, 246, 0.25);
+  --shadow-purple-lg: 0 10px 25px -3px rgba(139, 92, 246, 0.3);
+  --shadow-glow: 0 0 20px rgba(139, 92, 246, 0.4);
+  --shadow-glow-lg: 0 0 60px rgba(139, 92, 246, 0.3);
 
   /* Font rendering */
   font-synthesis: none;
@@ -244,7 +301,7 @@ body {
 /* Transitions */
 .fade-enter-active,
 .fade-leave-active {
-  transition: opacity 0.3s ease;
+  transition: opacity var(--duration-normal) var(--ease-out);
 }
 
 .fade-enter-from,
@@ -254,7 +311,7 @@ body {
 
 .slide-enter-active,
 .slide-leave-active {
-  transition: transform 0.3s ease;
+  transition: transform var(--duration-normal) var(--ease-out);
 }
 
 .slide-enter-from {
@@ -265,3 +322,450 @@ body {
   transform: translateX(100%);
 }
 
+/* Page transition - fade with slight scale */
+.page-enter-active,
+.page-leave-active {
+  transition: opacity var(--duration-normal) var(--ease-out),
+              transform var(--duration-normal) var(--ease-out);
+}
+
+.page-enter-from {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+.page-leave-to {
+  opacity: 0;
+  transform: translateY(-10px);
+}
+
+/* Scale fade for modals/dialogs */
+.scale-enter-active,
+.scale-leave-active {
+  transition: opacity var(--duration-normal) var(--ease-out),
+              transform var(--duration-normal) var(--ease-spring);
+}
+
+.scale-enter-from {
+  opacity: 0;
+  transform: scale(0.95);
+}
+
+.scale-leave-to {
+  opacity: 0;
+  transform: scale(0.95);
+}
+
+/* Staggered list animation */
+.list-enter-active,
+.list-leave-active {
+  transition: opacity var(--duration-normal) var(--ease-out),
+              transform var(--duration-normal) var(--ease-out);
+}
+
+.list-enter-from {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.list-leave-to {
+  opacity: 0;
+  transform: translateY(-20px);
+}
+
+.list-move {
+  transition: transform var(--duration-normal) var(--ease-out);
+}
+
+/* Glassmorphism utility classes */
+.glass {
+  background: var(--glass-bg-light);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border-light);
+}
+
+.glass-dark {
+  background: var(--glass-bg-dark);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border-dark);
+}
+
+.glass-heavy {
+  backdrop-filter: var(--glass-blur-heavy);
+  -webkit-backdrop-filter: var(--glass-blur-heavy);
+}
+
+.v-theme--dark .glass {
+  background: var(--glass-bg-dark);
+  border-color: var(--glass-border-dark);
+}
+
+/* Purple glow effects */
+.glow {
+  box-shadow: var(--shadow-glow);
+}
+
+.glow-lg {
+  box-shadow: var(--shadow-glow-lg);
+}
+
+.glow-text {
+  text-shadow: 0 0 20px rgba(139, 92, 246, 0.5);
+}
+
+/* Gradient backgrounds */
+.bg-gradient-primary {
+  background: var(--gradient-primary);
+}
+
+.bg-gradient-purple-glow {
+  background: var(--gradient-purple-glow);
+}
+
+/* Hover transitions for interactive elements */
+.hover-lift {
+  transition: transform var(--duration-fast) var(--ease-out),
+              box-shadow var(--duration-fast) var(--ease-out);
+}
+
+.hover-lift:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-purple);
+}
+
+.hover-glow {
+  transition: box-shadow var(--duration-fast) var(--ease-out);
+}
+
+.hover-glow:hover {
+  box-shadow: var(--shadow-purple-lg);
+}
+
+/* Button press effect */
+.press-effect {
+  transition: transform var(--duration-fast) var(--ease-out);
+}
+
+.press-effect:active {
+  transform: scale(0.98);
+}
+
+/* ============================================
+   Global Button Micro-interactions
+   需求: 9.1, 9.2
+   ============================================ */
+
+/* Base button transition for all Vuetify buttons */
+.v-btn {
+  transition: 
+    transform var(--duration-fast) var(--ease-out),
+    box-shadow var(--duration-fast) var(--ease-out),
+    background-color var(--duration-fast) var(--ease-out),
+    opacity var(--duration-fast) var(--ease-out) !important;
+}
+
+/* Hover effect - subtle lift and shadow */
+.v-btn:not(:disabled):hover {
+  transform: translateY(-1px);
+}
+
+/* Primary/colored buttons - purple glow on hover */
+.v-btn--variant-flat:not(:disabled):hover,
+.v-btn--variant-elevated:not(:disabled):hover,
+.v-btn--variant-tonal:not(:disabled):hover {
+  box-shadow: 0 4px 12px rgba(139, 92, 246, 0.25);
+}
+
+/* Text/outlined buttons - subtle background on hover */
+.v-btn--variant-text:not(:disabled):hover,
+.v-btn--variant-outlined:not(:disabled):hover {
+  background-color: rgba(139, 92, 246, 0.08);
+}
+
+/* Press/active effect - scale down */
+.v-btn:not(:disabled):active {
+  transform: translateY(0) scale(0.97);
+  box-shadow: none;
+}
+
+/* Icon buttons - special hover effect */
+.v-btn--icon:not(:disabled):hover {
+  transform: translateY(-1px) scale(1.05);
+  background-color: rgba(139, 92, 246, 0.1);
+}
+
+.v-btn--icon:not(:disabled):active {
+  transform: translateY(0) scale(0.95);
+}
+
+/* FAB buttons - enhanced hover effect */
+.v-btn--fab:not(:disabled):hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: var(--shadow-purple-lg);
+}
+
+.v-btn--fab:not(:disabled):active {
+  transform: translateY(0) scale(0.98);
+}
+
+/* Gradient button class for special buttons */
+.btn-gradient {
+  background: var(--gradient-primary) !important;
+  color: white !important;
+  border: none !important;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-gradient::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--gradient-primary-hover);
+  opacity: 0;
+  transition: opacity var(--duration-fast) var(--ease-out);
+}
+
+.btn-gradient:hover::before {
+  opacity: 1;
+}
+
+.btn-gradient > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Icon animation on button hover */
+.v-btn .v-icon {
+  transition: transform var(--duration-fast) var(--ease-out);
+}
+
+.v-btn:not(:disabled):hover .v-icon {
+  transform: scale(1.1);
+}
+
+.v-btn:not(:disabled):active .v-icon {
+  transform: scale(0.95);
+}
+
+/* Loading state - pulse animation */
+.v-btn--loading {
+  pointer-events: none;
+}
+
+.v-btn--loading .v-btn__loader {
+  animation: btn-loading-pulse 1s var(--ease-in-out) infinite;
+}
+
+@keyframes btn-loading-pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.6;
+  }
+}
+
+/* Disabled button style */
+.v-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Pulse animation for time-sensitive elements */
+@keyframes pulse-purple {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(139, 92, 246, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 8px rgba(139, 92, 246, 0);
+  }
+}
+
+.pulse-warning {
+  animation: pulse-purple 1s var(--ease-in-out) infinite;
+}
+
+/* Shimmer effect for loading states */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.shimmer {
+  background: linear-gradient(
+    90deg,
+    rgba(139, 92, 246, 0.1) 0%,
+    rgba(139, 92, 246, 0.2) 50%,
+    rgba(139, 92, 246, 0.1) 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  
+  .pulse-warning {
+    animation: none;
+  }
+  
+  .shimmer {
+    animation: none;
+  }
+}
+
+/* Monospace font utility */
+.font-mono {
+  font-family: var(--font-mono);
+}
+
+/* ============================================
+   Snackbar / Toast Notification Styles
+   需求: 9.3, 9.4
+   ============================================ */
+
+/* Base snackbar styling */
+.v-snackbar {
+  --v-snackbar-border-radius: 12px;
+}
+
+.v-snackbar__wrapper {
+  border-radius: 12px !important;
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  box-shadow: var(--shadow-lg), 0 0 20px rgba(0, 0, 0, 0.1) !important;
+  animation: snackbar-slide-in var(--duration-normal) var(--ease-spring);
+}
+
+/* Snackbar entrance animation */
+@keyframes snackbar-slide-in {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px) scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Snackbar exit animation */
+.v-snackbar--active .v-snackbar__wrapper {
+  animation: snackbar-slide-in var(--duration-normal) var(--ease-spring);
+}
+
+/* Success snackbar - green with subtle glow */
+.v-snackbar--color-success .v-snackbar__wrapper {
+  background: linear-gradient(135deg, #10B981 0%, #059669 100%) !important;
+  box-shadow: var(--shadow-lg), 0 4px 20px rgba(16, 185, 129, 0.3) !important;
+}
+
+/* Error snackbar - red with subtle glow */
+.v-snackbar--color-error .v-snackbar__wrapper {
+  background: linear-gradient(135deg, #EF4444 0%, #DC2626 100%) !important;
+  box-shadow: var(--shadow-lg), 0 4px 20px rgba(239, 68, 68, 0.3) !important;
+}
+
+/* Warning snackbar - amber with subtle glow */
+.v-snackbar--color-warning .v-snackbar__wrapper {
+  background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%) !important;
+  box-shadow: var(--shadow-lg), 0 4px 20px rgba(245, 158, 11, 0.3) !important;
+}
+
+/* Info snackbar - purple with subtle glow */
+.v-snackbar--color-info .v-snackbar__wrapper {
+  background: linear-gradient(135deg, #8B5CF6 0%, #7C3AED 100%) !important;
+  box-shadow: var(--shadow-lg), 0 4px 20px rgba(139, 92, 246, 0.3) !important;
+}
+
+/* Snackbar content styling */
+.v-snackbar__content {
+  padding: 12px 16px !important;
+  font-weight: 500;
+  letter-spacing: 0.25px;
+}
+
+/* Snackbar icon animation */
+.v-snackbar .v-icon {
+  animation: snackbar-icon-pop var(--duration-normal) var(--ease-spring);
+}
+
+@keyframes snackbar-icon-pop {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Snackbar action button */
+.v-snackbar__actions .v-btn {
+  color: rgba(255, 255, 255, 0.9) !important;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-size: 12px;
+}
+
+.v-snackbar__actions .v-btn:hover {
+  background: rgba(255, 255, 255, 0.15) !important;
+}
+
+/* Dark theme adjustments */
+.v-theme--dark .v-snackbar__wrapper {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Progress bar for auto-dismiss (if implemented) */
+.v-snackbar__progress {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.3);
+  transform-origin: left;
+  animation: snackbar-progress linear forwards;
+}
+
+@keyframes snackbar-progress {
+  from {
+    transform: scaleX(1);
+  }
+  to {
+    transform: scaleX(0);
+  }
+}
+
+/* Retry button styling for error snackbars */
+.v-snackbar .retry-btn {
+  background: rgba(255, 255, 255, 0.2) !important;
+  margin-left: 8px;
+}
+
+.v-snackbar .retry-btn:hover {
+  background: rgba(255, 255, 255, 0.3) !important;
+}

@@ -17,7 +17,9 @@
     "confirm": "Confirm",
     "loading": "Loading...",
     "clearSearch": "Clear Search",
-    "clear": "Clear"
+    "clear": "Clear",
+    "or": "or",
+    "retry": "Retry"
   },
   "nav": {
     "tokens": "Tokens",

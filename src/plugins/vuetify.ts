@@ -1,7 +1,7 @@
 /**
  * Vuetify Plugin Configuration
  * 
- * Google Authenticator inspired theme - Clean, simple, and comfortable
+ * Modern black-purple theme - Elegant, sleek, and sophisticated
  */
 
 import { createVuetify } from 'vuetify'
@@ -10,49 +10,51 @@ import * as directives from 'vuetify/directives'
 import { aliases, mdi } from 'vuetify/iconsets/mdi'
 import '@mdi/font/css/materialdesignicons.css'
 
-// Light theme - Google Authenticator style
+// Light theme - Light gray-white background + purple accent
 const lightTheme = {
   dark: false,
   colors: {
-    primary: '#1A73E8',      // Google Blue
-    secondary: '#5F6368',    // Google Gray
-    accent: '#1A73E8',       
-    error: '#D93025',        // Google Red
-    info: '#1A73E8',         
-    success: '#1E8E3E',      // Google Green
-    warning: '#F9AB00',      // Google Yellow
-    background: '#FFFFFF',   // Pure white
-    surface: '#F8F9FA',      // Very light gray
-    'surface-variant': '#F1F3F4',  // Light gray
+    primary: '#7C3AED',           // Darker purple for better contrast with white text
+    'primary-darken-1': '#6D28D9', // Even deeper purple
+    secondary: '#A78BFA',          // Light purple
+    accent: '#C4B5FD',             // Pale purple
+    error: '#EF4444',              // Red
+    warning: '#F59E0B',            // Amber
+    success: '#10B981',            // Green
+    info: '#7C3AED',               // Purple (same as primary)
+    background: '#FAFAFA',         // Light gray-white background
+    surface: '#FFFFFF',            // Pure white surface
+    'surface-variant': '#F5F3FF',  // Pale purple surface
     'surface-bright': '#FFFFFF',
     'on-primary': '#FFFFFF',
-    'on-secondary': '#FFFFFF',
-    'on-background': '#202124',    // Almost black
-    'on-surface': '#202124',       
-    'on-surface-variant': '#5F6368', // Gray
+    'on-secondary': '#1F2937',     // Dark text for better contrast on light purple
+    'on-background': '#1F2937',    // Dark gray text
+    'on-surface': '#1F2937',
+    'on-surface-variant': '#4B5563', // Darker gray for WCAG AA compliance (4.5:1 contrast)
   }
 }
 
-// Dark theme - Google Authenticator dark mode
+// Dark theme - Deep black background + purple accent
 const darkTheme = {
   dark: true,
   colors: {
-    primary: '#8AB4F8',      // Light blue
-    secondary: '#9AA0A6',    // Light gray
-    accent: '#8AB4F8',       
-    error: '#F28B82',        // Light red
-    info: '#8AB4F8',         
-    success: '#81C995',      // Light green
-    warning: '#FDD663',      // Light yellow
-    background: '#202124',   // Dark gray (Google dark)
-    surface: '#292A2D',      // Slightly lighter
-    'surface-variant': '#3C4043',  // Medium gray
-    'surface-bright': '#3C4043',
-    'on-primary': '#202124',
-    'on-secondary': '#202124',
-    'on-background': '#E8EAED',    // Light gray text
-    'on-surface': '#E8EAED',       
-    'on-surface-variant': '#9AA0A6', // Medium gray
+    primary: '#A78BFA',            // Bright purple
+    'primary-darken-1': '#8B5CF6', // Purple
+    secondary: '#C4B5FD',          // Light purple
+    accent: '#DDD6FE',             // Pale purple
+    error: '#F87171',              // Light red
+    warning: '#FBBF24',            // Light amber
+    success: '#34D399',            // Light green
+    info: '#A78BFA',               // Purple
+    background: '#0A0A0B',         // Deep black background
+    surface: '#18181B',            // Dark gray surface
+    'surface-variant': '#27272A',  // Medium gray surface
+    'surface-bright': '#3F3F46',   // Bright gray surface
+    'on-primary': '#0A0A0B',
+    'on-secondary': '#0A0A0B',
+    'on-background': '#F4F4F5',    // Light gray text
+    'on-surface': '#F4F4F5',
+    'on-surface-variant': '#A1A1AA',
   }
 }
 
@@ -77,30 +79,28 @@ export default createVuetify({
     },
   },
   
-  // Google-style component defaults
+  // Modern component defaults with purple accent
   defaults: {
     VBtn: {
       style: 'text-transform: none; font-weight: 500; letter-spacing: 0.25px;',
-      rounded: 'pill',  // 完全圆角
+      rounded: 'lg',
       elevation: 0,
     },
     VCard: {
-      rounded: 'lg',
+      rounded: 'xl',
       elevation: 0,
     },
     VTextField: {
       variant: 'outlined',
       density: 'comfortable',
       rounded: 'lg',
-      bgColor: 'surface',
-      hideDetails: true,  // 默认隐藏详情
+      hideDetails: true,
     },
     VSelect: {
       variant: 'outlined',
       density: 'comfortable',
       rounded: 'lg',
-      bgColor: 'surface',
-      hideDetails: true,  // 默认隐藏详情
+      hideDetails: true,
       menuProps: {
         rounded: 'lg',
       },
@@ -109,8 +109,7 @@ export default createVuetify({
       variant: 'outlined',
       density: 'comfortable',
       rounded: 'lg',
-      bgColor: 'surface',
-      hideDetails: true,  // 默认隐藏详情
+      hideDetails: true,
     },
     VDialog: {
       maxWidth: 600,
@@ -123,11 +122,16 @@ export default createVuetify({
       rounded: 'pill',
     },
     VList: {
-      bgColor: 'surface',
       rounded: 'lg',
     },
     VListItem: {
       rounded: 'lg',
+    },
+    VAppBar: {
+      elevation: 0,
+    },
+    VNavigationDrawer: {
+      elevation: 0,
     },
   },
 })

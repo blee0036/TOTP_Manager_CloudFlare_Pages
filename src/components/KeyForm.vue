@@ -1,5 +1,5 @@
 <template>
-  <v-form ref="formRef" v-model="isValid" @submit.prevent="handleSubmit">
+  <v-form ref="formRef" v-model="isValid" @submit.prevent="handleSubmit" class="key-form">
     <!-- Remark Field -->
     <v-text-field
       v-model="formData.remark"
@@ -7,11 +7,13 @@
       :placeholder="t('keys.remarkPlaceholder', 'e.g., Google, GitHub')"
       :rules="remarkRules"
       :error-messages="remarkError"
+      :error="!!remarkError"
       variant="outlined"
       density="comfortable"
+      prepend-inner-icon="mdi-tag-outline"
       hide-details
       required
-      style="margin-bottom: 32px;"
+      class="form-input mb-6"
       @update:model-value="clearRemarkError"
     />
 
@@ -22,12 +24,14 @@
       :placeholder="t('keys.secretPlaceholder', 'Enter Base32 key or paste URI')"
       :rules="secretRules"
       :error-messages="secretError"
+      :error="!!secretError"
       variant="outlined"
       density="comfortable"
+      prepend-inner-icon="mdi-key-outline"
       rows="3"
       hide-details
       required
-      style="margin-bottom: 24px;"
+      class="form-input mb-5"
       @update:model-value="handleSecretInput"
       @blur="handleSecretBlur"
     />
@@ -38,8 +42,11 @@
       type="info"
       variant="tonal"
       density="compact"
-      class="mb-4"
+      class="mb-4 form-alert"
     >
+      <template #prepend>
+        <v-icon size="18">mdi-information-outline</v-icon>
+      </template>
       {{ secretFormatHint }}
     </v-alert>
 
@@ -50,17 +57,21 @@
       variant="tonal"
       density="compact"
       closable
-      class="mb-4"
+      class="mb-4 form-alert form-alert-error"
       @click:close="validationError = ''"
     >
+      <template #prepend>
+        <v-icon size="18">mdi-alert-circle-outline</v-icon>
+      </template>
       {{ validationError }}
     </v-alert>
 
     <!-- Action Buttons -->
-    <div class="d-flex justify-end gap-2">
+    <div class="d-flex justify-end gap-3 mt-6">
       <v-btn
         v-if="mode === 'add' || showCancel"
         variant="text"
+        class="form-btn-cancel"
         @click="handleCancel"
       >
         {{ t('common.cancel', 'Cancel') }}
@@ -68,10 +79,12 @@
       <v-btn
         type="submit"
         color="primary"
-        variant="elevated"
+        variant="flat"
+        class="form-btn-submit"
         :loading="loading"
         :disabled="!isValid || loading"
       >
+        <v-icon start size="18">{{ mode === 'add' ? 'mdi-plus' : 'mdi-check' }}</v-icon>
         {{ mode === 'add' ? t('keys.addKey', 'Add Key') : t('keys.updateKey', 'Update') }}
       </v-btn>
     </div>
@@ -281,11 +294,86 @@ defineExpose({
 </script>
 
 <style scoped>
-.gap-2 {
-  gap: 8px;
+/**
+ * KeyForm Component Styles
+ * Modern black-purple theme with glassmorphism effects
+ * Requirements: 5.1, 5.2, 5.3, 5.5
+ */
+
+.key-form {
+  width: 100%;
 }
 
-/* 彻底移除输入框底部的所有元素 */
+.gap-3 {
+  gap: 12px;
+}
+
+/* Form Input Styling - Requirement 5.1, 5.2 */
+.form-input :deep(.v-field) {
+  border-radius: 12px !important;
+  transition: all var(--duration-fast, 200ms) ease;
+}
+
+/* Floating label animation - Requirement 5.1 */
+.form-input :deep(.v-field--focused .v-label),
+.form-input :deep(.v-field--dirty .v-label) {
+  transform: translateY(-50%) scale(0.75);
+  color: rgb(var(--v-theme-primary));
+}
+
+/* Focus state with primary color border - Requirement 5.2 */
+.form-input :deep(.v-field--focused) {
+  box-shadow: 0 0 0 2px rgba(139, 92, 246, 0.2);
+}
+
+.form-input :deep(.v-field__outline__start),
+.form-input :deep(.v-field__outline__end) {
+  border-color: rgba(var(--v-theme-on-surface), 0.15);
+  transition: border-color var(--duration-fast, 200ms) ease;
+}
+
+.form-input :deep(.v-field--focused .v-field__outline__start),
+.form-input :deep(.v-field--focused .v-field__outline__end) {
+  border-color: rgb(var(--v-theme-primary));
+  border-width: 2px;
+}
+
+/* Error state styling - Requirement 5.3 */
+.form-input :deep(.v-field--error .v-field__outline__start),
+.form-input :deep(.v-field--error .v-field__outline__end) {
+  border-color: rgb(var(--v-theme-error)) !important;
+  border-width: 2px;
+}
+
+.form-input :deep(.v-field--error) {
+  box-shadow: 0 0 0 2px rgba(239, 68, 68, 0.15);
+}
+
+.form-input :deep(.v-field--error .v-label) {
+  color: rgb(var(--v-theme-error));
+}
+
+/* Dark theme adjustments */
+.v-theme--dark .form-input :deep(.v-field__outline__start),
+.v-theme--dark .form-input :deep(.v-field__outline__end) {
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+/* Input icon styling */
+.form-input :deep(.v-field__prepend-inner) {
+  color: rgba(var(--v-theme-on-surface), 0.5);
+  transition: color var(--duration-fast, 200ms) ease;
+}
+
+.form-input :deep(.v-field--focused .v-field__prepend-inner) {
+  color: rgb(var(--v-theme-primary));
+}
+
+.form-input :deep(.v-field--error .v-field__prepend-inner) {
+  color: rgb(var(--v-theme-error));
+}
+
+/* Hide input details and messages */
 :deep(.v-input__details) {
   display: none !important;
   min-height: 0 !important;
@@ -306,11 +394,6 @@ defineExpose({
   margin-bottom: 0 !important;
 }
 
-/* 移除输入框底部的任何边框线 */
-:deep(.v-field__outline) {
-  border-bottom: none !important;
-}
-
 :deep(.v-input__control) {
   min-height: auto !important;
 }
@@ -319,8 +402,96 @@ defineExpose({
   display: none !important;
 }
 
-/* 隐藏导致横线的outline notch */
 :deep(.v-field__outline__notch) {
   display: none !important;
+}
+
+/* Alert Styling */
+.form-alert {
+  border-radius: 12px !important;
+  font-size: 14px;
+}
+
+.form-alert :deep(.v-alert__prepend) {
+  margin-right: 12px;
+}
+
+.form-alert-error {
+  background: rgba(239, 68, 68, 0.1) !important;
+  border: 1px solid rgba(239, 68, 68, 0.2);
+}
+
+.v-theme--dark .form-alert-error {
+  background: rgba(248, 113, 113, 0.1) !important;
+  border-color: rgba(248, 113, 113, 0.2);
+}
+
+/* Cancel Button - Secondary Style */
+.form-btn-cancel {
+  border-radius: 12px !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.5px !important;
+  text-transform: none !important;
+  min-height: 44px !important;
+  padding: 0 20px !important;
+  color: rgba(var(--v-theme-on-surface), 0.7) !important;
+  transition: all var(--duration-fast, 200ms) ease !important;
+}
+
+.form-btn-cancel:hover {
+  background: rgba(var(--v-theme-on-surface), 0.08) !important;
+  color: rgba(var(--v-theme-on-surface), 0.9) !important;
+}
+
+/* Submit Button - Primary Gradient Style - Requirement 5.5 */
+.form-btn-submit {
+  border-radius: 12px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.5px !important;
+  text-transform: none !important;
+  min-height: 44px !important;
+  padding: 0 24px !important;
+  background: linear-gradient(135deg, #8B5CF6 0%, #7C3AED 100%) !important;
+  box-shadow: 0 4px 14px rgba(139, 92, 246, 0.35) !important;
+  transition: all var(--duration-fast, 200ms) ease !important;
+}
+
+.form-btn-submit:hover:not(:disabled) {
+  background: linear-gradient(135deg, #A78BFA 0%, #8B5CF6 100%) !important;
+  box-shadow: 0 6px 20px rgba(139, 92, 246, 0.45) !important;
+  transform: translateY(-1px);
+}
+
+.form-btn-submit:active:not(:disabled) {
+  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(139, 92, 246, 0.3) !important;
+}
+
+.form-btn-submit:disabled {
+  background: rgba(139, 92, 246, 0.4) !important;
+  box-shadow: none !important;
+  color: rgba(255, 255, 255, 0.6) !important;
+}
+
+/* Spacing utilities */
+.mb-5 {
+  margin-bottom: 20px !important;
+}
+
+.mb-6 {
+  margin-bottom: 24px !important;
+}
+
+.mt-6 {
+  margin-top: 24px !important;
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .form-input :deep(.v-field),
+  .form-btn-submit,
+  .form-btn-cancel {
+    transition: none !important;
+  }
 }
 </style>

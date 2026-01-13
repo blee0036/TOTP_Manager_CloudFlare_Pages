@@ -1,54 +1,74 @@
 <template>
   <v-app>
-    <!-- 应用栏 / Navigation Bar -->
+    <!-- 应用栏 / Navigation Bar - 毛玻璃效果 -->
     <v-app-bar
-      :elevation="2"
-      color="primary"
-      dark
+      :elevation="0"
+      class="app-navbar"
+      height="64"
     >
-      <!-- 应用标题 -->
+      <!-- 应用标题 / Logo -->
       <v-app-bar-title>
         <router-link
           to="/"
-          class="text-decoration-none text-white d-flex align-center"
+          class="logo-link d-flex align-center"
         >
-          <v-icon icon="mdi-shield-key" class="mr-2" />
-          {{ $t('app.title') }}
+          <v-icon icon="mdi-shield-key" class="logo-icon mr-2" size="24" />
+          <span class="logo-text">{{ $t('app.title') }}</span>
         </router-link>
       </v-app-bar-title>
 
       <v-spacer />
 
-      <!-- 导航链接 (桌面端) -->
+      <!-- 导航链接 (桌面端) - 图标按钮 + tooltip -->
       <template v-if="!mobile">
-        <v-btn
-          :to="{ name: 'TokenDisplay' }"
-          variant="text"
-          :ripple="false"
-        >
-          <v-icon icon="mdi-view-grid" class="mr-1" />
-          {{ $t('nav.tokens') }}
-        </v-btn>
+        <v-tooltip :text="$t('nav.tokens')" location="bottom">
+          <template v-slot:activator="{ props }">
+            <v-btn
+              v-bind="props"
+              :to="{ name: 'TokenDisplay' }"
+              icon
+              variant="text"
+              class="nav-icon-btn mx-1"
+              size="44"
+            >
+              <v-icon icon="mdi-view-grid" size="20" />
+            </v-btn>
+          </template>
+        </v-tooltip>
 
-        <v-btn
-          :to="{ name: 'AddKey' }"
-          variant="text"
-          :ripple="false"
-        >
-          <v-icon icon="mdi-plus-circle" class="mr-1" />
-          {{ $t('nav.addKey') }}
-        </v-btn>
+        <v-tooltip :text="$t('nav.addKey')" location="bottom">
+          <template v-slot:activator="{ props }">
+            <v-btn
+              v-bind="props"
+              :to="{ name: 'AddKey' }"
+              icon
+              variant="text"
+              class="nav-icon-btn mx-1"
+              size="44"
+            >
+              <v-icon icon="mdi-plus-circle" size="20" />
+            </v-btn>
+          </template>
+        </v-tooltip>
 
-        <v-btn
-          v-if="authStore.isAuthenticated"
-          :to="{ name: 'ManageKeys' }"
-          variant="text"
-          :ripple="false"
-        >
-          <v-icon icon="mdi-cog" class="mr-1" />
-          {{ $t('nav.manage') }}
-        </v-btn>
+        <v-tooltip v-if="authStore.isAuthenticated" :text="$t('nav.manage')" location="bottom">
+          <template v-slot:activator="{ props }">
+            <v-btn
+              v-bind="props"
+              :to="{ name: 'ManageKeys' }"
+              icon
+              variant="text"
+              class="nav-icon-btn mx-1"
+              size="44"
+            >
+              <v-icon icon="mdi-cog" size="20" />
+            </v-btn>
+          </template>
+        </v-tooltip>
       </template>
+
+      <!-- 分隔线 -->
+      <div v-if="!mobile" class="nav-divider mx-2"></div>
 
       <!-- 主题切换按钮 -->
       <ThemeToggle />
@@ -64,26 +84,27 @@
             <v-btn
               v-bind="props"
               variant="text"
+              class="user-menu-btn ml-1"
               :ripple="false"
             >
-              <v-icon icon="mdi-account-circle" class="mr-1" />
-              {{ authStore.user?.username }}
-              <v-icon icon="mdi-menu-down" class="ml-1" />
+              <v-icon icon="mdi-account-circle" size="20" />
+              <span class="user-name ml-2" v-if="!mobile">{{ authStore.user?.username }}</span>
+              <v-icon icon="mdi-menu-down" size="16" class="ml-1" />
             </v-btn>
           </template>
 
-          <v-list>
+          <v-list class="user-menu-list">
             <v-list-item>
-              <v-list-item-title>
+              <v-list-item-title class="text-caption">
                 {{ $t('nav.welcome', { username: authStore.user?.username }) }}
               </v-list-item-title>
             </v-list-item>
 
             <v-divider />
 
-            <v-list-item @click="handleLogout">
+            <v-list-item @click="handleLogout" class="logout-item">
               <template v-slot:prepend>
-                <v-icon icon="mdi-logout" />
+                <v-icon icon="mdi-logout" size="18" />
               </template>
               <v-list-item-title>{{ $t('nav.logout') }}</v-list-item-title>
             </v-list-item>
@@ -92,20 +113,27 @@
       </template>
 
       <template v-else>
-        <v-btn
-          :to="{ name: 'Auth' }"
-          variant="text"
-          :ripple="false"
-        >
-          <v-icon icon="mdi-login" class="mr-1" />
-          {{ $t('nav.login') }}
-        </v-btn>
+        <v-tooltip :text="$t('nav.login')" location="bottom">
+          <template v-slot:activator="{ props }">
+            <v-btn
+              v-bind="props"
+              :to="{ name: 'Auth' }"
+              icon
+              variant="text"
+              class="nav-icon-btn ml-1"
+              size="44"
+            >
+              <v-icon icon="mdi-login" size="20" />
+            </v-btn>
+          </template>
+        </v-tooltip>
       </template>
 
       <!-- 移动端菜单按钮 -->
       <v-app-bar-nav-icon
         v-if="mobile"
         @click="drawer = !drawer"
+        class="mobile-menu-btn"
       />
     </v-app-bar>
 
@@ -115,14 +143,16 @@
       v-model="drawer"
       temporary
       location="right"
+      class="mobile-drawer"
     >
-      <v-list>
+      <v-list class="mobile-nav-list">
         <v-list-item
           :to="{ name: 'TokenDisplay' }"
           @click="drawer = false"
+          class="mobile-nav-item"
         >
           <template v-slot:prepend>
-            <v-icon icon="mdi-view-grid" />
+            <v-icon icon="mdi-view-grid" size="20" />
           </template>
           <v-list-item-title>{{ $t('nav.tokens') }}</v-list-item-title>
         </v-list-item>
@@ -130,9 +160,10 @@
         <v-list-item
           :to="{ name: 'AddKey' }"
           @click="drawer = false"
+          class="mobile-nav-item"
         >
           <template v-slot:prepend>
-            <v-icon icon="mdi-plus-circle" />
+            <v-icon icon="mdi-plus-circle" size="20" />
           </template>
           <v-list-item-title>{{ $t('nav.addKey') }}</v-list-item-title>
         </v-list-item>
@@ -141,9 +172,10 @@
           v-if="authStore.isAuthenticated"
           :to="{ name: 'ManageKeys' }"
           @click="drawer = false"
+          class="mobile-nav-item"
         >
           <template v-slot:prepend>
-            <v-icon icon="mdi-cog" />
+            <v-icon icon="mdi-cog" size="20" />
           </template>
           <v-list-item-title>{{ $t('nav.manage') }}</v-list-item-title>
         </v-list-item>
@@ -163,33 +195,43 @@
     </v-main>
 
     <!-- 全局 Snackbar 用于显示消息 -->
-    <!-- 需求: 15.3, 15.4, 15.5 -->
+    <!-- 需求: 9.3, 9.4, 15.3, 15.4, 15.5 -->
     <v-snackbar
       v-if="notificationStore.currentNotification"
       v-model="notificationStore.currentNotification.show"
       :color="getSnackbarColor(notificationStore.currentNotification.type)"
       :timeout="notificationStore.currentNotification.timeout"
       location="top"
+      class="app-snackbar"
       @update:model-value="(val) => !val && notificationStore.closeNotification()"
     >
-      <div class="d-flex align-center">
+      <div class="d-flex align-center snackbar-content">
         <!-- 图标 -->
         <v-icon
-          :icon="
-            notificationStore.currentNotification.type === 'success' ? 'mdi-check-circle' :
-            notificationStore.currentNotification.type === 'error' ? 'mdi-alert-circle' :
-            notificationStore.currentNotification.type === 'warning' ? 'mdi-alert' :
-            'mdi-information'
-          "
-          class="mr-2"
+          :icon="getSnackbarIcon(notificationStore.currentNotification.type)"
+          class="snackbar-icon mr-3"
+          size="22"
         />
         <!-- 消息文本 -->
-        <span>{{ notificationStore.currentNotification.message }}</span>
+        <span class="snackbar-message">{{ notificationStore.currentNotification.message }}</span>
       </div>
       
       <template v-slot:actions>
+        <!-- 重试按钮 (仅错误时显示) -->
+        <v-btn
+          v-if="notificationStore.currentNotification.type === 'error'"
+          variant="text"
+          size="small"
+          class="retry-btn"
+          @click="handleRetry"
+        >
+          {{ $t('common.retry') || 'Retry' }}
+        </v-btn>
+        <!-- 关闭按钮 -->
         <v-btn
           variant="text"
+          size="small"
+          class="close-btn"
           @click="notificationStore.closeNotification()"
         >
           {{ $t('common.close') }}
@@ -262,13 +304,156 @@ function getSnackbarColor(type: string): string {
       return 'info';
   }
 }
+
+/**
+ * 获取 Snackbar 图标
+ * 根据通知类型返回对应的图标
+ */
+function getSnackbarIcon(type: string): string {
+  switch (type) {
+    case 'success':
+      return 'mdi-check-circle';
+    case 'error':
+      return 'mdi-alert-circle';
+    case 'warning':
+      return 'mdi-alert';
+    case 'info':
+      return 'mdi-information';
+    default:
+      return 'mdi-information';
+  }
+}
+
+/**
+ * 处理重试操作
+ * 关闭当前通知并触发重试事件
+ */
+function handleRetry() {
+  notificationStore.closeNotification();
+  // 可以在这里添加重试逻辑，或者通过事件总线通知其他组件
+  // 目前简单地关闭通知，让用户手动重试
+}
 </script>
 
 <style scoped>
+/* 导航栏 - 毛玻璃效果 */
+.app-navbar {
+  background: rgba(255, 255, 255, 0.8) !important;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(139, 92, 246, 0.2) !important;
+}
+
+/* 暗色主题导航栏 */
+.v-theme--dark .app-navbar {
+  background: rgba(10, 10, 11, 0.8) !important;
+  border-bottom: 1px solid rgba(139, 92, 246, 0.3) !important;
+}
+
+/* Logo 链接样式 */
+.logo-link {
+  text-decoration: none;
+  color: inherit;
+  transition: opacity var(--duration-fast, 200ms) ease;
+}
+
+.logo-link:hover {
+  opacity: 0.8;
+}
+
+.logo-icon {
+  color: rgb(var(--v-theme-primary));
+}
+
+.logo-text {
+  font-weight: 600;
+  font-size: 1.125rem;
+  letter-spacing: 0.5px;
+}
+
+/* 导航图标按钮 */
+.nav-icon-btn {
+  color: rgb(var(--v-theme-on-surface)) !important;
+  transition: all var(--duration-fast, 200ms) ease;
+}
+
+.nav-icon-btn:hover {
+  color: rgb(var(--v-theme-primary)) !important;
+  background: rgba(139, 92, 246, 0.1) !important;
+}
+
+.nav-icon-btn.v-btn--active {
+  color: rgb(var(--v-theme-primary)) !important;
+  background: rgba(139, 92, 246, 0.15) !important;
+}
+
+/* 导航分隔线 */
+.nav-divider {
+  width: 1px;
+  height: 24px;
+  background: rgba(139, 92, 246, 0.2);
+}
+
+/* 用户菜单按钮 */
+.user-menu-btn {
+  color: rgb(var(--v-theme-on-surface)) !important;
+  text-transform: none !important;
+  font-weight: 500;
+  letter-spacing: 0.25px;
+}
+
+.user-menu-btn:hover {
+  background: rgba(139, 92, 246, 0.1) !important;
+}
+
+.user-name {
+  max-width: 120px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* 用户菜单列表 */
+.user-menu-list {
+  min-width: 180px;
+}
+
+.logout-item:hover {
+  color: rgb(var(--v-theme-error));
+}
+
+/* 移动端菜单按钮 */
+.mobile-menu-btn {
+  color: rgb(var(--v-theme-on-surface)) !important;
+}
+
+/* 移动端抽屉 */
+.mobile-drawer {
+  background: rgb(var(--v-theme-surface)) !important;
+}
+
+.mobile-nav-list {
+  padding-top: 16px;
+}
+
+.mobile-nav-item {
+  margin: 4px 8px;
+  border-radius: 12px;
+}
+
+.mobile-nav-item:hover {
+  background: rgba(139, 92, 246, 0.1);
+}
+
+.mobile-nav-item.v-list-item--active {
+  background: rgba(139, 92, 246, 0.15);
+  color: rgb(var(--v-theme-primary));
+}
+
 /* 页面切换动画 */
 .fade-enter-active,
 .fade-leave-active {
-  transition: opacity 0.2s ease;
+  transition: opacity var(--duration-normal, 300ms) ease;
 }
 
 .fade-enter-from,
@@ -284,5 +469,45 @@ function getSnackbarColor(type: string): string {
 /* 确保链接颜色继承 */
 a {
   color: inherit;
+}
+
+/* Snackbar 样式增强 */
+.app-snackbar :deep(.v-snackbar__wrapper) {
+  min-width: 320px;
+  max-width: 500px;
+}
+
+.snackbar-content {
+  padding: 4px 0;
+}
+
+.snackbar-icon {
+  flex-shrink: 0;
+}
+
+.snackbar-message {
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.app-snackbar :deep(.v-snackbar__actions) {
+  margin-right: -8px;
+}
+
+.app-snackbar .close-btn,
+.app-snackbar .retry-btn {
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  min-width: auto;
+  padding: 0 12px;
+}
+
+.app-snackbar .retry-btn {
+  background: rgba(255, 255, 255, 0.15);
+  margin-right: 4px;
+}
+
+.app-snackbar .retry-btn:hover {
+  background: rgba(255, 255, 255, 0.25);
 }
 </style>

@@ -17,7 +17,9 @@
     "confirm": "确认",
     "loading": "加载中...",
     "clearSearch": "清除搜索",
-    "clear": "清除"
+    "clear": "清除",
+    "or": "或",
+    "retry": "重试"
   },
   "nav": {
     "tokens": "令牌",
