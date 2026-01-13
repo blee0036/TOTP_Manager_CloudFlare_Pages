@@ -7,7 +7,7 @@
  * **Validates: Requirements 1.6**
  */
 
-import { describe, it, expect } from 'vitest';
+import { describe, it } from 'vitest';
 import * as fc from 'fast-check';
 
 // Theme color definitions from vuetify.ts
@@ -66,9 +66,9 @@ function hexToRgb(hex: string): { r: number; g: number; b: number } {
     throw new Error(`Invalid hex color: ${hex}`);
   }
   return {
-    r: parseInt(result[1], 16),
-    g: parseInt(result[2], 16),
-    b: parseInt(result[3], 16),
+    r: parseInt(result[1]!, 16),
+    g: parseInt(result[2]!, 16),
+    b: parseInt(result[3]!, 16),
   };
 }
 
@@ -84,7 +84,7 @@ function getRelativeLuminance(hex: string): number {
     return s <= 0.03928 ? s / 12.92 : Math.pow((s + 0.055) / 1.055, 2.4);
   });
   
-  return 0.2126 * sRGB[0] + 0.7152 * sRGB[1] + 0.0722 * sRGB[2];
+  return 0.2126 * sRGB[0]! + 0.7152 * sRGB[1]! + 0.0722 * sRGB[2]!;
 }
 
 /**
