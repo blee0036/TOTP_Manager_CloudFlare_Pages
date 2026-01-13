@@ -5,13 +5,12 @@
         <!-- Page Header -->
         <div class="mb-6">
           <v-btn
-            variant="text"
             prepend-icon="mdi-arrow-left"
             @click="handleBack"
             class="mb-4"
-            style="color: rgb(var(--v-theme-on-surface));"
+            variant="text"
           >
-            {{ t('common.back', 'Back') }}
+            {{ t('common.back') }}
           </v-btn>
           <h1 class="text-h4 font-weight-bold">
             {{ t('keys.addKey', 'Add Key') }}

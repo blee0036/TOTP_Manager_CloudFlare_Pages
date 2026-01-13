@@ -3,6 +3,9 @@
     "title": "2FA 身份验证器",
     "description": "安全便捷的双因素身份验证管理工具"
   },
+  "qr": {
+    "scanning": "正在扫描二维码..."
+  },
   "common": {
     "back": "返回",
     "close": "关闭",
@@ -47,15 +50,12 @@
     "remark": "备注",
     "remarkPlaceholder": "例如：Google、GitHub",
     "remarkRequired": "备注为必填项",
-    "remarkEmpty": "备注不能为空",
     "secret": "密钥",
     "secretPlaceholder": "输入 Base32 密钥或粘贴 otpauth:// URI",
-    "secretRequired": "密钥为必填项",
     "uploadQR": "上传二维码",
     "selectQRFile": "选择二维码图片",
     "scanQR": "扫描二维码",
     "manualEntry": "手动输入",
-    "selectQRFile": "选择二维码图片",
     "addKey": "添加密钥",
     "addKeyDesc": "添加新的 2FA 密钥到您的账户",
     "addKeyTempDesc": "添加新的 2FA 密钥（本地存储）",
@@ -74,9 +74,7 @@
     "noResultsDesc": "尝试不同的搜索词",
     "addedOn": "添加于",
     "cancel": "取消",
-    "save": "保存",
-    "otpauthDetected": "检测到 OTPAuth URI。将提取密钥和备注。",
-    "otpauthExtracted": "已从 OTPAuth URI 提取密钥"
+    "save": "保存"
   },
   "token": {
     "copy": "复制",
@@ -124,17 +122,5 @@
     "dark": "深色",
     "auto": "自动",
     "toggle": "切换主题"
-  },
-  "qr": {
-    "scanning": "正在扫描二维码..."
-  },
-  "common": {
-    "cancel": "取消",
-    "save": "保存",
-    "delete": "删除",
-    "edit": "编辑",
-    "add": "添加",
-    "close": "关闭",
-    "confirm": "确认"
   }
 }

@@ -19,9 +19,6 @@
         :active="currentLocale === locale.code"
         color="primary"
       >
-        <template v-slot:prepend>
-          <span class="text-h6 mr-3">{{ locale.flag }}</span>
-        </template>
         <v-list-item-title>{{ locale.name }}</v-list-item-title>
       </v-list-item>
     </v-list>
