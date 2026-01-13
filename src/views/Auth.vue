@@ -34,32 +34,34 @@
               <!-- Login Tab -->
               <v-window-item value="login">
                 <v-form ref="loginFormRef" v-model="loginValid" @submit.prevent="handleLogin">
-                  <v-text-field
-                    v-model="loginForm.username"
-                    :label="t('auth.username', 'Username')"
-                    :rules="usernameRules"
-                    variant="outlined"
-                    density="comfortable"
-                    prepend-inner-icon="mdi-account"
-                    hide-details
-                    required
-                    class="mb-8"
-                  />
+                  <div class="mb-10">
+                    <v-text-field
+                      v-model="loginForm.username"
+                      :label="t('auth.username', 'Username')"
+                      :rules="usernameRules"
+                      variant="outlined"
+                      density="comfortable"
+                      prepend-inner-icon="mdi-account"
+                      hide-details
+                      required
+                    />
+                  </div>
 
-                  <v-text-field
-                    v-model="loginForm.password"
-                    :label="t('auth.password', 'Password')"
-                    :rules="passwordRules"
-                    :type="showLoginPassword ? 'text' : 'password'"
-                    :append-inner-icon="showLoginPassword ? 'mdi-eye-off' : 'mdi-eye'"
-                    variant="outlined"
-                    density="comfortable"
-                    prepend-inner-icon="mdi-lock"
-                    hide-details
-                    required
-                    class="mb-8"
-                    @click:append-inner="showLoginPassword = !showLoginPassword"
-                  />
+                  <div class="mb-10">
+                    <v-text-field
+                      v-model="loginForm.password"
+                      :label="t('auth.password', 'Password')"
+                      :rules="passwordRules"
+                      :type="showLoginPassword ? 'text' : 'password'"
+                      :append-inner-icon="showLoginPassword ? 'mdi-eye-off' : 'mdi-eye'"
+                      variant="outlined"
+                      density="comfortable"
+                      prepend-inner-icon="mdi-lock"
+                      hide-details
+                      required
+                      @click:append-inner="showLoginPassword = !showLoginPassword"
+                    />
+                  </div>
 
                   <v-btn
                     type="submit"
@@ -79,47 +81,50 @@
               <!-- Register Tab -->
               <v-window-item value="register">
                 <v-form ref="registerFormRef" v-model="registerValid" @submit.prevent="handleRegister">
-                  <v-text-field
-                    v-model="registerForm.username"
-                    :label="t('auth.username', 'Username')"
-                    :rules="usernameRules"
-                    variant="outlined"
-                    density="comfortable"
-                    prepend-inner-icon="mdi-account"
-                    hide-details
-                    required
-                    class="mb-8"
-                  />
+                  <div class="mb-10">
+                    <v-text-field
+                      v-model="registerForm.username"
+                      :label="t('auth.username', 'Username')"
+                      :rules="usernameRules"
+                      variant="outlined"
+                      density="comfortable"
+                      prepend-inner-icon="mdi-account"
+                      hide-details
+                      required
+                    />
+                  </div>
 
-                  <v-text-field
-                    v-model="registerForm.password"
-                    :label="t('auth.password', 'Password')"
-                    :rules="passwordRules"
-                    :type="showRegisterPassword ? 'text' : 'password'"
-                    :append-inner-icon="showRegisterPassword ? 'mdi-eye-off' : 'mdi-eye'"
-                    variant="outlined"
-                    density="comfortable"
-                    prepend-inner-icon="mdi-lock"
-                    hide-details
-                    required
-                    class="mb-8"
-                    @click:append-inner="showRegisterPassword = !showRegisterPassword"
-                  />
+                  <div class="mb-10">
+                    <v-text-field
+                      v-model="registerForm.password"
+                      :label="t('auth.password', 'Password')"
+                      :rules="passwordRules"
+                      :type="showRegisterPassword ? 'text' : 'password'"
+                      :append-inner-icon="showRegisterPassword ? 'mdi-eye-off' : 'mdi-eye'"
+                      variant="outlined"
+                      density="comfortable"
+                      prepend-inner-icon="mdi-lock"
+                      hide-details
+                      required
+                      @click:append-inner="showRegisterPassword = !showRegisterPassword"
+                    />
+                  </div>
 
-                  <v-text-field
-                    v-model="registerForm.confirmPassword"
-                    :label="t('auth.confirmPassword', 'Confirm Password')"
-                    :rules="confirmPasswordRules"
-                    :type="showConfirmPassword ? 'text' : 'password'"
-                    :append-inner-icon="showConfirmPassword ? 'mdi-eye-off' : 'mdi-eye'"
-                    variant="outlined"
-                    density="comfortable"
-                    prepend-inner-icon="mdi-lock"
-                    hide-details
-                    required
-                    class="mb-8"
-                    @click:append-inner="showConfirmPassword = !showConfirmPassword"
-                  />
+                  <div class="mb-10">
+                    <v-text-field
+                      v-model="registerForm.confirmPassword"
+                      :label="t('auth.confirmPassword', 'Confirm Password')"
+                      :rules="confirmPasswordRules"
+                      :type="showConfirmPassword ? 'text' : 'password'"
+                      :append-inner-icon="showConfirmPassword ? 'mdi-eye-off' : 'mdi-eye'"
+                      variant="outlined"
+                      density="comfortable"
+                      prepend-inner-icon="mdi-lock"
+                      hide-details
+                      required
+                      @click:append-inner="showConfirmPassword = !showConfirmPassword"
+                    />
+                  </div>
 
                   <v-btn
                     type="submit"
@@ -352,5 +357,16 @@ const handleTemporaryMode = () => {
 
 .primary--text {
   color: rgb(var(--v-theme-primary));
+}
+
+/* 强制移除输入框底部的任何边框和间距 */
+:deep(.v-input__details) {
+  display: none !important;
+  min-height: 0 !important;
+  padding: 0 !important;
+}
+
+:deep(.v-text-field .v-field) {
+  margin-bottom: 0 !important;
 }
 </style>

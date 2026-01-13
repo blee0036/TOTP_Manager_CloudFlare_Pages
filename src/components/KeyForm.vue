@@ -1,36 +1,38 @@
 <template>
   <v-form ref="formRef" v-model="isValid" @submit.prevent="handleSubmit">
     <!-- Remark Field -->
-    <v-text-field
-      v-model="formData.remark"
-      :label="t('keys.remark', 'Remark') + ' *'"
-      :placeholder="t('keys.remarkPlaceholder', 'e.g., Google, GitHub')"
-      :rules="remarkRules"
-      :error-messages="remarkError"
-      variant="outlined"
-      density="comfortable"
-      hide-details
-      required
-      class="mb-8"
-      @update:model-value="clearRemarkError"
-    />
+    <div class="mb-10">
+      <v-text-field
+        v-model="formData.remark"
+        :label="t('keys.remark', 'Remark') + ' *'"
+        :placeholder="t('keys.remarkPlaceholder', 'e.g., Google, GitHub')"
+        :rules="remarkRules"
+        :error-messages="remarkError"
+        variant="outlined"
+        density="comfortable"
+        hide-details
+        required
+        @update:model-value="clearRemarkError"
+      />
+    </div>
 
     <!-- Secret Field -->
-    <v-textarea
-      v-model="formData.secret"
-      :label="t('keys.secret', 'Secret Key') + ' *'"
-      :placeholder="t('keys.secretPlaceholder', 'Enter Base32 key or paste URI')"
-      :rules="secretRules"
-      :error-messages="secretError"
-      variant="outlined"
-      density="comfortable"
-      rows="3"
-      hide-details
-      required
-      class="mb-6"
-      @update:model-value="handleSecretInput"
-      @blur="handleSecretBlur"
-    />
+    <div class="mb-8">
+      <v-textarea
+        v-model="formData.secret"
+        :label="t('keys.secret', 'Secret Key') + ' *'"
+        :placeholder="t('keys.secretPlaceholder', 'Enter Base32 key or paste URI')"
+        :rules="secretRules"
+        :error-messages="secretError"
+        variant="outlined"
+        density="comfortable"
+        rows="3"
+        hide-details
+        required
+        @update:model-value="handleSecretInput"
+        @blur="handleSecretBlur"
+      />
+    </div>
 
     <!-- Secret Format Hint -->
     <v-alert
@@ -283,5 +285,20 @@ defineExpose({
 <style scoped>
 .gap-2 {
   gap: 8px;
+}
+
+/* 强制移除输入框底部的任何边框和间距 */
+:deep(.v-input__details) {
+  display: none !important;
+  min-height: 0 !important;
+  padding: 0 !important;
+}
+
+:deep(.v-text-field .v-field) {
+  margin-bottom: 0 !important;
+}
+
+:deep(.v-textarea .v-field) {
+  margin-bottom: 0 !important;
 }
 </style>
