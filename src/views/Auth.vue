@@ -381,4 +381,9 @@ const handleTemporaryMode = () => {
 :deep(.v-field__underlay) {
   display: none !important;
 }
+
+/* 隐藏导致横线的outline notch */
+:deep(.v-field__outline__notch) {
+  display: none !important;
+}
 </style>

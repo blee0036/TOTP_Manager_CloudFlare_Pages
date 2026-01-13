@@ -283,4 +283,28 @@ const handleGoToLogin = () => {
 :deep(.v-field__underlay) {
   display: none !important;
 }
+
+/* 隐藏导致横线的outline notch */
+:deep(.v-field__outline__notch) {
+  display: none !important;
+}
+
+:deep(.v-field__outline) {
+  --v-field-border-opacity: 1;
+}
+
+/* 返回按钮样式 - 确保hover时文字可见和cursor pointer */
+:deep(.v-btn--variant-text) {
+  cursor: pointer !important;
+  color: rgb(var(--v-theme-on-surface)) !important;
+}
+
+:deep(.v-btn--variant-text:hover) {
+  background-color: rgba(var(--v-theme-on-surface), 0.08) !important;
+  color: rgb(var(--v-theme-on-surface)) !important;
+}
+
+:deep(.v-btn--variant-text .v-btn__overlay) {
+  display: none !important;
+}
 </style>
