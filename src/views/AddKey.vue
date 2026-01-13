@@ -26,10 +26,10 @@
 
         <!-- Main Card -->
         <v-card elevation="2" class="add-key-card">
-          <v-card-text class="pa-6">
+          <v-card-text class="pa-6" style="background: transparent;">
             <!-- QR Scanner Section -->
             <div class="mb-6">
-              <h2 class="text-h6 mb-3">
+              <h2 class="text-h6 mb-4">
                 {{ t('keys.scanQR', 'Scan QR Code') }}
               </h2>
               <QRScanner
@@ -38,11 +38,11 @@
               />
             </div>
 
-            <v-divider class="my-6" />
+            <v-divider class="my-8" />
 
             <!-- Manual Entry Section -->
             <div>
-              <h2 class="text-h6 mb-3">
+              <h2 class="text-h6 mb-4">
                 {{ t('keys.manualEntry', 'Manual Entry') }}
               </h2>
               <KeyForm
@@ -73,9 +73,9 @@
               </div>
               <v-btn
                 variant="text"
-                color="warning"
                 size="small"
                 class="mt-2 px-0"
+                style="color: rgb(var(--v-theme-on-surface));"
                 @click="handleGoToLogin"
               >
                 {{ t('auth.createAccount', 'Create an account to sync keys') }}
@@ -252,5 +252,28 @@ const handleGoToLogin = () => {
 
 .add-key-card {
   border-radius: 12px;
+  background: rgb(var(--v-theme-surface));
+}
+
+/* 确保卡片内容背景透明 */
+:deep(.v-card-text) {
+  background: transparent !important;
+}
+
+/* 彻底移除输入框底部的所有元素 */
+:deep(.v-input__details) {
+  display: none !important;
+  min-height: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+:deep(.v-messages) {
+  display: none !important;
+  min-height: 0 !important;
+}
+
+:deep(.v-field__underlay) {
+  display: none !important;
 }
 </style>

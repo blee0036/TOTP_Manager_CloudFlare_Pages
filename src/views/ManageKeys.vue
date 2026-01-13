@@ -177,21 +177,19 @@
               />
             </v-card-title>
 
-            <v-card-text class="pt-4 pb-6">
-              <div class="mb-6">
-                <v-text-field
-                  v-model="editForm.remark"
-                  :label="t('keys.remark', 'Remark') + ' *'"
-                  :placeholder="t('keys.remarkPlaceholder', 'e.g., Google, GitHub')"
-                  :rules="remarkRules"
-                  :error-messages="editError"
-                  variant="outlined"
-                  density="comfortable"
-                  hide-details
-                  required
-                  @update:model-value="editError = ''"
-                />
-              </div>
+            <v-card-text class="pt-6 pb-6">
+              <v-text-field
+                v-model="editForm.remark"
+                :label="t('keys.remark', 'Remark') + ' *'"
+                :placeholder="t('keys.remarkPlaceholder', 'e.g., Google, GitHub')"
+                :rules="remarkRules"
+                :error-messages="editError"
+                variant="outlined"
+                density="comfortable"
+                hide-details
+                required
+                @update:model-value="editError = ''"
+              />
             </v-card-text>
 
             <v-card-actions class="px-6 pb-4">
@@ -554,14 +552,28 @@ onMounted(async () => {
   gap: 8px;
 }
 
-/* 强制移除输入框底部的任何边框和间距 */
+/* 彻底移除输入框底部的所有元素 */
 :deep(.v-input__details) {
   display: none !important;
   min-height: 0 !important;
   padding: 0 !important;
+  margin: 0 !important;
+}
+
+:deep(.v-messages) {
+  display: none !important;
+  min-height: 0 !important;
 }
 
 :deep(.v-text-field .v-field) {
   margin-bottom: 0 !important;
+}
+
+:deep(.v-input__control) {
+  min-height: auto !important;
+}
+
+:deep(.v-field__underlay) {
+  display: none !important;
 }
 </style>

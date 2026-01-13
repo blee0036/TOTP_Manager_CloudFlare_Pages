@@ -34,34 +34,32 @@
               <!-- Login Tab -->
               <v-window-item value="login">
                 <v-form ref="loginFormRef" v-model="loginValid" @submit.prevent="handleLogin">
-                  <div class="mb-10">
-                    <v-text-field
-                      v-model="loginForm.username"
-                      :label="t('auth.username', 'Username')"
-                      :rules="usernameRules"
-                      variant="outlined"
-                      density="comfortable"
-                      prepend-inner-icon="mdi-account"
-                      hide-details
-                      required
-                    />
-                  </div>
+                  <v-text-field
+                    v-model="loginForm.username"
+                    :label="t('auth.username', 'Username')"
+                    :rules="usernameRules"
+                    variant="outlined"
+                    density="comfortable"
+                    prepend-inner-icon="mdi-account"
+                    hide-details
+                    required
+                    style="margin-bottom: 32px;"
+                  />
 
-                  <div class="mb-10">
-                    <v-text-field
-                      v-model="loginForm.password"
-                      :label="t('auth.password', 'Password')"
-                      :rules="passwordRules"
-                      :type="showLoginPassword ? 'text' : 'password'"
-                      :append-inner-icon="showLoginPassword ? 'mdi-eye-off' : 'mdi-eye'"
-                      variant="outlined"
-                      density="comfortable"
-                      prepend-inner-icon="mdi-lock"
-                      hide-details
-                      required
-                      @click:append-inner="showLoginPassword = !showLoginPassword"
-                    />
-                  </div>
+                  <v-text-field
+                    v-model="loginForm.password"
+                    :label="t('auth.password', 'Password')"
+                    :rules="passwordRules"
+                    :type="showLoginPassword ? 'text' : 'password'"
+                    :append-inner-icon="showLoginPassword ? 'mdi-eye-off' : 'mdi-eye'"
+                    variant="outlined"
+                    density="comfortable"
+                    prepend-inner-icon="mdi-lock"
+                    hide-details
+                    required
+                    style="margin-bottom: 32px;"
+                    @click:append-inner="showLoginPassword = !showLoginPassword"
+                  />
 
                   <v-btn
                     type="submit"
@@ -359,14 +357,28 @@ const handleTemporaryMode = () => {
   color: rgb(var(--v-theme-primary));
 }
 
-/* 强制移除输入框底部的任何边框和间距 */
+/* 彻底移除输入框底部的所有元素 */
 :deep(.v-input__details) {
   display: none !important;
   min-height: 0 !important;
   padding: 0 !important;
+  margin: 0 !important;
+}
+
+:deep(.v-messages) {
+  display: none !important;
+  min-height: 0 !important;
 }
 
 :deep(.v-text-field .v-field) {
   margin-bottom: 0 !important;
+}
+
+:deep(.v-input__control) {
+  min-height: auto !important;
+}
+
+:deep(.v-field__underlay) {
+  display: none !important;
 }
 </style>

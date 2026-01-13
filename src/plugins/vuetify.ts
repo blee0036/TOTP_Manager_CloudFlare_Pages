@@ -93,12 +93,14 @@ export default createVuetify({
       density: 'comfortable',
       rounded: 'lg',
       bgColor: 'surface',
+      hideDetails: true,  // 默认隐藏详情
     },
     VSelect: {
       variant: 'outlined',
       density: 'comfortable',
       rounded: 'lg',
       bgColor: 'surface',
+      hideDetails: true,  // 默认隐藏详情
       menuProps: {
         rounded: 'lg',
       },
@@ -108,6 +110,7 @@ export default createVuetify({
       density: 'comfortable',
       rounded: 'lg',
       bgColor: 'surface',
+      hideDetails: true,  // 默认隐藏详情
     },
     VDialog: {
       maxWidth: 600,

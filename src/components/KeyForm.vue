@@ -1,38 +1,36 @@
 <template>
   <v-form ref="formRef" v-model="isValid" @submit.prevent="handleSubmit">
     <!-- Remark Field -->
-    <div class="mb-10">
-      <v-text-field
-        v-model="formData.remark"
-        :label="t('keys.remark', 'Remark') + ' *'"
-        :placeholder="t('keys.remarkPlaceholder', 'e.g., Google, GitHub')"
-        :rules="remarkRules"
-        :error-messages="remarkError"
-        variant="outlined"
-        density="comfortable"
-        hide-details
-        required
-        @update:model-value="clearRemarkError"
-      />
-    </div>
+    <v-text-field
+      v-model="formData.remark"
+      :label="t('keys.remark', 'Remark') + ' *'"
+      :placeholder="t('keys.remarkPlaceholder', 'e.g., Google, GitHub')"
+      :rules="remarkRules"
+      :error-messages="remarkError"
+      variant="outlined"
+      density="comfortable"
+      hide-details
+      required
+      style="margin-bottom: 32px;"
+      @update:model-value="clearRemarkError"
+    />
 
     <!-- Secret Field -->
-    <div class="mb-8">
-      <v-textarea
-        v-model="formData.secret"
-        :label="t('keys.secret', 'Secret Key') + ' *'"
-        :placeholder="t('keys.secretPlaceholder', 'Enter Base32 key or paste URI')"
-        :rules="secretRules"
-        :error-messages="secretError"
-        variant="outlined"
-        density="comfortable"
-        rows="3"
-        hide-details
-        required
-        @update:model-value="handleSecretInput"
-        @blur="handleSecretBlur"
-      />
-    </div>
+    <v-textarea
+      v-model="formData.secret"
+      :label="t('keys.secret', 'Secret Key') + ' *'"
+      :placeholder="t('keys.secretPlaceholder', 'Enter Base32 key or paste URI')"
+      :rules="secretRules"
+      :error-messages="secretError"
+      variant="outlined"
+      density="comfortable"
+      rows="3"
+      hide-details
+      required
+      style="margin-bottom: 24px;"
+      @update:model-value="handleSecretInput"
+      @blur="handleSecretBlur"
+    />
 
     <!-- Secret Format Hint -->
     <v-alert
@@ -287,11 +285,17 @@ defineExpose({
   gap: 8px;
 }
 
-/* 强制移除输入框底部的任何边框和间距 */
+/* 彻底移除输入框底部的所有元素 */
 :deep(.v-input__details) {
   display: none !important;
   min-height: 0 !important;
   padding: 0 !important;
+  margin: 0 !important;
+}
+
+:deep(.v-messages) {
+  display: none !important;
+  min-height: 0 !important;
 }
 
 :deep(.v-text-field .v-field) {
@@ -300,5 +304,18 @@ defineExpose({
 
 :deep(.v-textarea .v-field) {
   margin-bottom: 0 !important;
+}
+
+/* 移除输入框底部的任何边框线 */
+:deep(.v-field__outline) {
+  border-bottom: none !important;
+}
+
+:deep(.v-input__control) {
+  min-height: auto !important;
+}
+
+:deep(.v-field__underlay) {
+  display: none !important;
 }
 </style>
