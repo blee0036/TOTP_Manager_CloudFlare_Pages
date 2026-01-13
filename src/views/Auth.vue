@@ -343,108 +343,88 @@ const handleTemporaryMode = () => {
 </script>
 
 <style scoped>
-/* Auth Page Container */
+/* ========== 页面容器 ========== */
 .auth-page {
   position: relative;
   min-height: 100vh;
-  overflow: hidden;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-/* Background Gradient Decorations */
+/* ========== 背景装饰 ========== */
 .auth-bg {
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  inset: 0;
   pointer-events: none;
   z-index: 0;
-  overflow: hidden;
 }
 
 .gradient-orb {
   position: absolute;
   border-radius: 50%;
-  filter: blur(80px);
-  opacity: 0.6;
+  filter: blur(100px);
 }
 
 .orb-1 {
-  width: 500px;
-  height: 500px;
-  background: radial-gradient(circle, rgba(139, 92, 246, 0.4) 0%, rgba(139, 92, 246, 0) 70%);
-  top: -150px;
-  right: -100px;
-  animation: float-slow 20s ease-in-out infinite;
+  width: 400px;
+  height: 400px;
+  background: rgba(139, 92, 246, 0.25);
+  top: -100px;
+  right: -50px;
 }
 
 .orb-2 {
-  width: 400px;
-  height: 400px;
-  background: radial-gradient(circle, rgba(124, 58, 237, 0.35) 0%, rgba(124, 58, 237, 0) 70%);
-  bottom: -100px;
-  left: -100px;
-  animation: float-slow 25s ease-in-out infinite reverse;
+  width: 350px;
+  height: 350px;
+  background: rgba(124, 58, 237, 0.2);
+  bottom: -80px;
+  left: -80px;
 }
 
 .orb-3 {
-  width: 300px;
-  height: 300px;
-  background: radial-gradient(circle, rgba(167, 139, 250, 0.3) 0%, rgba(167, 139, 250, 0) 70%);
+  width: 250px;
+  height: 250px;
+  background: rgba(167, 139, 250, 0.15);
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  animation: pulse-glow 8s ease-in-out infinite;
 }
 
-@keyframes float-slow {
-  0%, 100% {
-    transform: translate(0, 0);
-  }
-  50% {
-    transform: translate(30px, 20px);
-  }
-}
-
-@keyframes pulse-glow {
-  0%, 100% {
-    opacity: 0.3;
-    transform: translate(-50%, -50%) scale(1);
-  }
-  50% {
-    opacity: 0.5;
-    transform: translate(-50%, -50%) scale(1.1);
-  }
-}
-
+/* ========== 主容器 - 居中 ========== */
 .auth-container {
   position: relative;
   z-index: 1;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
   min-height: 100vh;
-  background: transparent;
+  padding: 24px 16px;
 }
 
-/* Glassmorphism Auth Card */
+.auth-container :deep(.v-row) {
+  width: 100%;
+  margin: 0 !important;
+  justify-content: center !important;
+}
+
+.auth-container :deep(.v-col) {
+  display: flex;
+  justify-content: center;
+}
+
+/* ========== 登录卡片 ========== */
 .auth-card {
-  border-radius: 24px !important;
-  background: rgba(var(--v-theme-surface), 0.85) !important;
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(139, 92, 246, 0.15) !important;
-  box-shadow: 
-    0 8px 32px rgba(0, 0, 0, 0.1),
-    0 0 0 1px rgba(255, 255, 255, 0.05) inset !important;
+  width: 100%;
+  max-width: 420px;
+  border-radius: 20px !important;
+  background: rgba(24, 24, 27, 0.95) !important;
+  border: 1px solid rgba(139, 92, 246, 0.2) !important;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4) !important;
 }
 
-.v-theme--dark .auth-card {
-  background: rgba(24, 24, 27, 0.9) !important;
-  border-color: rgba(139, 92, 246, 0.2) !important;
-  box-shadow: 
-    0 8px 32px rgba(0, 0, 0, 0.3),
-    0 0 0 1px rgba(255, 255, 255, 0.03) inset !important;
-}
-
-/* Logo Styling */
+/* ========== Logo ========== */
 .auth-logo-wrapper {
   position: relative;
   display: inline-flex;
@@ -453,171 +433,115 @@ const handleTemporaryMode = () => {
 }
 
 .auth-logo-icon {
-  color: rgb(var(--v-theme-primary));
-  position: relative;
-  z-index: 1;
+  color: #A78BFA;
 }
 
 .logo-glow {
   position: absolute;
-  width: 80px;
-  height: 80px;
-  background: radial-gradient(circle, rgba(139, 92, 246, 0.4) 0%, transparent 70%);
+  width: 70px;
+  height: 70px;
+  background: rgba(139, 92, 246, 0.4);
   border-radius: 50%;
-  filter: blur(15px);
-  z-index: 0;
+  filter: blur(20px);
 }
 
 .auth-title {
-  background: linear-gradient(135deg, rgb(var(--v-theme-primary)) 0%, #A78BFA 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: #E4E4E7 !important;
+  -webkit-text-fill-color: #E4E4E7 !important;
 }
 
-/* 彻底移除输入框底部的所有元素 */
-:deep(.v-input__details) {
-  display: none !important;
-  min-height: 0 !important;
-  padding: 0 !important;
-  margin: 0 !important;
-}
-
-:deep(.v-messages) {
-  display: none !important;
-  min-height: 0 !important;
-}
-
-:deep(.v-text-field .v-field) {
-  margin-bottom: 0 !important;
-}
-
-:deep(.v-input__control) {
-  min-height: auto !important;
-}
-
-:deep(.v-field__underlay) {
-  display: none !important;
-}
-
-/* 隐藏导致横线的outline notch */
-:deep(.v-field__outline__notch) {
-  display: none !important;
-}
-
-/* Auth Tabs Styling */
+/* ========== 标签页 ========== */
 .auth-tabs {
-  border-radius: 12px;
-  overflow: hidden;
+  background: rgba(39, 39, 42, 0.5);
+  border-radius: 10px;
+  padding: 4px;
 }
 
 :deep(.auth-tabs .v-tab) {
   font-weight: 500;
-  letter-spacing: 0.5px;
   text-transform: none;
-  min-height: 44px;
+  min-height: 40px;
+  border-radius: 8px;
+  color: #A1A1AA !important;
 }
 
 :deep(.auth-tabs .v-tab--selected) {
-  background: rgba(139, 92, 246, 0.1);
+  background: rgba(139, 92, 246, 0.2) !important;
+  color: #A78BFA !important;
 }
 
-/* Auth Input Styling */
-.auth-input :deep(.v-field) {
-  border-radius: 12px !important;
-  transition: all 0.2s ease;
+:deep(.v-tabs-slider-wrapper) {
+  display: none;
 }
 
-.auth-input :deep(.v-field--focused) {
-  box-shadow: 0 0 0 2px rgba(139, 92, 246, 0.2);
+/* ========== 输入框 ========== */
+.auth-input {
+  margin-bottom: 20px !important;
 }
 
-.auth-input :deep(.v-field__outline__start),
-.auth-input :deep(.v-field__outline__end) {
-  border-color: rgba(var(--v-theme-on-surface), 0.15);
-  transition: border-color 0.2s ease;
+.auth-input:last-of-type {
+  margin-bottom: 24px !important;
 }
 
-.auth-input :deep(.v-field--focused .v-field__outline__start),
-.auth-input :deep(.v-field--focused .v-field__outline__end) {
-  border-color: rgb(var(--v-theme-primary));
+:deep(.v-field) {
+  border-radius: 10px !important;
+  background: rgba(39, 39, 42, 0.6) !important;
 }
 
-.v-theme--dark .auth-input :deep(.v-field__outline__start),
-.v-theme--dark .auth-input :deep(.v-field__outline__end) {
-  border-color: rgba(255, 255, 255, 0.12);
+:deep(.v-field__outline) {
+  color: rgba(161, 161, 170, 0.3) !important;
 }
 
-/* Primary Submit Button with Gradient */
+:deep(.v-field--focused .v-field__outline) {
+  color: #8B5CF6 !important;
+}
+
+/* 移除输入框底部多余元素和白线 */
+:deep(.v-input__details) {
+  display: none !important;
+}
+
+:deep(.v-field__outline__notch::before),
+:deep(.v-field__outline__notch::after) {
+  border: none !important;
+}
+
+/* ========== 提交按钮 ========== */
 .auth-submit-btn {
-  border-radius: 12px !important;
+  border-radius: 10px !important;
   font-weight: 600 !important;
-  letter-spacing: 0.5px !important;
   text-transform: none !important;
-  min-height: 48px !important;
-  background: linear-gradient(135deg, #8B5CF6 0%, #7C3AED 100%) !important;
-  box-shadow: 0 4px 14px rgba(139, 92, 246, 0.35) !important;
-  transition: all 0.2s ease !important;
+  min-height: 46px !important;
+  background: linear-gradient(135deg, #8B5CF6, #7C3AED) !important;
+  box-shadow: 0 4px 15px rgba(139, 92, 246, 0.4) !important;
 }
 
 .auth-submit-btn:hover:not(:disabled) {
-  background: linear-gradient(135deg, #A78BFA 0%, #8B5CF6 100%) !important;
-  box-shadow: 0 6px 20px rgba(139, 92, 246, 0.45) !important;
-  transform: translateY(-1px);
-}
-
-.auth-submit-btn:active:not(:disabled) {
-  transform: translateY(0);
-  box-shadow: 0 2px 8px rgba(139, 92, 246, 0.3) !important;
+  box-shadow: 0 6px 20px rgba(139, 92, 246, 0.5) !important;
 }
 
 .auth-submit-btn:disabled {
-  background: rgba(139, 92, 246, 0.4) !important;
+  opacity: 0.5 !important;
   box-shadow: none !important;
 }
 
-/* Temporary Mode Button - Secondary Style */
+/* ========== 临时模式按钮 ========== */
 .temp-mode-btn {
-  border-radius: 12px !important;
+  border-radius: 10px !important;
   font-weight: 500 !important;
-  letter-spacing: 0.5px !important;
   text-transform: none !important;
-  min-height: 48px !important;
+  min-height: 46px !important;
   background: rgba(139, 92, 246, 0.1) !important;
-  color: rgb(var(--v-theme-primary)) !important;
-  border: 1px solid rgba(139, 92, 246, 0.2) !important;
-  transition: all 0.2s ease !important;
+  color: #A78BFA !important;
+  border: 1px solid rgba(139, 92, 246, 0.25) !important;
 }
 
 .temp-mode-btn:hover {
   background: rgba(139, 92, 246, 0.15) !important;
-  border-color: rgba(139, 92, 246, 0.3) !important;
 }
 
-.v-theme--dark .temp-mode-btn {
-  background: rgba(139, 92, 246, 0.08) !important;
-  border-color: rgba(139, 92, 246, 0.15) !important;
-}
-
-.v-theme--dark .temp-mode-btn:hover {
-  background: rgba(139, 92, 246, 0.12) !important;
-  border-color: rgba(139, 92, 246, 0.25) !important;
-}
-
-/* Divider Styling */
+/* ========== 分隔线 ========== */
 :deep(.v-divider) {
-  opacity: 0.15;
-}
-
-/* Reduced motion support */
-@media (prefers-reduced-motion: reduce) {
-  .gradient-orb {
-    animation: none !important;
-  }
-  
-  .auth-submit-btn,
-  .temp-mode-btn {
-    transition: none !important;
-  }
+  border-color: rgba(161, 161, 170, 0.15) !important;
 }
 </style>

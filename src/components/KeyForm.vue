@@ -294,12 +294,6 @@ defineExpose({
 </script>
 
 <style scoped>
-/**
- * KeyForm Component Styles
- * Modern black-purple theme with glassmorphism effects
- * Requirements: 5.1, 5.2, 5.3, 5.5
- */
-
 .key-form {
   width: 100%;
 }
@@ -308,172 +302,56 @@ defineExpose({
   gap: 12px;
 }
 
-/* Form Input Styling - Requirement 5.1, 5.2 */
-.form-input :deep(.v-field) {
-  border-radius: 12px !important;
-  transition: all var(--duration-fast, 200ms) ease;
+/* 输入框样式 */
+.form-input {
+  margin-bottom: 20px !important;
 }
 
-/* Floating label animation - Requirement 5.1 */
-.form-input :deep(.v-field--focused .v-label),
-.form-input :deep(.v-field--dirty .v-label) {
-  transform: translateY(-50%) scale(0.75);
-  color: rgb(var(--v-theme-primary));
+:deep(.v-field) {
+  border-radius: 10px !important;
 }
 
-/* Focus state with primary color border - Requirement 5.2 */
-.form-input :deep(.v-field--focused) {
-  box-shadow: 0 0 0 2px rgba(139, 92, 246, 0.2);
-}
-
-.form-input :deep(.v-field__outline__start),
-.form-input :deep(.v-field__outline__end) {
-  border-color: rgba(var(--v-theme-on-surface), 0.15);
-  transition: border-color var(--duration-fast, 200ms) ease;
-}
-
-.form-input :deep(.v-field--focused .v-field__outline__start),
-.form-input :deep(.v-field--focused .v-field__outline__end) {
-  border-color: rgb(var(--v-theme-primary));
-  border-width: 2px;
-}
-
-/* Error state styling - Requirement 5.3 */
-.form-input :deep(.v-field--error .v-field__outline__start),
-.form-input :deep(.v-field--error .v-field__outline__end) {
-  border-color: rgb(var(--v-theme-error)) !important;
-  border-width: 2px;
-}
-
-.form-input :deep(.v-field--error) {
-  box-shadow: 0 0 0 2px rgba(239, 68, 68, 0.15);
-}
-
-.form-input :deep(.v-field--error .v-label) {
-  color: rgb(var(--v-theme-error));
-}
-
-/* Dark theme adjustments */
-.v-theme--dark .form-input :deep(.v-field__outline__start),
-.v-theme--dark .form-input :deep(.v-field__outline__end) {
-  border-color: rgba(255, 255, 255, 0.12);
-}
-
-/* Input icon styling */
-.form-input :deep(.v-field__prepend-inner) {
-  color: rgba(var(--v-theme-on-surface), 0.5);
-  transition: color var(--duration-fast, 200ms) ease;
-}
-
-.form-input :deep(.v-field--focused .v-field__prepend-inner) {
-  color: rgb(var(--v-theme-primary));
-}
-
-.form-input :deep(.v-field--error .v-field__prepend-inner) {
-  color: rgb(var(--v-theme-error));
-}
-
-/* Hide input details and messages */
 :deep(.v-input__details) {
   display: none !important;
-  min-height: 0 !important;
-  padding: 0 !important;
-  margin: 0 !important;
 }
 
-:deep(.v-messages) {
-  display: none !important;
-  min-height: 0 !important;
+:deep(.v-field__outline__notch::before),
+:deep(.v-field__outline__notch::after) {
+  border: none !important;
 }
 
-:deep(.v-text-field .v-field) {
-  margin-bottom: 0 !important;
-}
-
-:deep(.v-textarea .v-field) {
-  margin-bottom: 0 !important;
-}
-
-:deep(.v-input__control) {
-  min-height: auto !important;
-}
-
-:deep(.v-field__underlay) {
-  display: none !important;
-}
-
-:deep(.v-field__outline__notch) {
-  display: none !important;
-}
-
-/* Alert Styling */
+/* Alert 样式 */
 .form-alert {
-  border-radius: 12px !important;
-  font-size: 14px;
+  border-radius: 10px !important;
 }
 
-.form-alert :deep(.v-alert__prepend) {
-  margin-right: 12px;
-}
-
-.form-alert-error {
-  background: rgba(239, 68, 68, 0.1) !important;
-  border: 1px solid rgba(239, 68, 68, 0.2);
-}
-
-.v-theme--dark .form-alert-error {
-  background: rgba(248, 113, 113, 0.1) !important;
-  border-color: rgba(248, 113, 113, 0.2);
-}
-
-/* Cancel Button - Secondary Style */
+/* 取消按钮 */
 .form-btn-cancel {
-  border-radius: 12px !important;
+  border-radius: 10px !important;
   font-weight: 500 !important;
-  letter-spacing: 0.5px !important;
   text-transform: none !important;
   min-height: 44px !important;
-  padding: 0 20px !important;
-  color: rgba(var(--v-theme-on-surface), 0.7) !important;
-  transition: all var(--duration-fast, 200ms) ease !important;
 }
 
-.form-btn-cancel:hover {
-  background: rgba(var(--v-theme-on-surface), 0.08) !important;
-  color: rgba(var(--v-theme-on-surface), 0.9) !important;
-}
-
-/* Submit Button - Primary Gradient Style - Requirement 5.5 */
+/* 提交按钮 */
 .form-btn-submit {
-  border-radius: 12px !important;
+  border-radius: 10px !important;
   font-weight: 600 !important;
-  letter-spacing: 0.5px !important;
   text-transform: none !important;
   min-height: 44px !important;
-  padding: 0 24px !important;
-  background: linear-gradient(135deg, #8B5CF6 0%, #7C3AED 100%) !important;
-  box-shadow: 0 4px 14px rgba(139, 92, 246, 0.35) !important;
-  transition: all var(--duration-fast, 200ms) ease !important;
+  background: linear-gradient(135deg, #8B5CF6, #7C3AED) !important;
+  box-shadow: 0 4px 15px rgba(139, 92, 246, 0.35) !important;
 }
 
 .form-btn-submit:hover:not(:disabled) {
-  background: linear-gradient(135deg, #A78BFA 0%, #8B5CF6 100%) !important;
   box-shadow: 0 6px 20px rgba(139, 92, 246, 0.45) !important;
-  transform: translateY(-1px);
-}
-
-.form-btn-submit:active:not(:disabled) {
-  transform: translateY(0);
-  box-shadow: 0 2px 8px rgba(139, 92, 246, 0.3) !important;
 }
 
 .form-btn-submit:disabled {
-  background: rgba(139, 92, 246, 0.4) !important;
+  opacity: 0.5 !important;
   box-shadow: none !important;
-  color: rgba(255, 255, 255, 0.6) !important;
 }
 
-/* Spacing utilities */
 .mb-5 {
   margin-bottom: 20px !important;
 }
@@ -484,14 +362,5 @@ defineExpose({
 
 .mt-6 {
   margin-top: 24px !important;
-}
-
-/* Reduced motion support */
-@media (prefers-reduced-motion: reduce) {
-  .form-input :deep(.v-field),
-  .form-btn-submit,
-  .form-btn-cancel {
-    transition: none !important;
-  }
 }
 </style>

@@ -249,8 +249,9 @@ const handleGoToLogin = () => {
 }
 
 .add-key-card {
-  border-radius: 12px;
+  border-radius: 16px;
   background: rgb(var(--v-theme-surface));
+  border: 1px solid rgba(139, 92, 246, 0.15);
 }
 
 /* 警告文字按钮样式 */
@@ -262,49 +263,22 @@ const handleGoToLogin = () => {
   background-color: rgba(var(--v-theme-warning), 0.08) !important;
 }
 
-/* 确保卡片内容背景透明 */
-:deep(.v-card-text) {
-  background: transparent !important;
-}
-
-/* 彻底移除输入框底部的所有元素 */
+/* 输入框样式修复 */
 :deep(.v-input__details) {
   display: none !important;
-  min-height: 0 !important;
-  padding: 0 !important;
-  margin: 0 !important;
 }
 
-:deep(.v-messages) {
-  display: none !important;
-  min-height: 0 !important;
+:deep(.v-field__outline__notch::before),
+:deep(.v-field__outline__notch::after) {
+  border: none !important;
 }
 
-:deep(.v-field__underlay) {
-  display: none !important;
+:deep(.v-field) {
+  border-radius: 10px !important;
 }
 
-/* 隐藏导致横线的outline notch */
-:deep(.v-field__outline__notch) {
-  display: none !important;
-}
-
-:deep(.v-field__outline) {
-  --v-field-border-opacity: 1;
-}
-
-/* 返回按钮样式 - 确保hover时文字可见和cursor pointer */
+/* 返回按钮样式 */
 :deep(.v-btn--variant-text) {
   cursor: pointer !important;
-  color: rgb(var(--v-theme-on-surface)) !important;
-}
-
-:deep(.v-btn--variant-text:hover) {
-  background-color: rgba(var(--v-theme-on-surface), 0.08) !important;
-  color: rgb(var(--v-theme-on-surface)) !important;
-}
-
-:deep(.v-btn--variant-text .v-btn__overlay) {
-  display: none !important;
 }
 </style>
